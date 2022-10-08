@@ -1,0 +1,211 @@
+=================================================================================
+=        DesignWare Library IP RTL Encrypted versus source                      =
+=================================================================================
+
+The fact that you are reading this file means that you have configured either a 
+single piece of DesignWare Library IP from within coreConsultant or a subsystem 
+containing DesignWare Library IP.  The DesignWare Library IP is available in two 
+forms :
+
+1)  Encrypted    In this install the RTL for all but the top level, and the 
+                 file(s) containing your configuration information will be  
+                 encrypted using an encryption scheme that can only be read by 
+                 Synopsys Tools.  If you attempt to open source in a text editor 
+                 like emacs or vi and the file looks garbled or some "binary 
+                 format", then you have encrypted RTL installed.
+
+2)  Source       As the title suggests this installation will include RTL source 
+                 files for all blocks in the IP for which you own source licenses.
+                 ** Note ** : The DWC AMBA Source component(s) are licensed on a 
+                 "per-project" basis. Please refer to the DesignWare Fee-Per-Use 
+                 Cores legal agreement for your companies usage terms and 
+                 conditions. If you are unsure of whether your current project 
+                 is covered please contact Synopsys support, your Synopsys Account 
+                 Manager, or local Synopsys AC.
+
+To be able to configure source RTL, the IP must be installed properly.  In other 
+words the installation scripts take the information provided and determine if 
+source should be installed , or not.  If source isn't selected then the tools 
+fall back to their default behavior and will  install encrypted RTL. If you expect 
+to find source for some, or all, of your DesignWare Library IP but don't, please 
+read the Frequently asked questions below.
+
+=================================================================================
+=        Frequently Asked questions                                             =
+=================================================================================
+1)  Question: Do I have source or encrypted?  How can I tell?
+
+    Answer:  Since you are reading this file, you have found the location of the 
+    Verilog files for at least one piece of IP that you have configured through
+    either coreConsultant or coreAssembler.  A quick check you can make to be 
+    sure your configured RTL is writing out source, examnine all of the Verilog 
+    files in the src directory for the component to see if they are all bare 
+    text. 
+
+        Note: There will be at least two files that are bare text, and seeing
+        these few files as bare text is not enough to determine that the 
+        install is source.  Files named similar to:
+
+              DW_<component_name>.v
+              DW_*_constants.v//where * is any text
+
+        will always be in plain text, even in an encrypted install.  If ALL *.v 
+        files are plain text, then you likely do have a source install.
+ 
+    If you see encrypted files and are certain that your current project is 
+    licensed for source, please proceed to the Trouble-Shooting section below.  
+    If you are unsure of whether your current project is covered please contact 
+    Synopsys support (See "Getting Help" below), your Synopsys Account Manager, 
+    or local AC.
+
+2)  Question: I have source license, but when I configure my IP I still get 
+    encrypted code what is wrong?
+
+    Answer: The installation was not completed properly. Please see the section
+    below titled "Trouble-Shooting Your Install" 
+
+3)  Question: I have source licenses, and some of my IP configures correctly to 
+    source, but some blocks don't and are still encrypted, what is wrong?  
+
+    Answer: It is likely that you have licenses for one of the IP components yet
+    do not have a license for the other.  This happens most commonly with the 
+    DesignWare Library APB peripherals.  For example, when configuring the 
+    DW_apb_i2c and the DW_apb_gpio components the user may find that the 
+    DW_apb_i2c configures to source, but the DW_apb_gpio is still encrypted.  
+    These two components are included in different packages for source licenses :
+
+       DWC-APB-Periph-Source - This is the package for the DW_apb_gpio
+       DWC-APB-Advanced-Source - This is the package for the DW_apb_i2c
+   
+    Check the licensing requirements for the IP you have.  If you have licenses for
+    source for all the IP the installation was not completed properly. Please see 
+    the section below titled "Trouble-Shooting Your Install".  If you do not 
+    have all the licenses you need, you will need to contact your Synopsys Account 
+    Manager to obtain the missing licenses and reinstall the IP.
+
+=================================================================================
+=        Trouble-Shooting Your Install                                          = 
+=================================================================================
+
+1) make sure to have read and followed the instruction in the section titled 
+
+   "Installing DesignWare Synthesizable Components for AMBA 2 and AMBA 3 AXI"
+
+  In the install guide : 
+
+   "DesignWare Synthesizable Components for AMBA 2/AMBA 3 AXI Installation Guide"
+
+  Links to the install guide are provided in the Resources section below.
+
+
+2) Review the licensing requirements for the IP you are using, and make sure you 
+  have all the required licenses for your IP and that they are properly installed
+  on the correct license server, see the section below titled "Licenses"
+
+3) Check your environment and make sure that these environment variables are set 
+  correctly : $DESIGNWARE_HOME, $LM_LICENSE_FILE, and $SYNOPSYS.  If you are 
+  unsure of what these variables need to contain, please consult chapter 4 
+  "Setting Up Your Environment" in the install guide : 
+
+   "DesignWare Synthesizable Components for AMBA 2/AMBA 3 AXI Installation Guide"
+
+  Links to the install guide are provided in the Resources section below.
+  
+
+4) Make sure that the install process selects all IP for which you have  a license
+  and that the correct project ID is entered.
+ 
+  dw_iip_amba images will present you with a menu similar to this during the 
+  install:
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   >> In addition to the encrypted product, this image contains the following
+   >> 5 optional source features:
+   >> 
+   >>     1) DWC-APB-Periph-Source 
+   >>     2) DWC-DMAC-Source
+   >>     3) DWC-APB-Advanced-Source
+   >>     4) DWC-AMBA-Fabric-Source
+   >>     5) DWC-MEMCTL-Source
+   >> 
+   >> Please enter a comma-separated list of numbers for each of the source
+   >> features that you purchased. If you purchased all of them, you may
+   >> enter 'all'. If you purchased none of them, simply press the Enter key.
+   >> Enter numbers here: 
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  Make sure to enter a comma separated list for all the IP for which this 
+  project is licensed for source.  If you are licensed for all you can skip
+  the list and just enter the string "all"
+
+
+  dw_iip_amba and dw_iip_axi images will present you with a prompt for the 
+  project ID :
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   >> 
+   >> Please enter your project ID for the source you purchased:
+   >>
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  Ensure that you enter the correct project ID.
+
+5) When performing a source installation if you encounter an ERROR like :
+
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   >> ERROR:  Unable to extract iip_DW_ahb_XXX_YYY_NN.NNNa source file from . . . 
+   >> Continue with installation [y/n]? 
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  Do not continue.  Either your licenses are installed incorrectly, or the
+  project ID was incorrect.  Provide 'n' to the installer so that it will exit. 
+  Go back to 2) above. 
+
+6) If you have followed all of the above and are still having trouble getting a 
+  source install, please see the section below titled "Getting Help"
+
+=================================================================================
+=        Licenses                                                               =
+=================================================================================
+For more information concerning which licenses are required for each piece of IP, 
+please consult the Table 3 in Chapter 4 of the DesignWare Amba Install Guide.  If
+you aren't sure where to find the install guide, links are provided in the 
+Resources section below.
+
+
+=================================================================================
+=        Resources                                                              =
+=================================================================================
+
+=============================================
+= DesignWare Synthesizable Components       =
+=  for AMBA 2/AMBA 3 AXI Installation Guide =
+=============================================
+Available here:
+===============
+$DESIGNWARE_HOME/doc/amba/latest/dw_amba_install.pdf 
+
+And on synopsys.com here:
+=========================
+https://www.synopsys.com/dw/doc.php/doc/amba/latest/dw_amba_install.pdf
+     (*Solvnet login required*)
+
+======================
+= Getting Help       =
+======================
+If you continue to have problems with installation of source,
+please open a case with the Support Center:
+==========================================
+   https://solvnet.synopsys.com/EnterACall
+   Product: DesignWare Library IP
+   Sub-Product: AMBA
+   Version : To find your version execute see instructions below.
+
+To get your version execute : 
+
+	ls -rlt $DESIGNWARE_HOME/doc/amba/
+
+The latest link will point to the version you need to enter above.
