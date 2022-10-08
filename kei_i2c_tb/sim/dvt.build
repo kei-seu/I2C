@@ -1,0 +1,26 @@
+# Automatically identify and compile all the source files in the project directory.
+# DO NOT explicitly list files/directories in 'dvt_auto_init' sections. Use 'dvt_init' sections instead.
++dvt_init
+-O0
+-novopt
+-uvm
++incdir+agents/lvc_apb3 
++incdir+agents/lvc_i2c 
++incdir+cfg 
++incdir+cov 
++incdir+reg 
++incdir+env 
++incdir+seq_lib 
++incdir+seq_lib/elem_seqs
++incdir+seq_lib/user_elem_seqs 
++incdir+seq_lib/user_virt_seqs 
++incdir+tests/user_tests 
++incdir+tests
+-f  sim/rkv_i2c.dvt.flist
+-sv agents/lvc_apb3/lvc_apb_if.sv 
+-sv agents/lvc_apb3/lvc_apb_pkg.sv 
+-sv agents/lvc_i2c/lvc_i2c_if.sv 
+-sv agents/lvc_i2c/lvc_i2c_pkg.sv 
+-sv env/rkv_i2c_pkg.sv 
+-sv tb/rkv_i2c_if.sv 
+-sv tb/rkv_i2c_tb.sv 
