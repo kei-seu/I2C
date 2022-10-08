@@ -1,0 +1,1238 @@
+#
+# ABSTRACT : RAL file generated for DW_apb_i2c
+#
+block kei_i2c {
+  endian little;
+  bytes 4;
+  register IC_CON @'h0 {
+    field MASTER_MODE @0 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field SPEED @1 {
+       bits 2;
+       access rw;
+       reset 2'h3;
+    }
+    field IC_10BITADDR_SLAVE @3 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field IC_10BITADDR_MASTER @4 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field IC_RESTART_EN @5 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field IC_SLAVE_DISABLE @6 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field STOP_DET_IFADDRESSED @7 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field TX_EMPTY_CTRL @8 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field RX_FIFO_FULL_HLD_CTRL @9 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field STOP_DET_IF_MASTER_ACTIVE @10 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_BUS_CLEAR_FEATURE_CTRL @11 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_IC_CON_1 @12 {
+       bits 4;
+       access ro;
+       reset 4'h0;
+    }
+    field RSVD_OPTIONAL_SAR_CTRL @16 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_SMBUS_SLAVE_QUICK_EN @17 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_SMBUS_ARP_EN @18 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_SMBUS_PERSISTENT_SLV_ADDR_EN @19 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_IC_CON_2 @20 {
+       bits 12;
+       access ro;
+       reset 12'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_TAR @'h4 {
+    field IC_TAR @0 {
+       bits 10;
+       access rw;
+       reset 10'h33;
+    }
+    field GC_OR_START @10 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field SPECIAL @11 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field RSVD_IC_10BITADDR_MASTER @12 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_DEVICE_ID @13 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_IC_TAR_1 @14 {
+       bits 2;
+       access ro;
+       reset 2'h0;
+    }
+    field RSVD_SMBUS_QUICK_CMD @16 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_IC_TAR_2 @17 {
+       bits 15;
+       access ro;
+       reset 15'h0;
+    }
+  }
+  register IC_SAR @'h8 {
+    field IC_SAR @0 {
+       bits 10;
+       access rw;
+       reset 10'h33;
+    }
+    field RSVD_IC_SAR @10 {
+       bits 22;
+       access ro;
+       reset 22'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_HS_MADDR @'hc {
+    field IC_HS_MAR @0 {
+       bits 3;
+       access rw;
+       reset 3'h1;
+    }
+    field RSVD_IC_HS_MAR @3 {
+       bits 29;
+       access ro;
+       reset 29'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_DATA_CMD @'h10 {
+    field DAT @0 {
+       bits 8;
+       access rw;
+       reset 8'h0;
+      volatile 1;
+    }
+    field CMD @8 {
+       bits 1;
+       access wo;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_STOP @9 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_RESTART @10 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_FIRST_DATA_BYTE @11 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_DATA_CMD @12 {
+       bits 20;
+       access ro;
+       reset 20'h0;
+      volatile 1;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_SS_SCL_HCNT @'h14 {
+    field IC_SS_SCL_HCNT @0 {
+       bits 16;
+       access rw;
+       reset 16'h190;
+    }
+    field RSVD_IC_SS_SCL_HIGH_COUNT @16 {
+       bits 16;
+       access ro;
+       reset 16'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_SS_SCL_LCNT @'h18 {
+    field IC_SS_SCL_LCNT @0 {
+       bits 16;
+       access rw;
+       reset 16'h1d6;
+    }
+    field RSVD_IC_SS_SCL_LOW_COUNT @16 {
+       bits 16;
+       access ro;
+       reset 16'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_FS_SCL_HCNT @'h1c {
+    field IC_FS_SCL_HCNT @0 {
+       bits 16;
+       access rw;
+       reset 16'h3c;
+    }
+    field RSVD_IC_FS_SCL_HCNT @16 {
+       bits 16;
+       access ro;
+       reset 16'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_FS_SCL_LCNT @'h20 {
+    field IC_FS_SCL_LCNT @0 {
+       bits 16;
+       access rw;
+       reset 16'h82;
+    }
+    field RSVD_IC_FS_SCL_LCNT @16 {
+       bits 16;
+       access ro;
+       reset 16'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_HS_SCL_HCNT @'h24 {
+    field IC_HS_SCL_HCNT @0 {
+       bits 16;
+       access rw;
+       reset 16'h6;
+    }
+    field RSVD_IC_HS_SCL_HCNT @16 {
+       bits 16;
+       access ro;
+       reset 16'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_HS_SCL_LCNT @'h28 {
+    field IC_HS_SCL_LCNT @0 {
+       bits 16;
+       access rw;
+       reset 16'h10;
+    }
+    field RSVD_IC_HS_SCL_LOW_CNT @16 {
+       bits 16;
+       access ro;
+       reset 16'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_INTR_STAT @'h2c {
+    field R_RX_UNDER @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_RX_OVER @1 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_RX_FULL @2 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_TX_OVER @3 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_TX_EMPTY @4 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_RD_REQ @5 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_TX_ABRT @6 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_RX_DONE @7 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_ACTIVITY @8 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_STOP_DET @9 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_START_DET @10 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_GEN_CALL @11 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_RESTART_DET @12 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field R_MASTER_ON_HOLD @13 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_R_SCL_STUCK_AT_LOW @14 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_INTR_STAT @15 {
+       bits 17;
+       access ro;
+       reset 17'h0;
+      volatile 1;
+    }
+  }
+  register IC_INTR_MASK @'h30 {
+    field M_RX_UNDER @0 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field M_RX_OVER @1 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field M_RX_FULL @2 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field M_TX_OVER @3 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field M_TX_EMPTY @4 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field M_RD_REQ @5 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field M_TX_ABRT @6 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field M_RX_DONE @7 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field M_ACTIVITY @8 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field M_STOP_DET @9 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field M_START_DET @10 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field M_GEN_CALL @11 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field M_RESTART_DET_read_only @12 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field M_MASTER_ON_HOLD_read_only @13 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_M_SCL_STUCK_AT_LOW @14 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_IC_INTR_STAT @15 {
+       bits 17;
+       access ro;
+       reset 17'h0;
+    }
+  }
+  register IC_RAW_INTR_STAT @'h34 {
+    field RX_UNDER @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RX_OVER @1 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RX_FULL @2 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field TX_OVER @3 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field TX_EMPTY @4 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RD_REQ @5 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field TX_ABRT @6 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RX_DONE @7 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ACTIVITY @8 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field STOP_DET @9 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field START_DET @10 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field GEN_CALL @11 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RESTART_DET @12 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field MASTER_ON_HOLD @13 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_SCL_STUCK_AT_LOW @14 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_RAW_INTR_STAT @15 {
+       bits 17;
+       access ro;
+       reset 17'h0;
+      volatile 1;
+    }
+  }
+  register IC_RX_TL @'h38 {
+    field RX_TL @0 {
+       bits 8;
+       access rw;
+       reset 8'h0;
+    }
+    field RSVD_IC_RX_TL @8 {
+       bits 24;
+       access ro;
+       reset 24'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_TX_TL @'h3c {
+    field TX_TL @0 {
+       bits 8;
+       access rw;
+       reset 8'h0;
+    }
+    field RSVD_IC_TX_TL @8 {
+       bits 24;
+       access ro;
+       reset 24'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_CLR_INTR @'h40 {
+    field CLR_INTR @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_INTR @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_RX_UNDER @'h44 {
+    field CLR_RX_UNDER @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_RX_UNDER @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_RX_OVER @'h48 {
+    field CLR_RX_OVER @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_RX_OVER @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_TX_OVER @'h4c {
+    field CLR_TX_OVER @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_TX_OVER @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_RD_REQ @'h50 {
+    field CLR_RD_REQ @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_RD_REQ @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_TX_ABRT @'h54 {
+    field CLR_TX_ABRT @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_TX_ABRT @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_RX_DONE @'h58 {
+    field CLR_RX_DONE @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_RX_DONE @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_ACTIVITY @'h5c {
+    field CLR_ACTIVITY @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_ACTIVITY @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_STOP_DET @'h60 {
+    field CLR_STOP_DET @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_STOP_DET @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_START_DET @'h64 {
+    field CLR_START_DET @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_START_DET @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_CLR_GEN_CALL @'h68 {
+    field CLR_GEN_CALL @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_CLR_GEN_CALL @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+      volatile 1;
+    }
+  }
+  register IC_ENABLE @'h6c {
+    field ENABLE @0 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field ABORT @1 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field TX_CMD_BLOCK @2 {
+       bits 1;
+       access rw;
+       reset 1'h0;
+    }
+    field RSVD_SDA_STUCK_RECOVERY_ENABLE @3 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_IC_ENABLE_1 @4 {
+       bits 12;
+       access ro;
+       reset 12'h0;
+    }
+    field RSVD_SMBUS_CLK_RESET @16 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_SMBUS_SUSPEND_EN @17 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_SMBUS_ALERT_EN @18 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field RSVD_IC_ENABLE_2 @19 {
+       bits 13;
+       access ro;
+       reset 13'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_STATUS @'h70 {
+    field ACTIVITY @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field TFNF @1 {
+       bits 1;
+       access ro;
+       reset 1'h1;
+      volatile 1;
+    }
+    field TFE @2 {
+       bits 1;
+       access ro;
+       reset 1'h1;
+      volatile 1;
+    }
+    field RFNE @3 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RFF @4 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field MST_ACTIVITY @5 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field SLV_ACTIVITY @6 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_MST_HOLD_TX_FIFO_EMPTY @7 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_MST_HOLD_RX_FIFO_FULL @8 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_SLV_HOLD_TX_FIFO_EMPTY @9 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_SLV_HOLD_RX_FIFO_FULL @10 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_SDA_STUCK_NOT_RECOVERED @11 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_STATUS_1 @12 {
+       bits 4;
+       access ro;
+       reset 4'h0;
+      volatile 1;
+    }
+    field RSVD_SMBUS_QUICK_CMD_BIT @16 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_SMBUS_SLAVE_ADDR_VALID @17 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_SMBUS_SLAVE_ADDR_RESOLVED @18 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_SMBUS_SUSPEND_STATUS @19 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_SMBUS_ALERT_STATUS @20 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_STATUS_2 @21 {
+       bits 11;
+       access ro;
+       reset 11'h0;
+      volatile 1;
+    }
+  }
+  register IC_TXFLR @'h74 {
+    field TXFLR @0 {
+       bits 4;
+       access ro;
+       reset 4'h0;
+      volatile 1;
+    }
+    field RSVD_TXFLR @4 {
+       bits 28;
+       access ro;
+       reset 28'h0;
+      volatile 1;
+    }
+  }
+  register IC_RXFLR @'h78 {
+    field RXFLR @0 {
+       bits 4;
+       access ro;
+       reset 4'h0;
+      volatile 1;
+    }
+    field RSVD_RXFLR @4 {
+       bits 28;
+       access ro;
+       reset 28'h0;
+      volatile 1;
+    }
+  }
+  register IC_SDA_HOLD @'h7c {
+    field IC_SDA_TX_HOLD @0 {
+       bits 16;
+       access rw;
+       reset 16'h1;
+    }
+    field IC_SDA_RX_HOLD @16 {
+       bits 8;
+       access rw;
+       reset 8'h0;
+    }
+    field RSVD_IC_SDA_HOLD @24 {
+       bits 8;
+       access ro;
+       reset 8'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_TX_ABRT_SOURCE @'h80 {
+    field ABRT_7B_ADDR_NOACK @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_10ADDR1_NOACK @1 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_10ADDR2_NOACK @2 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_TXDATA_NOACK @3 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_GCALL_NOACK @4 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_GCALL_READ @5 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_HS_ACKDET @6 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_SBYTE_ACKDET @7 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_HS_NORSTRT @8 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_SBYTE_NORSTRT @9 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_10B_RD_NORSTRT @10 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_MASTER_DIS @11 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ARB_LOST @12 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_SLVFLUSH_TXFIFO @13 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_SLV_ARBLOST @14 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_SLVRD_INTX @15 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field ABRT_USER_ABRT @16 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_ABRT_SDA_STUCK_AT_LOW @17 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_ABRT_DEVICE_WRITE @18 {
+       bits 3;
+       access ro;
+       reset 3'h0;
+      volatile 1;
+    }
+    field RSVD_IC_TX_ABRT_SOURCE @21 {
+       bits 2;
+       access ro;
+       reset 2'h0;
+      volatile 1;
+    }
+    field TX_FLUSH_CNT @23 {
+       bits 9;
+       access ro;
+       reset 9'h0;
+      volatile 1;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_SDA_SETUP @'h94 {
+    field SDA_SETUP @0 {
+       bits 8;
+       access rw;
+       reset 8'h64;
+    }
+    field RSVD_IC_SDA_SETUP @8 {
+       bits 24;
+       access ro;
+       reset 24'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_ACK_GENERAL_CALL @'h98 {
+    field ACK_GEN_CALL @0 {
+       bits 1;
+       access rw;
+       reset 1'h1;
+    }
+    field RSVD_IC_ACK_GEN_1_31 @1 {
+       bits 31;
+       access ro;
+       reset 31'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_ENABLE_STATUS @'h9c {
+    field IC_EN @0 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field SLV_DISABLED_WHILE_BUSY @1 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field SLV_RX_DATA_LOST @2 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+      volatile 1;
+    }
+    field RSVD_IC_ENABLE_STATUS @3 {
+       bits 29;
+       access ro;
+       reset 29'h0;
+      volatile 1;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_FS_SPKLEN @'ha0 {
+    field IC_FS_SPKLEN @0 {
+       bits 8;
+       access rw;
+       reset 8'h5;
+    }
+    field RSVD_IC_FS_SPKLEN @8 {
+       bits 24;
+       access ro;
+       reset 24'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register IC_HS_SPKLEN @'ha4 {
+    field IC_HS_SPKLEN @0 {
+       bits 8;
+       access rw;
+       reset 8'h1;
+    }
+    field RSVD_IC_HS_SPKLEN @8 {
+       bits 24;
+       access ro;
+       reset 24'h0;
+    }
+    attributes { NO_REG_BIT_BASH_TEST 1 }
+  }
+  register REG_TIMEOUT_RST @'hf0 {
+    field REG_TIMEOUT_RST_rw @0 {
+       bits 4;
+       access rw;
+       reset 4'h8;
+      volatile 1;
+    }
+    field RSVD_REG_TIMEOUT_RST @4 {
+       bits 28;
+       access ro;
+       reset 28'h0;
+      volatile 1;
+    }
+  }
+  register IC_COMP_PARAM_1 @'hf4 {
+    field APB_DATA_WIDTH @0 {
+       bits 2;
+       access ro;
+       reset 2'h2;
+    }
+    field MAX_SPEED_MODE @2 {
+       bits 2;
+       access ro;
+       reset 2'h3;
+    }
+    field HC_COUNT_VALUES @4 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field INTR_IO @5 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field HAS_DMA @6 {
+       bits 1;
+       access ro;
+       reset 1'h0;
+    }
+    field ADD_ENCODED_PARAMS @7 {
+       bits 1;
+       access ro;
+       reset 1'h1;
+    }
+    field RX_BUFFER_DEPTH @8 {
+       bits 8;
+       access ro;
+       reset 8'h7;
+    }
+    field TX_BUFFER_DEPTH @16 {
+       bits 8;
+       access ro;
+       reset 8'h7;
+    }
+    field RSVD_IC_COMP_PARAM_1 @24 {
+       bits 8;
+       access ro;
+       reset 8'h0;
+    }
+  }
+  register IC_COMP_VERSION @'hf8 {
+    field IC_COMP_VERSION @0 {
+       bits 32;
+       access ro;
+       reset 32'h3230322a;
+    }
+  }
+  register IC_COMP_TYPE @'hfc {
+    field IC_COMP_TYPE @0 {
+       bits 32;
+       access ro;
+       reset 32'h44570140;
+    }
+  }
+}
+
+
+system kei_i2c_rgm {
+  bytes 4;
+  block kei_i2c @'h0;
+}
+

@@ -1,0 +1,32 @@
+// component: (top level)
+// library: work
+// files:
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_cc_constants.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_bcm_params.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_bcm57.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_bcm21.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_bcm41.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_bcm47.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_bcm06.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_bcm05.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_bcm07.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_regs.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_tog.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_bcm99.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_biu.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_regfile.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_fifo.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_async_fifo.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_intctl.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_rx_filter.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_clk_gen.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_mstfsm.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_sync.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_slvfsm.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_tx_shift.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_rx_shift.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_toggle.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c_dma.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c.v
+/home/liubin/project/dw_iip/i_i2c_1/src/DW_apb_i2c-undef.v
+
