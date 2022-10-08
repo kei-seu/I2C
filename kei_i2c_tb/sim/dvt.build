@@ -4,8 +4,8 @@
 -O0
 -novopt
 -uvm
-+incdir+agents/lvc_apb3 
-+incdir+agents/lvc_i2c 
++incdir+agents/kei_vip_apb3 
++incdir+agents/kei_vip_i2c 
 +incdir+cfg 
 +incdir+cov 
 +incdir+reg 
@@ -16,11 +16,11 @@
 +incdir+seq_lib/user_virt_seqs 
 +incdir+tests/user_tests 
 +incdir+tests
--f  sim/rkv_i2c.dvt.flist
--sv agents/lvc_apb3/lvc_apb_if.sv 
--sv agents/lvc_apb3/lvc_apb_pkg.sv 
--sv agents/lvc_i2c/lvc_i2c_if.sv 
--sv agents/lvc_i2c/lvc_i2c_pkg.sv 
--sv env/rkv_i2c_pkg.sv 
--sv tb/rkv_i2c_if.sv 
--sv tb/rkv_i2c_tb.sv 
+-f  sim/kei_i2c.dvt.flist
+-sv agents/kei_vip_apb3/kei_vip_apb_if.sv 
+-sv agents/kei_vip_apb3/kei_vip_apb_pkg.sv 
+-sv agents/kei_vip_i2c/kei_vip_i2c_if.sv 
+-sv agents/kei_vip_i2c/kei_vip_i2c_pkg.sv 
+-sv env/kei_i2c_pkg.sv 
+-sv tb/kei_i2c_if.sv 
+-sv tb/kei_i2c_tb.sv 
