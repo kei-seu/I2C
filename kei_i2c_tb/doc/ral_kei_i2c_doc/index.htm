@@ -1,0 +1,287 @@
+<html><title>KEI_I2C RAL Model</title>
+<body>
+<h1>Block kei_i2c</h1>
+<h2>Registers</h2>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CON</b></td></tr><tr>
+<td colspan=12 halign=center>RSVD_IC_CON_2</td>
+<td colspan=1 halign=center>RSVD_SMBUS_PERSISTENT_SLV_ADDR_EN</td>
+<td colspan=1 halign=center>RSVD_SMBUS_ARP_EN</td>
+<td colspan=1 halign=center>RSVD_SMBUS_SLAVE_QUICK_EN</td>
+<td colspan=1 halign=center>RSVD_OPTIONAL_SAR_CTRL</td>
+<td colspan=4 halign=center>RSVD_IC_CON_1</td>
+<td colspan=1 halign=center>RSVD_BUS_CLEAR_FEATURE_CTRL</td>
+<td colspan=1 halign=center>STOP_DET_IF_MASTER_ACTIVE</td>
+<td colspan=1 halign=center>RX_FIFO_FULL_HLD_CTRL</td>
+<td colspan=1 halign=center>TX_EMPTY_CTRL</td>
+<td colspan=1 halign=center>STOP_DET_IFADDRESSED</td>
+<td colspan=1 halign=center>IC_SLAVE_DISABLE</td>
+<td colspan=1 halign=center>IC_RESTART_EN</td>
+<td colspan=1 halign=center>IC_10BITADDR_MASTER</td>
+<td colspan=1 halign=center>IC_10BITADDR_SLAVE</td>
+<td colspan=2 halign=center>SPEED</td>
+<td colspan=1 halign=center>MASTER_MODE</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_TAR</b></td></tr><tr>
+<td colspan=15 halign=center>RSVD_IC_TAR_2</td>
+<td colspan=1 halign=center>RSVD_SMBUS_QUICK_CMD</td>
+<td colspan=2 halign=center>RSVD_IC_TAR_1</td>
+<td colspan=1 halign=center>RSVD_DEVICE_ID</td>
+<td colspan=1 halign=center>RSVD_IC_10BITADDR_MASTER</td>
+<td colspan=1 halign=center>SPECIAL</td>
+<td colspan=1 halign=center>GC_OR_START</td>
+<td colspan=10 halign=center>IC_TAR</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_SAR</b></td></tr><tr>
+<td colspan=22 halign=center>RSVD_IC_SAR</td>
+<td colspan=10 halign=center>IC_SAR</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_HS_MADDR</b></td></tr><tr>
+<td colspan=29 halign=center>RSVD_IC_HS_MAR</td>
+<td colspan=3 halign=center>IC_HS_MAR</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_DATA_CMD</b></td></tr><tr>
+<td colspan=20 halign=center>RSVD_IC_DATA_CMD</td>
+<td colspan=1 halign=center>RSVD_FIRST_DATA_BYTE</td>
+<td colspan=1 halign=center>RSVD_RESTART</td>
+<td colspan=1 halign=center>RSVD_STOP</td>
+<td colspan=1 halign=center>CMD</td>
+<td colspan=8 halign=center>DAT</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_SS_SCL_HCNT</b></td></tr><tr>
+<td colspan=16 halign=center>RSVD_IC_SS_SCL_HIGH_COUNT</td>
+<td colspan=16 halign=center>IC_SS_SCL_HCNT</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_SS_SCL_LCNT</b></td></tr><tr>
+<td colspan=16 halign=center>RSVD_IC_SS_SCL_LOW_COUNT</td>
+<td colspan=16 halign=center>IC_SS_SCL_LCNT</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_FS_SCL_HCNT</b></td></tr><tr>
+<td colspan=16 halign=center>RSVD_IC_FS_SCL_HCNT</td>
+<td colspan=16 halign=center>IC_FS_SCL_HCNT</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_FS_SCL_LCNT</b></td></tr><tr>
+<td colspan=16 halign=center>RSVD_IC_FS_SCL_LCNT</td>
+<td colspan=16 halign=center>IC_FS_SCL_LCNT</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_HS_SCL_HCNT</b></td></tr><tr>
+<td colspan=16 halign=center>RSVD_IC_HS_SCL_HCNT</td>
+<td colspan=16 halign=center>IC_HS_SCL_HCNT</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_HS_SCL_LCNT</b></td></tr><tr>
+<td colspan=16 halign=center>RSVD_IC_HS_SCL_LOW_CNT</td>
+<td colspan=16 halign=center>IC_HS_SCL_LCNT</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_INTR_STAT</b></td></tr><tr>
+<td colspan=17 halign=center>RSVD_IC_INTR_STAT</td>
+<td colspan=1 halign=center>RSVD_R_SCL_STUCK_AT_LOW</td>
+<td colspan=1 halign=center>R_MASTER_ON_HOLD</td>
+<td colspan=1 halign=center>R_RESTART_DET</td>
+<td colspan=1 halign=center>R_GEN_CALL</td>
+<td colspan=1 halign=center>R_START_DET</td>
+<td colspan=1 halign=center>R_STOP_DET</td>
+<td colspan=1 halign=center>R_ACTIVITY</td>
+<td colspan=1 halign=center>R_RX_DONE</td>
+<td colspan=1 halign=center>R_TX_ABRT</td>
+<td colspan=1 halign=center>R_RD_REQ</td>
+<td colspan=1 halign=center>R_TX_EMPTY</td>
+<td colspan=1 halign=center>R_TX_OVER</td>
+<td colspan=1 halign=center>R_RX_FULL</td>
+<td colspan=1 halign=center>R_RX_OVER</td>
+<td colspan=1 halign=center>R_RX_UNDER</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_INTR_MASK</b></td></tr><tr>
+<td colspan=17 halign=center>RSVD_IC_INTR_STAT</td>
+<td colspan=1 halign=center>RSVD_M_SCL_STUCK_AT_LOW</td>
+<td colspan=1 halign=center>M_MASTER_ON_HOLD_read_only</td>
+<td colspan=1 halign=center>M_RESTART_DET_read_only</td>
+<td colspan=1 halign=center>M_GEN_CALL</td>
+<td colspan=1 halign=center>M_START_DET</td>
+<td colspan=1 halign=center>M_STOP_DET</td>
+<td colspan=1 halign=center>M_ACTIVITY</td>
+<td colspan=1 halign=center>M_RX_DONE</td>
+<td colspan=1 halign=center>M_TX_ABRT</td>
+<td colspan=1 halign=center>M_RD_REQ</td>
+<td colspan=1 halign=center>M_TX_EMPTY</td>
+<td colspan=1 halign=center>M_TX_OVER</td>
+<td colspan=1 halign=center>M_RX_FULL</td>
+<td colspan=1 halign=center>M_RX_OVER</td>
+<td colspan=1 halign=center>M_RX_UNDER</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_RAW_INTR_STAT</b></td></tr><tr>
+<td colspan=17 halign=center>RSVD_IC_RAW_INTR_STAT</td>
+<td colspan=1 halign=center>RSVD_SCL_STUCK_AT_LOW</td>
+<td colspan=1 halign=center>MASTER_ON_HOLD</td>
+<td colspan=1 halign=center>RESTART_DET</td>
+<td colspan=1 halign=center>GEN_CALL</td>
+<td colspan=1 halign=center>START_DET</td>
+<td colspan=1 halign=center>STOP_DET</td>
+<td colspan=1 halign=center>ACTIVITY</td>
+<td colspan=1 halign=center>RX_DONE</td>
+<td colspan=1 halign=center>TX_ABRT</td>
+<td colspan=1 halign=center>RD_REQ</td>
+<td colspan=1 halign=center>TX_EMPTY</td>
+<td colspan=1 halign=center>TX_OVER</td>
+<td colspan=1 halign=center>RX_FULL</td>
+<td colspan=1 halign=center>RX_OVER</td>
+<td colspan=1 halign=center>RX_UNDER</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_RX_TL</b></td></tr><tr>
+<td colspan=24 halign=center>RSVD_IC_RX_TL</td>
+<td colspan=8 halign=center>RX_TL</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_TX_TL</b></td></tr><tr>
+<td colspan=24 halign=center>RSVD_IC_TX_TL</td>
+<td colspan=8 halign=center>TX_TL</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_INTR</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_INTR</td>
+<td colspan=1 halign=center>CLR_INTR</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_RX_UNDER</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_RX_UNDER</td>
+<td colspan=1 halign=center>CLR_RX_UNDER</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_RX_OVER</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_RX_OVER</td>
+<td colspan=1 halign=center>CLR_RX_OVER</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_TX_OVER</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_TX_OVER</td>
+<td colspan=1 halign=center>CLR_TX_OVER</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_RD_REQ</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_RD_REQ</td>
+<td colspan=1 halign=center>CLR_RD_REQ</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_TX_ABRT</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_TX_ABRT</td>
+<td colspan=1 halign=center>CLR_TX_ABRT</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_RX_DONE</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_RX_DONE</td>
+<td colspan=1 halign=center>CLR_RX_DONE</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_ACTIVITY</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_ACTIVITY</td>
+<td colspan=1 halign=center>CLR_ACTIVITY</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_STOP_DET</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_STOP_DET</td>
+<td colspan=1 halign=center>CLR_STOP_DET</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_START_DET</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_START_DET</td>
+<td colspan=1 halign=center>CLR_START_DET</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_CLR_GEN_CALL</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_CLR_GEN_CALL</td>
+<td colspan=1 halign=center>CLR_GEN_CALL</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_ENABLE</b></td></tr><tr>
+<td colspan=13 halign=center>RSVD_IC_ENABLE_2</td>
+<td colspan=1 halign=center>RSVD_SMBUS_ALERT_EN</td>
+<td colspan=1 halign=center>RSVD_SMBUS_SUSPEND_EN</td>
+<td colspan=1 halign=center>RSVD_SMBUS_CLK_RESET</td>
+<td colspan=12 halign=center>RSVD_IC_ENABLE_1</td>
+<td colspan=1 halign=center>RSVD_SDA_STUCK_RECOVERY_ENABLE</td>
+<td colspan=1 halign=center>TX_CMD_BLOCK</td>
+<td colspan=1 halign=center>ABORT</td>
+<td colspan=1 halign=center>ENABLE</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_STATUS</b></td></tr><tr>
+<td colspan=11 halign=center>RSVD_IC_STATUS_2</td>
+<td colspan=1 halign=center>RSVD_SMBUS_ALERT_STATUS</td>
+<td colspan=1 halign=center>RSVD_SMBUS_SUSPEND_STATUS</td>
+<td colspan=1 halign=center>RSVD_SMBUS_SLAVE_ADDR_RESOLVED</td>
+<td colspan=1 halign=center>RSVD_SMBUS_SLAVE_ADDR_VALID</td>
+<td colspan=1 halign=center>RSVD_SMBUS_QUICK_CMD_BIT</td>
+<td colspan=4 halign=center>RSVD_IC_STATUS_1</td>
+<td colspan=1 halign=center>RSVD_SDA_STUCK_NOT_RECOVERED</td>
+<td colspan=1 halign=center>RSVD_SLV_HOLD_RX_FIFO_FULL</td>
+<td colspan=1 halign=center>RSVD_SLV_HOLD_TX_FIFO_EMPTY</td>
+<td colspan=1 halign=center>RSVD_MST_HOLD_RX_FIFO_FULL</td>
+<td colspan=1 halign=center>RSVD_MST_HOLD_TX_FIFO_EMPTY</td>
+<td colspan=1 halign=center>SLV_ACTIVITY</td>
+<td colspan=1 halign=center>MST_ACTIVITY</td>
+<td colspan=1 halign=center>RFF</td>
+<td colspan=1 halign=center>RFNE</td>
+<td colspan=1 halign=center>TFE</td>
+<td colspan=1 halign=center>TFNF</td>
+<td colspan=1 halign=center>ACTIVITY</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_TXFLR</b></td></tr><tr>
+<td colspan=28 halign=center>RSVD_TXFLR</td>
+<td colspan=4 halign=center>TXFLR</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_RXFLR</b></td></tr><tr>
+<td colspan=28 halign=center>RSVD_RXFLR</td>
+<td colspan=4 halign=center>RXFLR</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_SDA_HOLD</b></td></tr><tr>
+<td colspan=8 halign=center>RSVD_IC_SDA_HOLD</td>
+<td colspan=8 halign=center>IC_SDA_RX_HOLD</td>
+<td colspan=16 halign=center>IC_SDA_TX_HOLD</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_TX_ABRT_SOURCE</b></td></tr><tr>
+<td colspan=9 halign=center>TX_FLUSH_CNT</td>
+<td colspan=2 halign=center>RSVD_IC_TX_ABRT_SOURCE</td>
+<td colspan=3 halign=center>RSVD_ABRT_DEVICE_WRITE</td>
+<td colspan=1 halign=center>RSVD_ABRT_SDA_STUCK_AT_LOW</td>
+<td colspan=1 halign=center>ABRT_USER_ABRT</td>
+<td colspan=1 halign=center>ABRT_SLVRD_INTX</td>
+<td colspan=1 halign=center>ABRT_SLV_ARBLOST</td>
+<td colspan=1 halign=center>ABRT_SLVFLUSH_TXFIFO</td>
+<td colspan=1 halign=center>ARB_LOST</td>
+<td colspan=1 halign=center>ABRT_MASTER_DIS</td>
+<td colspan=1 halign=center>ABRT_10B_RD_NORSTRT</td>
+<td colspan=1 halign=center>ABRT_SBYTE_NORSTRT</td>
+<td colspan=1 halign=center>ABRT_HS_NORSTRT</td>
+<td colspan=1 halign=center>ABRT_SBYTE_ACKDET</td>
+<td colspan=1 halign=center>ABRT_HS_ACKDET</td>
+<td colspan=1 halign=center>ABRT_GCALL_READ</td>
+<td colspan=1 halign=center>ABRT_GCALL_NOACK</td>
+<td colspan=1 halign=center>ABRT_TXDATA_NOACK</td>
+<td colspan=1 halign=center>ABRT_10ADDR2_NOACK</td>
+<td colspan=1 halign=center>ABRT_10ADDR1_NOACK</td>
+<td colspan=1 halign=center>ABRT_7B_ADDR_NOACK</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_SDA_SETUP</b></td></tr><tr>
+<td colspan=24 halign=center>RSVD_IC_SDA_SETUP</td>
+<td colspan=8 halign=center>SDA_SETUP</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_ACK_GENERAL_CALL</b></td></tr><tr>
+<td colspan=31 halign=center>RSVD_IC_ACK_GEN_1_31</td>
+<td colspan=1 halign=center>ACK_GEN_CALL</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_ENABLE_STATUS</b></td></tr><tr>
+<td colspan=29 halign=center>RSVD_IC_ENABLE_STATUS</td>
+<td colspan=1 halign=center>SLV_RX_DATA_LOST</td>
+<td colspan=1 halign=center>SLV_DISABLED_WHILE_BUSY</td>
+<td colspan=1 halign=center>IC_EN</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_FS_SPKLEN</b></td></tr><tr>
+<td colspan=24 halign=center>RSVD_IC_FS_SPKLEN</td>
+<td colspan=8 halign=center>IC_FS_SPKLEN</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_HS_SPKLEN</b></td></tr><tr>
+<td colspan=24 halign=center>RSVD_IC_HS_SPKLEN</td>
+<td colspan=8 halign=center>IC_HS_SPKLEN</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_COMP_PARAM_1</b></td></tr><tr>
+<td colspan=8 halign=center>RSVD_IC_COMP_PARAM_1</td>
+<td colspan=8 halign=center>TX_BUFFER_DEPTH</td>
+<td colspan=8 halign=center>RX_BUFFER_DEPTH</td>
+<td colspan=1 halign=center>ADD_ENCODED_PARAMS</td>
+<td colspan=1 halign=center>HAS_DMA</td>
+<td colspan=1 halign=center>INTR_IO</td>
+<td colspan=1 halign=center>HC_COUNT_VALUES</td>
+<td colspan=2 halign=center>MAX_SPEED_MODE</td>
+<td colspan=2 halign=center>APB_DATA_WIDTH</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_COMP_VERSION</b></td></tr><tr>
+<td colspan=32 halign=center>IC_COMP_VERSION</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+<table border=1 rules=all><tr><td colspan=32 bgcolor=cyan><b>IC_COMP_TYPE</b></td></tr><tr>
+<td colspan=32 halign=center>IC_COMP_TYPE</td>
+</tr><tr halign=center><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></table><br>&nbsp<br>
+</body></html>
