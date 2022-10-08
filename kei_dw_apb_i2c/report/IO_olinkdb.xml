@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE targetset
+    SYSTEM "file:///opt/synopsys/coretools/N-2017.12-SP2/auxx/dware/docbook-xsl-ns/common/targetdatabase.dtd" [
+<!ENTITY IO SYSTEM "file:///home/liubin/project/dw_iip/i_i2c_1/report/IO/target.db">
+<!ENTITY portGroup0 SYSTEM "file:///home/liubin/project/dw_iip/i_i2c_1/report/portGroup0/target.db">
+<!ENTITY portGroup1 SYSTEM "file:///home/liubin/project/dw_iip/i_i2c_1/report/portGroup1/target.db">
+<!ENTITY portGroup2 SYSTEM "file:///home/liubin/project/dw_iip/i_i2c_1/report/portGroup2/target.db">
+<!ENTITY portGroup3 SYSTEM "file:///home/liubin/project/dw_iip/i_i2c_1/report/portGroup3/target.db">
+
+]>
+<targetset>
+  <targetsetinfo>
+    Description of this target database document,
+    which is for the examples in olink doc.
+  </targetsetinfo>
+
+  <!-- Site map for generating relative paths between documents -->
+  <sitemap>
+    <dir name=".">
+      <document targetdoc="IO"
+                baseuri="IO.html">
+        &IO;
+      </document>
+      <dir name="portGroup0">
+          <document targetdoc="portGroup0"
+                    baseuri="portGroup0.html">
+            &portGroup0;
+          </document>
+      </dir>
+      <dir name="portGroup1">
+          <document targetdoc="portGroup1"
+                    baseuri="portGroup1.html">
+            &portGroup1;
+          </document>
+      </dir>
+      <dir name="portGroup2">
+          <document targetdoc="portGroup2"
+                    baseuri="portGroup2.html">
+            &portGroup2;
+          </document>
+      </dir>
+      <dir name="portGroup3">
+          <document targetdoc="portGroup3"
+                    baseuri="portGroup3.html">
+            &portGroup3;
+          </document>
+      </dir>
+
+    </dir>
+  </sitemap>
+</targetset>

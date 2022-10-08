@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+]>
+<docbook:article
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://docbook.org/ns/docbook docbook.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:docbook="http://docbook.org/ns/docbook" version="5.0">
+  <docbook:title>Signals for DW_apb_i2c</docbook:title>
+  <docbook:sect1 xml:id="section">
+    <docbook:title xml:id="H2-title">APB Slave Interface</docbook:title>
+    <docbook:informaltable xml:id="interfacetable-APBSlaveInterface" frame="none" rowsep="0" colsep="0">
+      <docbook:tgroup cols="3">
+        <?dbhtml cellpadding="0" cellspacing="0" ?>
+        <docbook:tbody>
+          <docbook:row>
+            <docbook:entry>
+            </docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="pclk">pclk</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="prdata">prdata</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="presetn">presetn</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="pready">pready</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="psel">psel</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="pslverr">pslverr</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="penable">penable</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="pwrite">pwrite</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="paddr">paddr</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="pwdata">pwdata</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>
+            </docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:informaltable>
+    <docbook:table xml:id="signaltable" pgwide="1">
+      <docbook:title>APB Slave Interface</docbook:title>
+      <docbook:tgroup cols="3">
+        <docbook:colspec colnum="1" colname="c1"/>
+        <docbook:colspec colnum="2" colname="c2"/>
+        <docbook:colspec colnum="3" colname="c3"/>
+        <docbook:thead>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Port Name</docbook:entry>
+            <docbook:entry>I/O</docbook:entry>
+            <docbook:entry>Description</docbook:entry>
+          </docbook:row>
+        </docbook:thead>
+        <docbook:tbody>
+          <docbook:row>
+            <docbook:entry><docbook:para id="pclk">pclk</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>APB clock for the bus interface unit. <docbook:para role="BLANK"/><docbook:emphasis role="bold">Note:</docbook:emphasis> ic_clk frequency must be greater than or equal to pclk frequency. The configuration parameter IC_CLK_TYPE indicates the relationship between pclk and ic_clk. It can be asynchronous (1) or identical (0).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>None</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>N/A</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>N/A</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="presetn">presetn</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>An APB interface domain reset. The signal is asserted asynchronously, but is deasserted synchronously after the rising edge of pclk. The synchronization must be provided external to this component.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>Asynchronous</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>N/A</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>Low</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="psel">psel</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>APB peripheral select that lasts for two pclk cycles. When asserted, indicates that the peripheral has been selected for a read/write operation.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>pclk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>No</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="penable">penable</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>APB enable control. Asserted for a single pclk cycle and used for timing read/write operations.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>pclk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>No</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="pwrite">pwrite</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>APB write control. When high, indicates a write access to the peripheral; when low, indicates a read access.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>pclk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>No</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>N/A</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="paddr">paddr[7:0]</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>APB address bus. Uses lower 7 bits of the address bus for register decode.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>pclk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>No</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>N/A</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="pwdata">pwdata[31:0]</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>APB write data bus. Driven by the bus master (DW_ahb to DW_apb bridge) during write cycles. Can be 8, 16, or 32 bits wide depending on APB_DATA_WIDTH parameter.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>pclk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>No</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>N/A</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="prdata">prdata[31:0]</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>APB readback data. Driven by the selected peripheral during read cycles. Can be 8, 16, or 32 bits wide depending on APB_DATA_WIDTH parameter.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>pclk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>N/A</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="pready">pready</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>The APB ready signal, used to extend the APB transfer and it is also used to indicate the end of a transaction when there is a high in the access phase of a transaction.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>pclk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="pslverr">pslverr</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>APB slave error response signal. The signal issues an error when some error condition occurs, as specified in databook.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>pclk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:table>
+  </docbook:sect1>
+</docbook:article>

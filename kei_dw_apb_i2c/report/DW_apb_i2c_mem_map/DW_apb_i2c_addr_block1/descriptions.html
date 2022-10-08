@@ -1,0 +1,169 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Register Descriptions</title><link rel="stylesheet" type="text/css" href="html.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="#idp29330008" title="Register Descriptions"><link rel="next" href="#DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-descriptions" title=""></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idp29330008"></a>Register Descriptions</h2></div></div><hr></div><div class="book"><div class="titlepage"><hr></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sectionStart"></a>DW_apb_i2c_mem_map/DW_apb_i2c_addr_block1 Registers</h2></div></div></div><p>DW_apb_i2c address block
+Follow the link for the register to see a detailed description of the register.</p><div class="table"><a name="regtable"></a><p class="title"><b>Table 1. Registers for Address Block: DW_apb_i2c_mem_map/DW_apb_i2c_addr_block1</b></p><div class="table-contents"><table class="table" summary="Registers for Address Block: DW_apb_i2c_mem_map/DW_apb_i2c_addr_block1" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Register</th><th>Offset</th><th>Description</th></tr></thead><tbody><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CON" class="olink">IC_CON
+</a></td><td>0x0</td><td>
+              <p>I2C Control Register.
+This register can be written only when the DW_apb_i2c
+is disabled, which corresponds...</p>
+            </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_TAR" class="olink">IC_TAR
+</a></td><td>0x4</td><td>
+        <p>I2C Target Address Register
+
+If the configuration parameter I2C_DYNAMIC_TAR_UPDATE is set to 'No'...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SAR" class="olink">IC_SAR
+</a></td><td>0x8</td><td>
+        <p>I2C Slave Address Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_HS_MADDR" class="olink">IC_HS_MADDR
+</a></td><td>0xc</td><td>
+        <p>I2C High Speed Master Mode Code Address Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_DATA_CMD" class="olink">IC_DATA_CMD
+</a></td><td>0x10</td><td>
+        <p>I2C Rx/Tx Data Buffer and Command Register; this is the register the CPU writes to when filling...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SS_SCL_HCNT" class="olink">IC_SS_SCL_HCNT
+</a></td><td>0x14</td><td>
+        <p>Standard Speed I2C Clock SCL High Count Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SS_SCL_LCNT" class="olink">IC_SS_SCL_LCNT
+</a></td><td>0x18</td><td>
+        <p>Standard Speed I2C Clock SCL Low Count Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_FS_SCL_HCNT" class="olink">IC_FS_SCL_HCNT
+</a></td><td>0x1c</td><td>
+        <p>Fast Mode or Fast Mode Plus I2C Clock SCL High Count Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_FS_SCL_LCNT" class="olink">IC_FS_SCL_LCNT
+</a></td><td>0x20</td><td>
+        <p>Fast Mode or Fast Mode Plus I2C Clock SCL Low Count Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_HS_SCL_HCNT" class="olink">IC_HS_SCL_HCNT
+</a></td><td>0x24</td><td>
+        <p>High Speed I2C Clock SCL High Count Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_HS_SCL_LCNT" class="olink">IC_HS_SCL_LCNT
+</a></td><td>0x28</td><td>
+        <p>High Speed I2C Clock SCL Low Count Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_INTR_STAT" class="olink">IC_INTR_STAT
+</a></td><td>0x2c</td><td>
+        <p>I2C Interrupt Status Register
+
+Each bit in this register has a corresponding mask bit
+in the IC_INTR_MASK...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_INTR_MASK" class="olink">IC_INTR_MASK
+</a></td><td>0x30</td><td>
+        <p>I2C Interrupt Mask Register.
+
+These bits mask their corresponding interrupt status bits. This register...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_RAW_INTR_STAT" class="olink">IC_RAW_INTR_STAT
+</a></td><td>0x34</td><td>
+        <p>I2C Raw Interrupt Status Register
+
+Unlike the IC_INTR_STAT register, these bits are not masked so...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_RX_TL" class="olink">IC_RX_TL
+</a></td><td>0x38</td><td>
+        <p>I2C Receive FIFO Threshold Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_TX_TL" class="olink">IC_TX_TL
+</a></td><td>0x3c</td><td>
+        <p>I2C Transmit FIFO Threshold Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_INTR" class="olink">IC_CLR_INTR
+</a></td><td>0x40</td><td>
+        <p>Clear Combined and Individual Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_RX_UNDER" class="olink">IC_CLR_RX_UNDER
+</a></td><td>0x44</td><td>
+        <p>Clear RX_UNDER Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_RX_OVER" class="olink">IC_CLR_RX_OVER
+</a></td><td>0x48</td><td>
+        <p>Clear RX_OVER Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_TX_OVER" class="olink">IC_CLR_TX_OVER
+</a></td><td>0x4c</td><td>
+        <p>Clear TX_OVER Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_RD_REQ" class="olink">IC_CLR_RD_REQ
+</a></td><td>0x50</td><td>
+        <p>Clear RD_REQ Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_TX_ABRT" class="olink">IC_CLR_TX_ABRT
+</a></td><td>0x54</td><td>
+        <p>Clear TX_ABRT Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_RX_DONE" class="olink">IC_CLR_RX_DONE
+</a></td><td>0x58</td><td>
+        <p>Clear RX_DONE Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_ACTIVITY" class="olink">IC_CLR_ACTIVITY
+</a></td><td>0x5c</td><td>
+        <p>Clear ACTIVITY Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_STOP_DET" class="olink">IC_CLR_STOP_DET
+</a></td><td>0x60</td><td>
+        <p>Clear STOP_DET Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_START_DET" class="olink">IC_CLR_START_DET
+</a></td><td>0x64</td><td>
+        <p>Clear START_DET Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_GEN_CALL" class="olink">IC_CLR_GEN_CALL
+</a></td><td>0x68</td><td>
+        <p>Clear GEN_CALL Interrupt Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_ENABLE" class="olink">IC_ENABLE
+</a></td><td>0x6c</td><td>
+        <p>I2C Enable Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_STATUS" class="olink">IC_STATUS
+</a></td><td>0x70</td><td>
+        <p>I2C Status Register 
+
+This is a read-only register used to indicate the current
+transfer status...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_TXFLR" class="olink">IC_TXFLR
+</a></td><td>0x74</td><td>
+        <p>I2C Transmit FIFO Level Register
+This register contains the number of valid data entries in the...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_RXFLR" class="olink">IC_RXFLR
+</a></td><td>0x78</td><td>
+        <p>I2C Receive FIFO Level Register
+This register contains the number of valid data entries in the receive...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SDA_HOLD" class="olink">IC_SDA_HOLD
+</a></td><td>0x7c</td><td>
+        <p>I2C SDA Hold Time Length Register
+
+The bits [15:0] of this register are used to control the hold...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_TX_ABRT_SOURCE" class="olink">IC_TX_ABRT_SOURCE
+</a></td><td>0x80</td><td>
+        <p>I2C Transmit Abort Source Register
+
+This register has 32 bits that indicate the source
+of the TX_ABRT...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SDA_SETUP" class="olink">IC_SDA_SETUP
+</a></td><td>0x94</td><td>
+        <p>I2C SDA Setup Register
+
+This register controls the amount of time delay
+(in terms of number of ic_clk...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_ACK_GENERAL_CALL" class="olink">IC_ACK_GENERAL_CALL
+</a></td><td>0x98</td><td>
+        <p>I2C ACK General Call Register
+
+The register controls whether DW_apb_i2c responds
+with a ACK or NACK...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_ENABLE_STATUS" class="olink">IC_ENABLE_STATUS
+</a></td><td>0x9c</td><td>
+        <p>I2C Enable Status Register
+
+The register is used to report the DW_apb_i2c hardware
+status when the...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_FS_SPKLEN" class="olink">IC_FS_SPKLEN
+</a></td><td>0xa0</td><td>
+        <p>I2C SS, FS or FM+  spike suppression limit
+
+This register is used to store the duration, measured...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_HS_SPKLEN" class="olink">IC_HS_SPKLEN
+</a></td><td>0xa4</td><td>
+        <p>I2C HS spike suppression limit register
+
+This register is used to store the duration, measured in...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_REG_TIMEOUT_RST" class="olink">REG_TIMEOUT_RST
+</a></td><td>0xf0</td><td>
+        <p>Name: Register timeout counter reset register
+Size: REG_TIMEOUT_WIDTH bits
+Address: 0xF0
+Read/Write...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_COMP_PARAM_1" class="olink">IC_COMP_PARAM_1
+</a></td><td>0xf4</td><td>
+        <p>Component Parameter Register 1
+
+Note
+This is a constant read-only register that contains
+encoded...</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_COMP_VERSION" class="olink">IC_COMP_VERSION
+</a></td><td>0xf8</td><td>
+        <p>I2C Component Version Register</p>
+      </td></tr><tr><td><a href="details.html#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_COMP_TYPE" class="olink">IC_COMP_TYPE
+</a></td><td>0xfc</td><td>
+        <p>I2C Component Type Register</p>
+      </td></tr></tbody></table></div></div><br class="table-break"></div></div></body></html>

@@ -1,0 +1,133 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Signals for DW_apb_i2c</title><link rel="stylesheet" type="text/css" href="html.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="#idp46406760" title="Signals for DW_apb_i2c"><link rel="next" href="#section" title="I2C Debug"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idp46406760"></a>Signals for DW_apb_i2c</h2></div></div><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="section"></a>I2C Debug</h2></div></div></div><div class="informaltable"><a name="interfacetable-I2CDebug"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_s_gen">debug_s_gen</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_p_gen">debug_p_gen</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_data">debug_data</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_addr">debug_addr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_rd">debug_rd</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_wr">debug_wr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_hs">debug_hs</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_master_act">debug_master_act</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_slave_act">debug_slave_act</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_addr_10bit">debug_addr_10bit</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_mst_cstate">debug_mst_cstate</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#debug_slv_cstate">debug_slv_cstate</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable"></a><p class="title"><b>Table 1. I2C Debug</b></p><div class="table-contents"><table class="table" summary="I2C Debug" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="debug_s_gen"></a>debug_s_gen</p></td><td>O</td><td>
+              <p>In the master mode of operation, this signal is set to 1 when DW_apb_i2c is driving a START condition on the bus.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>Low</p>
+            </td></tr><tr><td><p><a name="debug_p_gen"></a>debug_p_gen</p></td><td>O</td><td>
+              <p>In the master mode of operation, this signal is set to 1 when DW_apb_i2c is driving a STOP condition on the bus.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>Low</p>
+            </td></tr><tr><td><p><a name="debug_data"></a>debug_data</p></td><td>O</td><td>
+              <p>In the master or slave mode of operation, this signal is set to 1 when a byte of data is actively being read or written by DW_apb_i2c. This bit remains 1 until the transaction has completed.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="debug_addr"></a>debug_addr</p></td><td>O</td><td>
+              <p>In the master or slave mode of operation, this signal is set to 1 when the addressing phase is active on the I2C bus.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="debug_rd"></a>debug_rd</p></td><td>O</td><td>
+              <p>In the master mode of operation, this signal is set to 1 whenever the master is receiving data. This bit remains 1 until the transfer is complete or until the direction changes.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="debug_wr"></a>debug_wr</p></td><td>O</td><td>
+              <p>In the master mode of operation, this signal is set to 1 whenever the master is transmitting data. This bit remains 1 until the transfer is complete or the direction changes.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="debug_hs"></a>debug_hs</p></td><td>O</td><td>
+              <p>In the master mode of operation, this signal is set to 1 when DW_apb_i2c is performing high-speed mode transfers. This bit is set after the high-speed master code is transmitted and remains 1 until the master leaves high-speed mode.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="debug_master_act"></a>debug_master_act</p></td><td>O</td><td>
+              <p>This bit is set to 1 when the master module is active.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="debug_slave_act"></a>debug_slave_act</p></td><td>O</td><td>
+              <p>This bit is set to 1 when the slave module is active.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="debug_addr_10bit"></a>debug_addr_10bit</p></td><td>O</td><td>
+              <p>In the Slave mode of operation, this signal is set if 10-bit addressing is enabled and if the slave has received a matching 10-bit address with respect to IC_SAR register. </p><p class="BLANK"></p><p> This signal is not applicable in Master Mode.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="debug_mst_cstate"></a>debug_mst_cstate[4:0]</p></td><td>O</td><td>
+              <p>Master FSM state vector.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="debug_slv_cstate"></a>debug_slv_cstate[3:0]</p></td><td>O</td><td>
+              <p>Slave FSM state vector.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div></div></body></html>

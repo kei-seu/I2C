@@ -1,0 +1,1464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+]>
+<docbook:article
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://docbook.org/ns/docbook docbook.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:docbook="http://docbook.org/ns/docbook" version="5.0">
+  <docbook:title>Parameters for DW_apb_i2c - 2.02a</docbook:title>
+  <docbook:sect1 xml:id="Parameter-Descriptions">
+    <docbook:para>These tables define all of the user configuration options for this component. Entries which are grayed-out are disabled (read-only) in the current configuration.</docbook:para>
+    <docbook:itemizedlist>
+      <docbook:listitem><docbook:link linkend="paramtable-TopLevelParameters">Top Level Parameters</docbook:link></docbook:listitem>
+      <docbook:listitem><docbook:link linkend="paramtable-I2CVersion3.0Features">I2C Version 3.0 Features</docbook:link></docbook:listitem>
+      <docbook:listitem><docbook:link linkend="paramtable-SMBusFeatures">SMBus Features</docbook:link></docbook:listitem>
+      <docbook:listitem><docbook:link linkend="paramtable-I2CVersion6.0Features">I2C Version 6.0 Features</docbook:link></docbook:listitem>
+    </docbook:itemizedlist>
+    <docbook:sect2 xml:id="H2-sect2-paramtable-TopLevelParameters">
+    <docbook:title xml:id="H2-title-paramtable-TopLevelParameters">Top Level Parameters Parameters</docbook:title>
+    <docbook:table xml:id="paramtable-TopLevelParameters" pgwide="1">
+      <docbook:title>Top Level Parameters Parameters</docbook:title>
+      <docbook:tgroup cols="3">
+        <docbook:colspec colnum="1" colname="c1"/>
+        <docbook:colspec colnum="2" colname="c2"/>
+        <docbook:colspec colnum="3" colname="c3"/>
+        <docbook:thead>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Label</docbook:entry>
+            <docbook:entry>Value</docbook:entry>
+            <docbook:entry>Description</docbook:entry>
+          </docbook:row>
+        </docbook:thead>
+        <docbook:tbody>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              System Configuration
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Register Interface Type</docbook:entry>
+            <docbook:entry>APB3</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Select Register Interface type as APB2, APB3 or APB4.
+By default, DW_apb_i2c supports APB2 interface.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>APB2 (0)</docbook:listitem>
+            <docbook:listitem>APB3 (1)</docbook:listitem>
+            <docbook:listitem>APB4 (2)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>APB2</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>[&lt;functionof&gt; %item]</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>SLAVE_INTERFACE_TYPE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Slave Error Response Enable</docbook:entry>
+            <docbook:entry>true</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Enable Slave Error response signaling:The component will refrain
+From signaling an error response if this parameter is disabled.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0)</docbook:listitem>
+            <docbook:listitem>true (1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>SLAVE_INTERFACE_TYPE&gt;0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>SLVERR_RESP_EN</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>APB data bus width</docbook:entry>
+            <docbook:entry>32</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Width of the APB data bus.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>8, 16, 32</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>8</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>APB_DATA_WIDTH</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Width of Register timeout counter</docbook:entry>
+            <docbook:entry>4</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Defines the width of Register timeout counter. If set to zero,
+the timeout counter register is disabled, and timeout is triggered
+as soon as the transaction tries to read an empty RX_FIFO or write
+to a full TX_FIFO. As these are the only cases where PREADY signal
+goes low , it ensures that PREADY is tied high throughout. Setting
+values from 4 through 32 for this parameter configures the timeout
+period from 2^4 to 2^8 pclk cycles.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0, 4, 5, 6, 7, 8</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>4</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>SLAVE_INTERFACE_TYPE&gt;0 &amp;&amp; SLVERR_RESP_EN==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>REG_TIMEOUT_WIDTH</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Hardcode Register timeout counter value</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Checking this parameter makes Register timeout counter a read-only register.
+The register can be programmed by user if the hardcode option is turned off.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0)</docbook:listitem>
+            <docbook:listitem>true (1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>SLAVE_INTERFACE_TYPE&gt;0 &amp;&amp; SLVERR_RESP_EN==1 &amp;&amp; REG_TIMEOUT_WIDTH&gt;0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>HC_REG_TIMEOUT_VALUE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Register Timeout counter default value</docbook:entry>
+            <docbook:entry>8</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Defines the reset value of Register timeout counter register. This value can
+be over - ridden by programming the timeout counter register before
+enabling the component , if the HC_REG_TIMEOUT_VALUE is left un-checked</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>1, ..., POW_2_REG_TIMEOUT_WIDTH</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>8</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>SLAVE_INTERFACE_TYPE&gt;0 &amp;&amp; SLVERR_RESP_EN==1 &amp;&amp; REG_TIMEOUT_WIDTH&gt;0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>REG_TIMEOUT_VALUE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              Device Configuration
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Highest speed I2C mode supported</docbook:entry>
+            <docbook:entry>High Speed Mode</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Maximum I2C mode supported.
+Controls the reset value of the SPEED bit field [2:1] of the I2C Control Register (IC_CON).
+Count registers are used to generate the outgoing clock SCL on the I2C interface. 
+For speed modes faster than the configured maximum speed mode, the corresponding
+registers are not present in the top-level RTL.<docbook:para role="BLANK"/>
+For unsupported speed modes those registers are not present as described below.
+<docbook:itemizedlist><docbook:listitem>
+If this parameter is set to "Standard Mode" then the IC_FS_SCL_*, IC_HS_MADDR, and IC_HS_SCL_* registers are not present.
+</docbook:listitem><docbook:listitem>
+If this parameter is set to "Fast Mode" then the IC_HS_MADDR, and IC_HS_SCL_* registers are not present.
+</docbook:listitem></docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>Standard Mode (0x1)</docbook:listitem>
+            <docbook:listitem>Fast Mode or Fast Mode Plus (0x2)</docbook:listitem>
+            <docbook:listitem>High Speed Mode (0x3)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>High Speed Mode</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE == 0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_MAX_SPEED_MODE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Has I2C default slave address of?</docbook:entry>
+            <docbook:entry>0x033</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset Value of DW_apb_i2c Slave Address. 
+Controls the reset value of Register (IC_SAR). 
+The default values cannot be any of the reserved 
+address locations: 0x00 to 0x07 or 0x78 to 0x7f.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x000, ..., 0x3ff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x055</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEFAULT_SLAVE_ADDR</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Has I2C default target slave address of?</docbook:entry>
+            <docbook:entry>0x033</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of DW_apb_i2c target slave address. Controls the reset value 
+of the IC_TAR bit field (9:0) of the I2C Target Address Register (IC_TAR). 
+The default values cannot be any of the reserved address locations:
+0x00 to 0x07 or 0x78 to 0x7f.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x000, ..., 0x3ff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x055</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEFAULT_TAR_SLAVE_ADDR</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Has High Speed mode master code of?</docbook:entry>
+            <docbook:entry>0x1</docbook:entry>
+            <docbook:entry>
+              <docbook:para>High Speed mode master code of the DW_apb_i2c block.
+Controls the reset value of I2C HS Master Mode Code Address Register (IC_HS_MADDR).
+This is a unique code that alerts other masters on the I2C 
+bus that a high-speed mode transfer is going to begin. For more information
+about this code, refer to "Multiple Master Arbitration" section in data
+book.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0x7</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_MAX_SPEED_MODE == 3) &amp;&amp; (IC_ULTRA_FAST_MODE ==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_HS_MASTER_CODE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Is an I2C Master?</docbook:entry>
+            <docbook:entry>true</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c has its master enabled to be a master after reset. 
+This parameter controls the reset value of bit 0 of the I2C Control 
+Register (IC_CON). To enable the component to be a master, you must 
+write a 1 in bit 0 of the IC_CON register. <docbook:para role="BLANK"/>
+<docbook:emphasis role="bold">Note:</docbook:emphasis> If this parameter is checked (1), then you must ensure that the 
+parameter IC_SLAVE_DISABLE is checked (1) as well.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>true</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_MASTER_MODE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Disable Slave after reset?</docbook:entry>
+            <docbook:entry>true</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c has its slave enabled or disabled after reset.
+If checked, the DW_apb_i2c slave interface is disabled after reset.
+The slave also can be disabled by programming a 1 into IC_CON[6].
+By default the slave is enabled.<docbook:para role="BLANK"/>
+<docbook:emphasis role="bold">Note:</docbook:emphasis> If this parameter is unchecked (0), then you must ensure that the
+parameter IC_MASTER_MODE is unchecked (0) as well.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>true</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SLAVE_DISABLE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Supports 10-bit addressing in slave mode?</docbook:entry>
+            <docbook:entry>true</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c slave supports 7 or 10 bit addressing on the I2C 
+interface after reset when acting as a slave.  
+Controls reset value of part of Register IC_CON. 
+The DW_apb_i2c module will respond to this number of address bits when
+acting as a slave; it can be reprogrammed by software.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>true</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_10BITADDR_SLAVE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Supports 10-bit addressing in master mode?</docbook:entry>
+            <docbook:entry>true</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c supports 7 or 10 bit addressing on the I2C 
+interface after reset when acting as a master. 
+Controls reset value of part of Register IC_CON. 
+Master generated transfers will use this number of address bits. Additionally, it 
+can be reprogrammed by software by writing to the IC_CON register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>true</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_10BITADDR_MASTER</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Depth of transmit buffer is?</docbook:entry>
+            <docbook:entry>8</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Depth of transmit buffer. The buffer is 9 bits wide;
+8 bits for the data, and 1 bit for the read or write command.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>2, ..., 256</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>8</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_TX_BUFFER_DEPTH</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Depth of receive buffer is?</docbook:entry>
+            <docbook:entry>8</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Depth of receive buffer, the buffer is 8 bits wide.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>2, ..., 256</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>8</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_RX_BUFFER_DEPTH</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Transmit buffer threshold value is?</docbook:entry>
+            <docbook:entry>0x0</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value for threshold level of transmit buffer.
+This parameter controls the reset value of the I2C 
+Transmit FIFO Threshold Level Register (IC_TX_TL).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., IC_TX_BUFFER_DEPTH-1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_TX_TL</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Receive buffer threshold value is?</docbook:entry>
+            <docbook:entry>0x0</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value for threshold level of receive buffer.
+This parameter controls the reset value of the I2C 
+Receive FIFO Threshold Level Register (IC_RX_TL).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., IC_RX_BUFFER_DEPTH-1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_RX_TL</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Allow re-start conditions to be sent when acting as a master?</docbook:entry>
+            <docbook:entry>true</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls the reset value of bit 5 (IC_RESTART_EN) in the
+IC_CON register. By default, this parameter is checked, which allows
+RESTART conditions to be sent when DW_apb_i2c is acting as a master.
+Some older slaves do not support handling RESTART conditions; however,
+RESTART conditions are used in several I2C operations. When the RESTART
+is disabled, the DW_apb_i2c master is incapable of performing the following
+functions:
+<docbook:itemizedlist><docbook:listitem>
+Sending a START BYTE
+</docbook:listitem><docbook:listitem>
+Performing any high-speed mode operation
+</docbook:listitem><docbook:listitem>
+Performing direction changes in combined format mode
+</docbook:listitem><docbook:listitem>
+Performing a read operation with a 10-bit address
+</docbook:listitem></docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>true</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_RESTART_EN</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Hardware reset value for IC_SDA_SETUP register</docbook:entry>
+            <docbook:entry>0x64</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Determines the reset value for the register IC_SDA_SETUP, which in
+turn controls the time delay - in terms of number of ic_clk clock periods - introduced
+in the rising edge of SCL, relative to SDA changing when a read-request is serviced.
+The relevant I2C requirement is t[su:DAT] as detailed in the I2C Bus Specifications.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x02, ..., 0xff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x64</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE ==0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEFAULT_SDA_SETUP</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Hardware reset value for IC_SDA_HOLD register</docbook:entry>
+            <docbook:entry>0x000001</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Determines the reset value for the register IC_SDA_HOLD, which in
+turn controls the SDA hold time implemented by DW_apb_i2c (when
+transmitting or receiving, as either master or slave)
+as a master/slave transmitter or Master/Slave Reciever).
+The relevant I2C requirement is t[HD:DAT] as detailed in the I2C Bus Specifications.<docbook:para role="BLANK"/>
+The programmed SDA hold time as transmitter cannot exceed at any time the
+duration of the low part of scl. Therefore it is recommended that the configured
+default value should not be larger than N_SCL_LOW-2, where N_SCL_LOW is
+the duration of the low part of the scl period measured in ic_clk cycles, for the
+maximum speed mode the component is configured for.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x000001, ..., 0xffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x000001</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEFAULT_SDA_HOLD</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>IC_ACK_GENERAL_CALL set to acknowledge I2C general calls on reset</docbook:entry>
+            <docbook:entry>true</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This parameter determines the reset value for the register IC_ACK_GENERAL_CALL, which
+in turn controls whether I2C general call addresses are to responded or not.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>true</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE == 0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEFAULT_ACK_GENERAL_CALL</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              External Configuration
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Include DMA handshaking interface signals?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Configures the inclusion of DMA handshaking interface signals.
+When checked, includes the DMA handshaking interface signals
+at the top-level I/O. For more information about these signals, 
+see "Signal Descriptions" in data book.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_HAS_DMA</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Single Interrupt output port present?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>If unchecked, each interrupt source has its own output. If
+checked, all interrupt sources are combined into a single output.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_INTR_IO</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Polarity of Interrupts is active high?</docbook:entry>
+            <docbook:entry>true</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Configures the active level of the output interrupt lines.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>true</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_INTR_POL</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              Internal Configuration
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Add Encoded Parameters</docbook:entry>
+            <docbook:entry>true</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Adding the encoded parameters gives firmware an easy and quick 
+way of identifying the DesignWare component within an I/O memory 
+map. Some critical design-time options determine how a driver 
+should interact with the peripheral. There is a minimal area 
+overhead by including these parameters. Allows a single driver 
+to be developed for each component which will be self-configurable.<docbook:para role="BLANK"/>
+When bit 7 of the IC_COMP_PARAM_1 is read and contains a '1' 
+the encoded parameters can be read via software. If this bit 
+is a '0' then the entire register is '0' regardless of the 
+setting of any of the other parameters that are encoded in 
+the register's bits.  For details about this register,
+see the IC_COMP_PARAM_1 register.<docbook:para role="BLANK"/>
+<docbook:emphasis role="bold">Note:</docbook:emphasis> Unique drivers must be developed for each configuration of the
+DW_apb_i2c. Based on the configuration, the registers in the IP can differ; 
+thus the same driver cannot be used with different configurations of the IP.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>true</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_ADD_ENCODED_PARAMS</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Specify clock counts directly instead of supplying clock frequency?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Determines whether *CNT values are provided directly or by specifying the ic_clk 
+clock frequency and letting coreConsultant (or coreAssembler) calculate the count values.<docbook:para role="BLANK"/>
+When this parameter is checked, the reset values of the *CNT registers are specified by
+the corresponding *COUNT configuration parameters which may be user-defined or derived 
+(see standard, fast, fast mode plus, and high speed mode parameters later in this table). <docbook:para role="BLANK"/>
+When unchecked (default setting), the reset values of the *CNT registers are calculated
+from the configuration parameter IC_CLOCK_PERIOD.<docbook:para role="BLANK"/>
+<docbook:emphasis role="bold">Note:</docbook:emphasis> For fast mode plus, reprogram the IC_FS_SCL_*CNT register to achieve
+the required data rate when unchecked.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_USE_COUNTS</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Hard code the count values for each mode?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>By checking this parameter, the *CNT registers are set to read
+only. Unchecking this parameter (default setting) allows the *CNT registers to
+be writable.<docbook:para role="BLANK"/>
+Regardless of the setting, the *CNT registers are always readable and
+have reset values from the corresponding *COUNT configuration parameters, which
+may be user defined or derived (see standard, fast, fast mode plus, or high
+speed mode parameters later in this table).<docbook:para role="BLANK"/>
+<docbook:emphasis role="bold">Note:</docbook:emphasis> Since the DW_apb_i2c uses the same high and low count registers for fast mode and fast mode plus operation, 
+if this parameter is checked (1) the IC_FS_SCL_*CNT registers are hard coded to either one of the fast mode and fast mode plus. 
+Consequently, DW_apb_i2c can operate in either fast mode or fast mode plus, but not in both modes simultaneously.<docbook:para role="BLANK"/>
+For fast mode plus, it is recommended that this parameter be Unchecked (0).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_HC_COUNT_VALUES</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>ic_clk has a period of? (ns integers only)</docbook:entry>
+            <docbook:entry>10</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Specifies the period of incoming ic_clk, used to generate outgoing I2C
+interface SCL clock. (ns integers only)<docbook:para role="BLANK"/>
+When the count values are used to generate the IC_CLOCK_PERIOD then
+the IC_MAX_SPEED_MODE setting determines the actual period<docbook:para role="BLANK"/>
+  IC_MAX_SPEED_MODE = Standard =&gt; 500ns<docbook:para role="BLANK"/>
+  IC_MAX_SPEED_MODE = Fast     =&gt; 100ns<docbook:para role="BLANK"/>
+  IC_MAX_SPEED_MODE = High     =&gt; 10ns<docbook:para role="BLANK"/>
+  IC_ULTRA_FAST_MODE = 1       =&gt; 25ns<docbook:para role="BLANK"/>
+<docbook:emphasis role="bold">Note:</docbook:emphasis> For fast mode plus, user has to reprogram the IC_FS_SCL_*CNT register to achieve required data rate.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>2, ..., 2147483647</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>10</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_USE_COUNTS == 0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_CLOCK_PERIOD</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Relationship between pclk and ic_clk is?</docbook:entry>
+            <docbook:entry>Asynchronous</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Specifies the relationship between pclk and ic_clk<docbook:para role="BLANK"/>
+Identical (0): clocks are identical; no meta-stability flops
+used for data passing between clock domains.<docbook:para role="BLANK"/>
+Asynchronous (1): clocks may be completely asynchronous to
+each other, meta-stability flops are required for data passing between clock domains.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>Identical (0x0)</docbook:listitem>
+            <docbook:listitem>Asynchronous (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>Asynchronous</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_CLK_TYPE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Enable Async FIFO Mode?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This parameter controls whether DW_apb_i2c consist of Asynchronous or Synchronous
+FIFO's for the Transmit and Receive Data Buffers.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_CLK_TYPE==ASYNC</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_HAS_ASYNC_FIFO</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              Standard Speed Mode Configuration
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Std speed SCL high count is?</docbook:entry>
+            <docbook:entry>0x0190</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of Standard Speed I2C Clock SCL High Count
+register (IC_SS_SCL_HCNT). The value must be calculated 
+based on the I2C data rate desired and I2C clock frequency. 
+When parameter IC_USE_COUNTS = 0, this parameter is automatically calculated using the 
+IC_CLOCK_PERIOD parameter. For more information, see the IC_SS_SCL_HCNT register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>IC_HCNT_LO_LIMIT, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0190</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_USE_COUNTS==1) &amp;&amp; (IC_ULTRA_FAST_MODE ==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SS_SCL_HIGH_COUNT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Std speed SCL low count is?</docbook:entry>
+            <docbook:entry>0x01d6</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of Standard Speed I2C Clock SCL High Count register (IC_SS_SCL_HCNT).
+Value must be calculated based on I2C data rate desired and I2C clock frequency.
+When parameter IC_USE_COUNTS = 0, this parameter is automatically calculated using 
+the IC_CLOCK_PERIOD parameter. For more information, see IC_SS_SCL_LCNT register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>IC_LCNT_LO_LIMIT, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x01d6</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_USE_COUNTS==1) &amp;&amp; (IC_ULTRA_FAST_MODE ==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SS_SCL_LOW_COUNT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              Fast Mode or Fast Mode Plus Configuration
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Fast speed SCL high count is?</docbook:entry>
+            <docbook:entry>0x003c</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of Fast Mode or Fast Mode Plus I2C Clock SCL High Count register (IC_FS_SCL_HCNT).
+The value must be calculated based on I2C data rate desired and I2C clock frequency.
+When parameter IC_USE_COUNTS = 0, this parameter is automatically calculated using 
+the IC_CLOCK_PERIOD parameter. For more information, see IC_FS_SCL_HCNT register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>IC_HCNT_LO_LIMIT, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x003c</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_MAX_SPEED_MODE&gt;=2 &amp;&amp; IC_USE_COUNTS==1) &amp;&amp; (IC_ULTRA_FAST_MODE==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_FS_SCL_HIGH_COUNT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Fast speed SCL low count is?</docbook:entry>
+            <docbook:entry>0x0082</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of Fast Mode or Fast Mode Plus I2C Clock SCL Low Count register (IC_FS_SCL_LCNT).
+The value must be calculated based on I2C data rate desired and I2C clock frequency.
+When parameter IC_USE_COUNTS = 0, this parameter is automatically calculated using 
+the IC_CLOCK_PERIOD parameter. For more information, see the IC_FS_SCL_LCNT register</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>IC_LCNT_LO_LIMIT, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0082</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_MAX_SPEED_MODE&gt;=2 &amp;&amp; IC_USE_COUNTS==1) &amp;&amp; (IC_ULTRA_FAST_MODE==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_FS_SCL_LOW_COUNT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              High Speed Mode Configuration
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>For high speed mode systems the I2C bus loading is? (pF)</docbook:entry>
+            <docbook:entry>100</docbook:entry>
+            <docbook:entry>
+              <docbook:para>For high speed mode, the bus loading affects the high and low
+pulse width of SCL.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>100 (100)</docbook:listitem>
+            <docbook:listitem>400 (400)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>100</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_MAX_SPEED_MODE==3) &amp;&amp; (IC_ULTRA_FAST_MODE ==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_CAP_LOADING</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>High speed SCL high count is?</docbook:entry>
+            <docbook:entry>0x0006</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of High Speed I2C Clock SCL High Count register (IC_HS_SCL_HCNT).
+The value must be calculated based on I2C data rate desired and high speed
+I2C clock frequency. When parameter IC_USE_COUNTS = 0, this parameter is 
+automatically calculated using the IC_CLOCK_PERIOD parameter. 
+For more information, see IC_HS_SCL_HCNT register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>IC_HCNT_LO_LIMIT, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0006</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_MAX_SPEED_MODE==3 &amp;&amp; IC_USE_COUNTS==1) &amp;&amp; (IC_ULTRA_FAST_MODE==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_HS_SCL_HIGH_COUNT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>High speed SCL low count is?</docbook:entry>
+            <docbook:entry>0x0010</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of High Speed I2C Clock SCL Low Count register (IC_HS_SCL_LCNT).
+The value must be calculated based on I2C data rate and I2C clock
+frequency.
+When parameter IC_USE_COUNTS = 0, this parameter is automatically calculated using 
+the IC_CLOCK_PERIOD parameter. For more information, see IC_HS_SCL_LCNT register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>IC_LCNT_LO_LIMIT, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0010</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_MAX_SPEED_MODE==3 &amp;&amp; IC_USE_COUNTS==1) &amp;&amp; (IC_ULTRA_FAST_MODE==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_HS_SCL_LOW_COUNT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              Spike Suppression Configuration
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Maximum length (in ic_clk cycles) of suppressed spikes in Standard Mode, Fast Mode, and Fast Mode Plus</docbook:entry>
+            <docbook:entry>0x5</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of maximum suppressed spike length register in 
+Standard Mode, Fast Mode, and Fast Mode Plus modes (IC_FS_SPKLEN Register).
+Spike length is expressed in ic_clk cycles and this value is calculated based
+on the value of IC_CLOCK_PERIOD.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x1, ..., 0xff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x5</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE==0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEFAULT_FS_SPKLEN</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Maximum length (in ic_clk cycles) of suppressed spikes in HS mode</docbook:entry>
+            <docbook:entry>0x1</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of maximum suppressed spike length register in HS modes (Register IC_HS_SPKLEN).
+Spike length is expressed in ic_clk cycles and this value is calculated based on the value
+of IC_CLOCK_PERIOD.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x1, ..., 0xff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_MAX_SPEED_MODE==3) &amp;&amp; (IC_ULTRA_FAST_MODE ==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEFAULT_HS_SPKLEN</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              Additional Features
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Allow dynamic updating of the TAR address?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>When checked, allows the IC_TAR register to be updated
+dynamically. Setting this parameter affects the operation 
+of DW_apb_i2c when it is in master mode. For more details, 
+see "Master Mode Operation".</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0)</docbook:listitem>
+            <docbook:listitem>true (1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>I2C_DYNAMIC_TAR_UPDATE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Enable register to generate NACKs for data received by Slave?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Enables an additional register which controls whether the DW_apb_i2c generates a NACK
+after a data byte has been transferred to it. This NACK generation only occurs when
+the DW_apb_i2c is a Slave-Receiver. If this register is set to a value of 1, it can
+only generate a NACK after a data byte is received; hence, the data transfer is aborted.
+Also, the data received is not pushed to the receive buffer.<docbook:para role="BLANK"/>
+When the register is set to a value of 0, it generates NACK/ACK depending on 
+normal criteria.
+If this option is selected, the default value of the register IC_SLV_DATA_NACK_ONLY is always 0.
+The register must be explicitly programmed to a value of 1 if NACKs are to be generated. The
+register can only be written to successfully if DW_apb_i2c is disabled (IC_ENABLE[0] = 0) or the 
+slave part is inactive (IC_STATUS[6] = 0).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE ==0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SLV_DATA_NACK_ONLY</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>When Receive Fifo is Physically full, Generate NACK for data received by slave?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This parameter enables DW_apb_i2c in Slave mode to generate NACK for a data byte recieved 
+when Receive FIFO is physically full. The new data byte will not be pushed to the Receive
+FIFO, hence no overflow happens and rx_over interrupt will not be set.
+This works only when DW_apb_i2c is in Slave/Receiver mode (data being written
+to the slave) and is not applicable in Master mode.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_ULTRA_FAST_MODE ==0) &amp;&amp; (IC_SLV_DATA_NACK_ONLY ==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_RX_FULL_GEN_NACK</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Hold transfer when Tx FIFO is empty</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>If this parameter is set, the master will only complete a transfer - that is issues a STOP - 
+when it finds a Tx FIFO entry tagged with a Stop bit. If the Tx FIFO becomes
+empty and the last byte does not have the Stop bit set, the master stalls
+the transfer by holding the SCL line low.<docbook:para role="BLANK"/>
+If this parameter is not set, the master completes a transfer when the 
+Tx FIFO is empty. In SMbus Mode (IC_SMBUS=1),
+IC_EMPTYFIFO_HOLD_MASTER_EN should be always enabled.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0)</docbook:listitem>
+            <docbook:listitem>true (1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_EMPTYFIFO_HOLD_MASTER_EN</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>When Receive Fifo is physically full, Hold the bus till Receive fifo has space avialable?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>When the Rx FIFO is physically full to its RX_BUFFER_DEPTH, 
+this parameter provides a hardware method to hold the bus till Rx FIFO data 
+is read out and there is a space available in the FIFO.
+This parameter can be used when DW_apb_i2c is either a slave-receiver (that
+is, data is written to the device) or a master-receiver (that is, the device reads
+data from a slave).<docbook:para role="BLANK"/>
+<docbook:emphasis role="bold">Note:</docbook:emphasis> If parameter "IC_RX_FULL_GEN_NACK" is enabled, then setting this parameter
+has no impact in slave-receiver mode since, the controller NACK's the Data byte if Rx-FIFO
+has no empty space.
+<docbook:emphasis role="bold">Note:</docbook:emphasis> If this parameter is checked, then the RX_OVER interrupt is never set to 1 
+as the criteria to set this interrupt is never met. The RX_OVER interrupt can be found 
+in IC_INTR_STAT and IC_RAW_INTR_STAT registers. It is also an optional output signal,
+ ic_rx_over_intr(_n).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE ==0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_RX_FULL_HLD_BUS_EN</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Enable restart detect interrupt in slave mode?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>When checked, allows the slave to detect and issue the restart interrupt when slave is 
+addressed. Setting this parameter affects the operation of DW_apb_i2c only when it is in slave mode. 
+This controls the "RESTART_DET" bit in the IC_RAW_INTR_STAT, IC_INTR_MASK, IC_INTR_STAT, 
+and IC_CLR_RESTART_DET registers.This also controls the ic_restart_det_intr(_n) 
+and ic_intr(_n) signals.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SLV_RESTART_DET_EN</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Generate STOP_DET interrupt only if Master is active?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c generates STOP_DET interrupt when master is active:
+<docbook:itemizedlist><docbook:listitem>
+Checked (1): Allows the master to detect and issue the stop interrupt when master is active.
+</docbook:listitem><docbook:listitem>
+Unchecked (0): The master always detects and issues the stop interrupt irrespective of whether it is active.
+</docbook:listitem></docbook:itemizedlist>
+This parameter affects the operation of DW_apb_i2c when it is in master mode. 
+This controls the STOP_DET bit of the IC_RAW_INTR_STAT, IC_INTR_MASK,  
+IC_INTR_STAT and IC_CLR_STOP_DET registers. This also controls the ic_stop_det_intr(_n) and 
+ic_intr(_n) signals.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE ==0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_STOP_DET_IF_MASTER_ACTIVE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Include Status bits to indicate the reason for clock stretching?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>If this parameter is set, the DW_apb_i2c consists of status bits indicating
+the reason for clock stretching in the IC_STATUS Register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE ==0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_STAT_FOR_CLK_STRETCH</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Include programmable bit for blocking Master commands?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c transmits data on I2C bus as soon as data is available in 
+Tx FIFO. When checked, allows the master to hold the transmission of data on 
+I2C bus when Tx FIFO has data to transmit.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_TX_CMD_BLOCK</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Enable blocking Master commands after reset?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c has its transmit command block enabled or disabled after reset.
+If checked, the DW_apb_i2c blocks the transmission of data on I2C bus.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_TX_CMD_BLOCK==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_TX_CMD_BLOCK_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Include First data byte indication in IC_DATA_CMD register?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c generates FIRST_DATA_BYTE status bit in IC_DATA_CMD register.
+When checked, the master/slave receiver to set the FIRST_DATA_BYTE status bit
+in IC_DATA_CMD register to indicate whether the data present in IC_DATA_CMD register is 
+first data byte after the address phase of a receive transfer.
+<docbook:para role="BLANK"/><docbook:emphasis role="bold">Note</docbook:emphasis>: In the case when APB_DATA_WIDTH is set to 8, you must perform two
+APB reads to the IC_DATA_CMD register to get status on bit 11.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>Always</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_FIRST_DATA_BYTE_STATUS</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Avoid Rx FIFO Flush on Tranmsit Abort?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This Parameter controls the Rx FIFO Flush during the Transmit Abort.
+If this parameter is checked(1), only the Tx FIFO is flushed (not the Rx FIFO)
+Flush on the Transmit Abort.
+If this parameter is unchecked(0), both Tx FIFO and Rx FIFO are flushed on Transmit Abort.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE ==0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_AVOID_RX_FIFO_FLUSH_ON_TX_ABRT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Enable IC_CLK Frequency Reduction?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This parameter is used to reduce the system clock frequency (ic_clk) 
+by reducing the internal latency required to generate the high period 
+and low period of the SCL line.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>([&lt;functionof&gt; %item]) &amp;&amp; (IC_ULTRA_FAST_MODE ==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_CLK_FREQ_OPTIMIZATION</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:table>
+    </docbook:sect2>
+    <docbook:sect2 xml:id="H2-sect2-paramtable-I2CVersion3.0Features">
+    <docbook:title xml:id="H2-title-paramtable-I2CVersion3.0Features">I2C Version 3.0 Features Parameters</docbook:title>
+    <docbook:table xml:id="paramtable-I2CVersion3.0Features" pgwide="1">
+      <docbook:title>I2C Version 3.0 Features Parameters</docbook:title>
+      <docbook:tgroup cols="3">
+        <docbook:colspec colnum="1" colname="c1"/>
+        <docbook:colspec colnum="2" colname="c2"/>
+        <docbook:colspec colnum="3" colname="c3"/>
+        <docbook:thead>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Label</docbook:entry>
+            <docbook:entry>Value</docbook:entry>
+            <docbook:entry>Description</docbook:entry>
+          </docbook:row>
+        </docbook:thead>
+        <docbook:tbody>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              I2C 3.0 Features
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Include Bus Clear feature?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This parameter will enable the Bus clear feature for the DW_apb_i2c core.
+<docbook:para role="BLANK"/>
+If this parameter is set:
+<docbook:itemizedlist><docbook:listitem>
+If an SDA line is stuck at low for IC_SDA_STUCK_LOW_TIMEOUT period of ic_clk, DW_apb_i2c master generates a master transmit abort (IC_TX_ABRT_SOURCE[17]: ABRT_SDA_STUCK_AT_LOW) to indicate SDA stuck at low.<docbook:para role="BLANK"/>User can enable the SDA_STUCK_RECOVERY_EN (IC_ENABLE[3]) register bit to recover the SDA by sending at most 9 SCL clocks.<docbook:para role="BLANK"/>If SDA line is recovered, then the master generates a STOP and auto clear the 'SDA_STUCK_RECOVERY_EN' register bit and resume the normal I2C transfers.<docbook:para role="BLANK"/>If an SDA line is not recovered, then the master auto clears the SDA_STUCK_RECOVERY_EN register bit and asserts the SDA_STUCK_NOT_RECOVERED (IC_STATUS[12]) status bit to indicate the SDA is not recovered after sending 9 SCL clocks which intimate the user for system reset.
+</docbook:listitem><docbook:listitem>
+If SCL line is stuck at low for IC_SCL_STUCK_LOW_TIMEOUT period of ic_clk, DW_apb_i2c Master will generate an SCL_STUCK_AT_LOW (IC_INTR_RAW_STATUS[14]) interrupt to intimate the user for system reset.
+</docbook:listitem></docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE ==0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_BUS_CLEAR_FEATURE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has SCL Stuck Timeout value of ?</docbook:entry>
+            <docbook:entry>0xffffffff</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Default value of the IC_SCL_STUCK_LOW_TIMEOUT Register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_BUS_CLEAR_FEATURE==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SCL_STUCK_TIMEOUT_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has SDA Stuck Timeout value of ?</docbook:entry>
+            <docbook:entry>0xffffffff</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Default value of the IC_SDA_STUCK_LOW_TIMEOUT Register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_BUS_CLEAR_FEATURE==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SDA_STUCK_TIMEOUT_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Enable DEVICE-ID feature?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>If this Parameter is enabled, the DW_apb_i2c slave includes a 24-bit 
+IC_DEVICE_ID Register to store the value of
+Device-ID and transmits whenever master is requested.<docbook:para role="BLANK"/>
+The Master mode includes a DEVICE_ID bit 13 in IC_TAR register to initiate
+the Device ID read for a particular slave address mentioned in IC_TAR[6:0]
+register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE ==0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEVICE_ID</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has I2C Slave DEVICE ID value of?</docbook:entry>
+            <docbook:entry>0x0</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Device ID Value of the I2C Slave stored in the IC_DEVICE_ID Register (24 bit, MSB is transferred first
+on the Device ID read from the master).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0xffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_DEVICE_ID==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEVICE_ID_VALUE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:table>
+    </docbook:sect2>
+    <docbook:sect2 xml:id="H2-sect2-paramtable-SMBusFeatures">
+    <docbook:title xml:id="H2-title-paramtable-SMBusFeatures">SMBus Features Parameters</docbook:title>
+    <docbook:table xml:id="paramtable-SMBusFeatures" pgwide="1">
+      <docbook:title>SMBus Features Parameters</docbook:title>
+      <docbook:tgroup cols="3">
+        <docbook:colspec colnum="1" colname="c1"/>
+        <docbook:colspec colnum="2" colname="c2"/>
+        <docbook:colspec colnum="3" colname="c3"/>
+        <docbook:thead>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Label</docbook:entry>
+            <docbook:entry>Value</docbook:entry>
+            <docbook:entry>Description</docbook:entry>
+          </docbook:row>
+        </docbook:thead>
+        <docbook:tbody>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              I2C System Management Bus Features
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Enable SMBus Mode?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c Master/Slave supports SMBus mode.
+If checked, the DW_apb_i2c includes the SMBus mode related registers, real-time checks, 
+timeout interrupts, and SMBus optional signals.<docbook:para role="BLANK"/>
+<docbook:emphasis role="bold">Note: </docbook:emphasis>If this parameter is selected (1), then the user can set the parameter
+IC_MAX_SPEED_MODE to Standard mode(1) or Fast Mode/Fast Mode Plus (2).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>([&lt;functionof&gt; %item]) &amp;&amp; (IC_ULTRA_FAST_MODE ==0)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SMBUS</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has SMBus clock low Slave extend default Timeout value of ?</docbook:entry>
+            <docbook:entry>0xffffffff</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Default value of the IC_SMBUS_CLK_LOW_SEXT Register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SMBUS_CLK_LOW_SEXT_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has SMBus clock low Master extend default Timeout value of ?</docbook:entry>
+            <docbook:entry>0xffffffff</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Default value of the IC_SMBUS_CLK_LOW_MEXT Register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SMBUS_CLK_LOW_MEXT_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has SMBus Thigh:Max Idle count Value of ?</docbook:entry>
+            <docbook:entry>0xffff</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Default value of the IC_SMBUS_THIGH_MAX_IDLE_COUNT Register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SMBUS_RST_IDLE_CNT_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Enable SMBus Optional Signals?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This parameter controls whether DW_apb_i2c includes 
+Optional SMBus Suspend and Alert signals on the interface.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SMBUS_SUSPEND_ALERT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Include Optional slave address register?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This parameter controls whether to include optional 
+Slave Address Register in SMBus Mode.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_OPTIONAL_SAR</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has I2C default optional slave address of?</docbook:entry>
+            <docbook:entry>0x0</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether to include Optional Slave Address Register in
+SMBus Mode. A user is not allowed to assign any reserved 
+addresses. The reserved address are as follows:<docbook:para role="BLANK"/>
+0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07<docbook:para role="BLANK"/>
+0x78 0x79 0x7a 0x7b 0x7c 0x7d 0x7e 0x7f</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0x7f</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_OPTIONAL_SAR==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_OPTIONAL_SAR_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Enable Address Resolution Protocol in SMBus Mode?</docbook:entry>
+            <docbook:entry>0x0</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether DW_apb_i2c includes logic to detect and
+respond ARP commands in Slave mode. It also includes logic to
+generate/validate the PEC byte at the end of the transfer in 
+Slave mode only.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, 0x1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SMBUS_ARP</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>SMBus Unique Device Identifier (UDID) Hardcode?</docbook:entry>
+            <docbook:entry>0x1</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Controls whether Unique Device Identifier (UDID) used for Dynamic
+Address Resolution process in SMBus ARP Mode is Hardcoded 
+(Upper 96-bits) or Complete UDID is Software Programmable.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, 0x1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS_ARP==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SMBUS_UDID_HC</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has SMBUS Unique device identifier (MSB 96 bits) value of?</docbook:entry>
+            <docbook:entry>0x0</docbook:entry>
+            <docbook:entry>
+              <docbook:para>If the parameter IC_SMBUS_UDID_HC is 1, stores the Static Unique 
+Device Identifier used for Dynamic Address Resolution process in 
+SMBus ARP Mode (Upper 96bits of UDID).
+If the parameter IC_SMBUS_UDID_HC is 0, then this field is used as the
+default value of the upper 96bits of the UDID Registers
+{IC_SMBUS_UDID_WORD3, IC_SMBUS_UDID_WORD2, IC_SMBUS_UDID_WORD1}</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0xffffffffffffffffffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS_ARP==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SMBUS_UDID_MSB</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has Default SMBus Unique device identifier (LSB 32 bits) value of?</docbook:entry>
+            <docbook:entry>0xffffffff</docbook:entry>
+            <docbook:entry>
+              <docbook:para>If the parameter IC_SMBUS_UDID_HC is 1, specifies default value of 
+the IC_SMBUS_UDID_LSB register used for Dynamic Address Resolution 
+process in SMBus ARP mode (Lower 32bits of UDID).
+If the parameter IC_SMBUS_UDID_HC is 0, specifies default value of 
+the IC_SMBUS_UDID_WORD0 register used for Dynamic Address Resolution 
+process in SMBus ARP mode (Lower 32bits of UDID).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0xffffffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS_ARP==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_SMBUS_UDID_LSB_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has Default Persistent Slave Address register bit Value of ?</docbook:entry>
+            <docbook:entry>0x0</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Default value of the Persistent Slave Address register bit in IC_CON Register.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, 0x1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_SMBUS_ARP==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_PERSISTANT_SLV_ADDR_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:table>
+    </docbook:sect2>
+    <docbook:sect2 xml:id="H2-sect2-paramtable-I2CVersion6.0Features">
+    <docbook:title xml:id="H2-title-paramtable-I2CVersion6.0Features">I2C Version 6.0 Features Parameters</docbook:title>
+    <docbook:table xml:id="paramtable-I2CVersion6.0Features" pgwide="1">
+      <docbook:title>I2C Version 6.0 Features Parameters</docbook:title>
+      <docbook:tgroup cols="3">
+        <docbook:colspec colnum="1" colname="c1"/>
+        <docbook:colspec colnum="2" colname="c2"/>
+        <docbook:colspec colnum="3" colname="c3"/>
+        <docbook:thead>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Label</docbook:entry>
+            <docbook:entry>Value</docbook:entry>
+            <docbook:entry>Description</docbook:entry>
+          </docbook:row>
+        </docbook:thead>
+        <docbook:tbody>
+          <docbook:row>
+            <?dbhtml bgcolor="#EEEEEE" ?>
+            <?dbfo bgcolor="#EEEEEE" ?>
+            <docbook:entry align="center" namest="c1" nameend="c3">
+              I2C 6.0 Features
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>Enable Ultra-Fast Mode?</docbook:entry>
+            <docbook:entry>false</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This parameter is used to control whether DW_apb_i2c supports Ultra-Fast speed mode or not.<docbook:para role="BLANK"/>
+If this Parameter is enabled, the Master
+<docbook:itemizedlist><docbook:listitem>
+Disables the Arbitration, clock synchronization features.
+</docbook:listitem><docbook:listitem>
+Support only write transfers.
+</docbook:listitem><docbook:listitem>
+Does not check the validity of ACK/NACK for each byte.
+</docbook:listitem></docbook:itemizedlist>
+The Slave 
+<docbook:itemizedlist><docbook:listitem>
+Supports only write transfers.
+</docbook:listitem><docbook:listitem>
+Disables the logic to generate ACK/NACK after the end of each byte.
+</docbook:listitem><docbook:listitem>
+Disables the logic to stretch the clock if RX-FIFO is full.
+</docbook:listitem></docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>          <docbook:itemizedlist>
+            <docbook:listitem>false (0x0)</docbook:listitem>
+            <docbook:listitem>true (0x1)</docbook:listitem>
+          </docbook:itemizedlist></docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>false</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>[&lt;functionof&gt; %item]</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_ULTRA_FAST_MODE</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Ultra Fast speed SCL high count is?</docbook:entry>
+            <docbook:entry>0x0006</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of Ultra-Fast Speed I2C Clock SCL High Count register (IC_UFM_SCL_HCNT). 
+The value must be calculated based on the I2C data rate desired and I2C clock frequency.
+When parameter IC_USE_COUNTS = 0, this parameter is automatically calculated using the IC_CLOCK_PERIOD parameter.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>IC_HCNT_LO_LIMIT, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0006</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_USE_COUNTS==1) &amp;&amp; (IC_ULTRA_FAST_MODE==1)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_UFM_SCL_HIGH_COUNT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Ultra Fast speed SCL low count is?</docbook:entry>
+            <docbook:entry>0x0008</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of Ultra-Fast Speed I2C Clock SCL Low Count register (IC_UFM_SCL_LCNT). 
+The value must be calculated based on the I2C data rate desired and I2C clock frequency.
+When parameter IC_USE_COUNTS = 0, this parameter is automatically calculated using the IC_CLOCK_PERIOD parameter.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>IC_LCNT_LO_LIMIT, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x0008</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_USE_COUNTS==1) &amp;&amp; (IC_ULTRA_FAST_MODE==1)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_UFM_SCL_LOW_COUNT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Maximum length (in ic_clk cycles) of suppressed spikes in Ultra Fast mode</docbook:entry>
+            <docbook:entry>0x1</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Reset value of maximum suppressed spike length register in Ultra-Fast Mode (IC_UFM_SPKLEN Register).
+Spike length is expressed in ic_clk cycles and this value is calculated based on the value of IC_CLOCK_PERIOD.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x1, ..., 0xff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>IC_ULTRA_FAST_MODE ==1</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_DEFAULT_UFM_SPKLEN</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Has Ultra Fast mode tBuf count Value of ?</docbook:entry>
+            <docbook:entry>0x8</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Default value of the IC_UFM_TBUF_CNT Register. This parameter is active when the IC_USE_COUNTS and
+IC_ULTRA_FAST_MODE parameters are checked (1); otherwise, this value is automatically calculated 
+using the IC_CLK_PERIOD parameter.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Values: </docbook:emphasis>0x0, ..., 0xffff</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">DefaultValue: </docbook:emphasis>0x8</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Enabled: </docbook:emphasis>(IC_USE_COUNTS==1) &amp;&amp; (IC_ULTRA_FAST_MODE==1)</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Parameter Name: </docbook:emphasis>IC_UFM_TBUF_CNT_DEFAULT</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:table>
+    </docbook:sect2>
+  </docbook:sect1>
+</docbook:article>

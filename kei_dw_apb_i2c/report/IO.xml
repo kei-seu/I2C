@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+]>
+<docbook:article
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://docbook.org/ns/docbook docbook.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:docbook="http://docbook.org/ns/docbook" version="5.0">
+  <docbook:title>Signals for DW_apb_i2c</docbook:title>
+  <docbook:sect1 xml:id="Signal-Descriptions">
+    <docbook:para>Provides a description of the DW_apb_i2c signals.</docbook:para>
+ <docbook:itemizedlist>
+   <docbook:title> Port Groups</docbook:title>
+   <docbook:listitem>
+     <docbook:olink xlink:href="portGroup0#signaltable" xlink:role="http://docbook.org/xlink/role/olink">Interrupts
+</docbook:olink>
+   </docbook:listitem>
+   <docbook:listitem>
+     <docbook:olink xlink:href="portGroup1#signaltable" xlink:role="http://docbook.org/xlink/role/olink">I2C Interface (Master/Slave)
+</docbook:olink>
+   </docbook:listitem>
+   <docbook:listitem>
+     <docbook:olink xlink:href="portGroup2#signaltable" xlink:role="http://docbook.org/xlink/role/olink">APB Slave Interface
+</docbook:olink>
+   </docbook:listitem>
+   <docbook:listitem>
+     <docbook:olink xlink:href="portGroup3#signaltable" xlink:role="http://docbook.org/xlink/role/olink">I2C Debug
+</docbook:olink>
+   </docbook:listitem>
+ </docbook:itemizedlist>
+  </docbook:sect1>
+</docbook:article>

@@ -1,0 +1,101 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Signals for DW_apb_i2c</title><link rel="stylesheet" type="text/css" href="html.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="#idp46406760" title="Signals for DW_apb_i2c"><link rel="next" href="#section" title="APB Slave Interface"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idp46406760"></a>Signals for DW_apb_i2c</h2></div></div><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="section"></a>APB Slave Interface</h2></div></div></div><div class="informaltable"><a name="interfacetable-APBSlaveInterface"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#pclk">pclk</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#prdata">prdata</a></td></tr><tr><td align="right"><a class="link" href="#presetn">presetn</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#pready">pready</a></td></tr><tr><td align="right"><a class="link" href="#psel">psel</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#pslverr">pslverr</a></td></tr><tr><td align="right"><a class="link" href="#penable">penable</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#pwrite">pwrite</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#paddr">paddr</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#pwdata">pwdata</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable"></a><p class="title"><b>Table 1. APB Slave Interface</b></p><div class="table-contents"><table class="table" summary="APB Slave Interface" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="pclk"></a>pclk</p></td><td>I</td><td>
+              <p>APB clock for the bus interface unit. </p><p class="BLANK"></p><p><span class="bold"><strong>Note:</strong></span> ic_clk frequency must be greater than or equal to pclk frequency. The configuration parameter IC_CLK_TYPE indicates the relationship between pclk and ic_clk. It can be asynchronous (1) or identical (0).</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>None</p>
+              <p><span class="bold"><strong>Registered: </strong></span>N/A</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="presetn"></a>presetn</p></td><td>I</td><td>
+              <p>An APB interface domain reset. The signal is asserted asynchronously, but is deasserted synchronously after the rising edge of pclk. The synchronization must be provided external to this component.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>Asynchronous</p>
+              <p><span class="bold"><strong>Registered: </strong></span>N/A</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>Low</p>
+            </td></tr><tr><td><p><a name="psel"></a>psel</p></td><td>I</td><td>
+              <p>APB peripheral select that lasts for two pclk cycles. When asserted, indicates that the peripheral has been selected for a read/write operation.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="penable"></a>penable</p></td><td>I</td><td>
+              <p>APB enable control. Asserted for a single pclk cycle and used for timing read/write operations.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="pwrite"></a>pwrite</p></td><td>I</td><td>
+              <p>APB write control. When high, indicates a write access to the peripheral; when low, indicates a read access.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="paddr"></a>paddr[7:0]</p></td><td>I</td><td>
+              <p>APB address bus. Uses lower 7 bits of the address bus for register decode.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="pwdata"></a>pwdata[31:0]</p></td><td>I</td><td>
+              <p>APB write data bus. Driven by the bus master (DW_ahb to DW_apb bridge) during write cycles. Can be 8, 16, or 32 bits wide depending on APB_DATA_WIDTH parameter.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="prdata"></a>prdata[31:0]</p></td><td>O</td><td>
+              <p>APB readback data. Driven by the selected peripheral during read cycles. Can be 8, 16, or 32 bits wide depending on APB_DATA_WIDTH parameter.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="pready"></a>pready</p></td><td>O</td><td>
+              <p>The APB ready signal, used to extend the APB transfer and it is also used to indicate the end of a transaction when there is a high in the access phase of a transaction.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="pslverr"></a>pslverr</p></td><td>O</td><td>
+              <p>APB slave error response signal. The signal issues an error when some error condition occurs, as specified in databook.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div></div></body></html>

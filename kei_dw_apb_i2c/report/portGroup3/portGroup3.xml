@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+]>
+<docbook:article
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://docbook.org/ns/docbook docbook.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:docbook="http://docbook.org/ns/docbook" version="5.0">
+  <docbook:title>Signals for DW_apb_i2c</docbook:title>
+  <docbook:sect1 xml:id="section">
+    <docbook:title xml:id="H2-title">I2C Debug</docbook:title>
+    <docbook:informaltable xml:id="interfacetable-I2CDebug" frame="none" rowsep="0" colsep="0">
+      <docbook:tgroup cols="3">
+        <?dbhtml cellpadding="0" cellspacing="0" ?>
+        <docbook:tbody>
+          <docbook:row>
+            <docbook:entry>
+            </docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_s_gen">debug_s_gen</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_p_gen">debug_p_gen</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_data">debug_data</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_addr">debug_addr</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_rd">debug_rd</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_wr">debug_wr</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_hs">debug_hs</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_master_act">debug_master_act</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_slave_act">debug_slave_act</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_addr_10bit">debug_addr_10bit</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_mst_cstate">debug_mst_cstate</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"></docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="debug_slv_cstate">debug_slv_cstate</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>
+            </docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:informaltable>
+    <docbook:table xml:id="signaltable" pgwide="1">
+      <docbook:title>I2C Debug</docbook:title>
+      <docbook:tgroup cols="3">
+        <docbook:colspec colnum="1" colname="c1"/>
+        <docbook:colspec colnum="2" colname="c2"/>
+        <docbook:colspec colnum="3" colname="c3"/>
+        <docbook:thead>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Port Name</docbook:entry>
+            <docbook:entry>I/O</docbook:entry>
+            <docbook:entry>Description</docbook:entry>
+          </docbook:row>
+        </docbook:thead>
+        <docbook:tbody>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_s_gen">debug_s_gen</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In the master mode of operation, this signal is set to 1 when DW_apb_i2c is driving a START condition on the bus.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>Low</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_p_gen">debug_p_gen</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In the master mode of operation, this signal is set to 1 when DW_apb_i2c is driving a STOP condition on the bus.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>Low</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_data">debug_data</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In the master or slave mode of operation, this signal is set to 1 when a byte of data is actively being read or written by DW_apb_i2c. This bit remains 1 until the transaction has completed.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_addr">debug_addr</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In the master or slave mode of operation, this signal is set to 1 when the addressing phase is active on the I2C bus.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_rd">debug_rd</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In the master mode of operation, this signal is set to 1 whenever the master is receiving data. This bit remains 1 until the transfer is complete or until the direction changes.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_wr">debug_wr</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In the master mode of operation, this signal is set to 1 whenever the master is transmitting data. This bit remains 1 until the transfer is complete or the direction changes.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_hs">debug_hs</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In the master mode of operation, this signal is set to 1 when DW_apb_i2c is performing high-speed mode transfers. This bit is set after the high-speed master code is transmitted and remains 1 until the master leaves high-speed mode.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_master_act">debug_master_act</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This bit is set to 1 when the master module is active.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_slave_act">debug_slave_act</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>This bit is set to 1 when the slave module is active.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_addr_10bit">debug_addr_10bit</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In the Slave mode of operation, this signal is set if 10-bit addressing is enabled and if the slave has received a matching 10-bit address with respect to IC_SAR register. <docbook:para role="BLANK"/> This signal is not applicable in Master Mode.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_mst_cstate">debug_mst_cstate[4:0]</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Master FSM state vector.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>N/A</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="debug_slv_cstate">debug_slv_cstate[3:0]</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Slave FSM state vector.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>N/A</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:table>
+  </docbook:sect1>
+</docbook:article>

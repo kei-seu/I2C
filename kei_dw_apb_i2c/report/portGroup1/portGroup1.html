@@ -1,0 +1,77 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Signals for DW_apb_i2c</title><link rel="stylesheet" type="text/css" href="html.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="#idp46406760" title="Signals for DW_apb_i2c"><link rel="next" href="#section" title="I2C Interface (Master/Slave)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idp46406760"></a>Signals for DW_apb_i2c</h2></div></div><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="section"></a>I2C Interface (Master/Slave)</h2></div></div></div><div class="informaltable"><a name="interfacetable-I2CInterface_Master_Slave_"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#ic_clk">ic_clk</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_current_src_en">ic_current_src_en</a></td></tr><tr><td align="right"><a class="link" href="#ic_clk_in_a">ic_clk_in_a</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_clk_oe">ic_clk_oe</a></td></tr><tr><td align="right"><a class="link" href="#ic_data_in_a">ic_data_in_a</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_data_oe">ic_data_oe</a></td></tr><tr><td align="right"><a class="link" href="#ic_rst_n">ic_rst_n</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_en">ic_en</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable"></a><p class="title"><b>Table 1. I2C Interface (Master/Slave)</b></p><div class="table-contents"><table class="table" summary="I2C Interface (Master/Slave)" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="ic_current_src_en"></a>ic_current_src_en</p></td><td>O</td><td>
+              <p>Optional. Current source pull-up. Controls the polarity of the current source pull-up on the SCLH. This pull-up is used to shorten the rise time on SCLH by activating an user-supplied external current source pull-up circuit. It is disabled after a RESTART condition and after each A/A bit when acting as the active master. </p><p class="BLANK"></p><p> This signal enables other devices to delay the serial transfer by stretching the LOW period of the SCLH signal. The active master re-enables its current source pull-up circuit again when all devices have released and the SCLH signal reaches high level, therefore, shortening the last part of the SCLH signal's rise time.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="ic_clk"></a>ic_clk</p></td><td>I</td><td>
+              <p>Peripheral clock. DW_apb_i2c runs on this clock and is used to clock transfers in standard, fast, and high-speed mode. </p><p class="BLANK"></p><p> <span class="bold"><strong>Note:</strong></span> ic_clk frequency must be greater than or equal to pclk frequency. The configuration parameter IC_CLK_TYPE indicates the relationship between pclk and ic_clk. It can be asynchronous (1) or identical (0).</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>None</p>
+              <p><span class="bold"><strong>Registered: </strong></span>N/A</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="ic_clk_in_a"></a>ic_clk_in_a</p></td><td>I</td><td>
+              <p>In (IC_ULTRA_FAST_MODE = 0) mode - Incoming I2C clock. This is the input SCL signal. Double-registered for metastability synchronization. </p><p class="BLANK"></p><p> <span class="bold"><strong>Note:</strong></span> DW_apb_i2c provides filtering on the SDA (ic_data_in_a) and SCL (ic_clk_in_a) inputs, suppressing noise and signal spikes with durations less than one ic_clk period. </p><p class="BLANK"></p><p> In Ultra-Fast(IC_ULTRA_FAST_MODE = 1) mode - Incoming I2C clock. This is the input SCL signal. Double-registered for metastability synchronization.  </p><p class="BLANK"></p><p> <span class="bold"><strong>Note:</strong></span> DW_apb_i2c provides filtering on the SDA (ic_data_in_a) and SCL (ic_clk_in_a) inputs, suppressing noise and signal spikes with durations less than one ic_clk period. This signal is used as USCL input for slave device. This signal is asynchronous to ic_clk.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>Asynchronous</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="ic_data_in_a"></a>ic_data_in_a</p></td><td>I</td><td>
+              <p>In (IC_ULTRA_FAST_MODE = 0) mode - Incoming I2C Data. It is the input SDA signal. Double-registered for metastability synchronization.  </p><p class="BLANK"></p><p> <span class="bold"><strong>Note:</strong></span> DW_apb_i2c provides filtering on the SDA (ic_data_in_a) and SCL (ic_clk_in_a) inputs, suppressing noise and signal spikes with durations less than one ic_clk period. </p><p class="BLANK"></p><p> In Ultra-Fast(IC_ULTRA_FAST_MODE = 1) mode - Incoming I2C Data. It is the input SDA signal. Double-registered for metastability synchronization. </p><p class="BLANK"></p><p> <span class="bold"><strong>Note:</strong></span> DW_apb_i2c provides filtering on the SDA (ic_data_in_a) and SCL (ic_clk_in_a) inputs, suppressing noise and signal spikes with durations less than one ic_clk period.This signal is used as USDA input for slave device. This signal is asynchronous to ic_clk.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>Asynchronous</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="ic_rst_n"></a>ic_rst_n</p></td><td>I</td><td>
+              <p>I2C reset. Used to reset flip-flops that are clocked by the ic_clk clock. </p><p class="BLANK"></p><p> <span class="bold"><strong>Note:</strong></span> This signal does not reset DW_apb_i2c control, configuration, and status registers. The signal is asserted asynchronously, but is deasserted synchronously after the rising edge of ic_clk. The synchronization must be provided external to this component.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>Asynchronous</p>
+              <p><span class="bold"><strong>Registered: </strong></span>N/A</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>Low</p>
+            </td></tr><tr><td><p><a name="ic_clk_oe"></a>ic_clk_oe</p></td><td>O</td><td>
+              <p>In (IC_ULTRA_FAST_MODE = 0) mode - Outgoing I2C clock. Open drain synchronous with ic_clk. </p><p class="BLANK"></p><p> In Ultra-Fast(IC_ULTRA_FAST_MODE = 1) mode - Outgoing I2C clock, inverted. This signal is used as USCL out from master device.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="ic_data_oe"></a>ic_data_oe</p></td><td>O</td><td>
+              <p>In (IC_ULTRA_FAST_MODE = 0) mode - Outgoing I2C Data. Open Drain Synchronous to ic_clk. </p><p class="BLANK"></p><p> In Ultra-Fast(IC_ULTRA_FAST_MODE = 1) mode - Outgoing I2C Data, inverted. This signal is used as USDA out from master device.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>ic_clk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="ic_en"></a>ic_en</p></td><td>O</td><td>
+              <p>I2C interface enable. Indicates whether DW_apb_i2c is enabled; this signal is set to 0 when IC_ENABLE[0] is set to 0 (disabled). Because DW_apb_i2c always finishes its current transfer before turning off ic_en, this signal may be used by a clock generator to control whether the DW_apb_i2c ic_clk is active or inactive.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>Low</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div></div></body></html>

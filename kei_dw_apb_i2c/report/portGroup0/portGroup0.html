@@ -1,0 +1,133 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Signals for DW_apb_i2c</title><link rel="stylesheet" type="text/css" href="html.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="#idp46406760" title="Signals for DW_apb_i2c"><link rel="next" href="#section" title="Interrupts"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idp46406760"></a>Signals for DW_apb_i2c</h2></div></div><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="section"></a>Interrupts</h2></div></div></div><div class="informaltable"><a name="interfacetable-Interrupts"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_start_det_intr">ic_start_det_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_stop_det_intr">ic_stop_det_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_activity_intr">ic_activity_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_rx_done_intr">ic_rx_done_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_tx_abrt_intr">ic_tx_abrt_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_rd_req_intr">ic_rd_req_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_tx_empty_intr">ic_tx_empty_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_tx_over_intr">ic_tx_over_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_rx_full_intr">ic_rx_full_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_rx_over_intr">ic_rx_over_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_rx_under_intr">ic_rx_under_intr</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#ic_gen_call_intr">ic_gen_call_intr</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable"></a><p class="title"><b>Table 1. Interrupts</b></p><div class="table-contents"><table class="table" summary="Interrupts" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="ic_start_det_intr"></a>ic_start_det_intr</p></td><td>O</td><td>
+              <p>Optional. Start condition detect on I2C active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_stop_det_intr"></a>ic_stop_det_intr</p></td><td>O</td><td>
+              <p>Optional. Stop condition detect on I2C active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_activity_intr"></a>ic_activity_intr</p></td><td>O</td><td>
+              <p>Optional. I2C activity active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_rx_done_intr"></a>ic_rx_done_intr</p></td><td>O</td><td>
+              <p>Optional. Receive done active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_tx_abrt_intr"></a>ic_tx_abrt_intr</p></td><td>O</td><td>
+              <p>Optional. Transmit abort active high interrupt.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_rd_req_intr"></a>ic_rd_req_intr</p></td><td>O</td><td>
+              <p>Optional. Slave read request interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_tx_empty_intr"></a>ic_tx_empty_intr</p></td><td>O</td><td>
+              <p>Optional. Transmit buffer empty active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O. </p><p class="BLANK"></p><p> When bit 0 of the IC_ENABLE register is 0, the TX FIFO is flushed and held in reset, where it looks like it has no data within it. The ic_tx_empty_intr bit is raised when bit 0 of the IC_ENABLE register is 0, provided there is activity in the master or slave state machines. When there is no longer activity, then this interrupt bit is masked with ic_en.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_tx_over_intr"></a>ic_tx_over_intr</p></td><td>O</td><td>
+              <p>Optional. Transmit buffer overflow active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O. </p><p class="BLANK"></p><p> When the module is disabled, this interrupt keeps its level until the master or slave state machines go into idle and bit 0 of the IC_ENABLE register is 0. When ic_en goes to 0, this interrupt is cleared.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_rx_full_intr"></a>ic_rx_full_intr</p></td><td>O</td><td>
+              <p>Optional. Receive buffer full active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O. </p><p class="BLANK"></p><p> When bit 0 of the IC_ENABLE register is 0, the RX FIFO is flushed and held in resetthe RX FIFO is not fullso this ic_rx_full_intr bit is cleared once the ic_enable bit is programmed with a 0, regardless of the activity that continues.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_rx_over_intr"></a>ic_rx_over_intr</p></td><td>O</td><td>
+              <p>Optional. Receive buffer overflow active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O. </p><p class="BLANK"></p><p> When the module is disabled, this interrupt keeps its level until the master or slave state machines go into idle and bit 0 of the IC_ENABLE register is 0. When ic_en goes to 0, this interrupt is cleared.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_rx_under_intr"></a>ic_rx_under_intr</p></td><td>O</td><td>
+              <p>Optional. Receive buffer underflow active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O. </p><p class="BLANK"></p><p> When the module is disabled, this interrupt keeps its level until the master or slave state machines go into idle and bit 0 of the IC_ENABLE register is 0. When ic_en goes to 0, this interrupt is cleared.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr><tr><td><p><a name="ic_gen_call_intr"></a>ic_gen_call_intr</p></td><td>O</td><td>
+              <p>Optional. General Call received active high interrupt. This signal is included on the interface when the configuration IC_INTR_IO parameter is unchecked (0), which indicates that individual interrupt lines appear on the I/O.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>pclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High. Polarity is set by the configuration parameter IC_INTR_POL (checked(1) = active high).</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div></div></body></html>

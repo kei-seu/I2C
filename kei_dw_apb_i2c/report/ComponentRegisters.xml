@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+]>
+<docbook:article
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://docbook.org/ns/docbook docbook.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:docbook="http://docbook.org/ns/docbook" version="5.0">
+  <docbook:book xml:id="ComponentRegisters"></docbook:book>
+  <docbook:title>Memory Maps for DW_apb_i2c - 2.02a</docbook:title>
+  <docbook:sect1 xml:id="Register-Descriptions">
+    <docbook:title xml:id="HBH-title2">Component Banks/Blocks</docbook:title>
+    <docbook:para>The following table shows the address blocks for each memory map.  Follow the link for an address block to see a table of its registers.</docbook:para>
+ <docbook:table xml:id="regtable-DW_apb_i2c_mem_map" pgwide="1">
+   <docbook:title>Address Banks/Blocks for Memory Map: DW_apb_i2c_mem_map</docbook:title>
+   <docbook:tgroup cols="2">
+    <docbook:thead>
+      <docbook:row>
+        <?dbhtml bgcolor="#C0C0C0" ?>
+        <?dbfo bgcolor="#C0C0C0" ?>
+        <docbook:entry>Address Block</docbook:entry>
+        <docbook:entry>Description</docbook:entry>
+      </docbook:row>
+    </docbook:thead>
+    <docbook:tbody>
+      <docbook:row>
+        <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-descriptions#regtable" xlink:role="http://docbook.org/xlink/role/olink">DW_apb_i2c_addr_block1
+</docbook:olink></docbook:entry>
+        <docbook:entry>
+          <docbook:para>DW_apb_i2c address block</docbook:para>
+        </docbook:entry>
+      </docbook:row>
+      </docbook:tbody>
+      </docbook:tgroup>
+    </docbook:table>
+  </docbook:sect1>
+</docbook:article>

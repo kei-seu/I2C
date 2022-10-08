@@ -1,0 +1,17 @@
+set ::sHtml::reports(IO) [list I/O {This report includes a symbolic
+view of the component and tables documenting the ports
+of the component and key attributes of those ports such
+as size, directionality, etc.} ./IO.html]
+set ::sHtml::reports(AreaEstimate) [list {Area Estimate} {This report documents estimated area requirements
+for the given configuration of the current component.
+Area estimation is based on technology and configuration.} ./AreaEstimate.html]
+set ::sHtml::reports(ComponentRegisters) [list {Component Registers} {This report documents component registers and register
+fields and documents key characteristics of the registers and fields such
+as offset address, size, access modes, etc.} ./ComponentRegisters.html]
+set ::sHtml::reports(ComponentConfiguration) [list {Component Configuration} {This report documents component configuration choices and
+includes parameter descriptions and default values.} ./ComponentConfiguration.html]
+set ::sHtml::views(IPXACTComponent) [list {IP-XACT Component} {Generate IP-XACT component corresponding to the current component.} /home/liubin/project/dw_iip/i_i2c_1/export/DW_apb_i2c.xml]
+set ::sHtml::views(ComponentRegisterHeaders) [list {Component Register Headers} {Generate component-level header files containing definitions of key register constants.} /home/liubin/project/dw_iip/i_i2c_1/report/ComponentRegisterHeaders.html]
+set ::sHtml::views(ExampleComponentInstantiation) [list {Example Component Instantiation} {Generate example netlist instantiating the component.} /home/liubin/project/dw_iip/i_i2c_1/export/DW_apb_i2c_inst.v]
+set ::sHtml::views(UVMComponentRAL) [list {UVM Component RAL} {Generate UVM RAL (register abstraction language) file for the component.} /home/liubin/project/dw_iip/i_i2c_1/export/DW_apb_i2c_uvm.ralf]
+set ::sHtml::views(ComponentConfigurationHeaders) [list {Component Configuration Headers} {Generate component-level header files containing component parameters and its value.} /home/liubin/project/dw_iip/i_i2c_1/export/configuration/DW_apb_i2c.h]

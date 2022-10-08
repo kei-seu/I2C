@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+]>
+<docbook:article
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://docbook.org/ns/docbook docbook.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:docbook="http://docbook.org/ns/docbook" version="5.0">
+  <docbook:book xml:id="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-descriptions"></docbook:book>
+  <docbook:title>Register Descriptions</docbook:title>
+  <docbook:sect1 xml:id="sectionStart">
+    <docbook:title xml:id="H2-title">DW_apb_i2c_mem_map/DW_apb_i2c_addr_block1 Registers</docbook:title>
+    <docbook:para>DW_apb_i2c address block
+Follow the link for the register to see a detailed description of the register.</docbook:para>
+    <docbook:table xml:id="regtable" pgwide="1">
+      <docbook:title>Registers for Address Block: DW_apb_i2c_mem_map/DW_apb_i2c_addr_block1</docbook:title>
+      <docbook:tgroup cols="3">
+        <docbook:colspec colnum="1" colname="c1"/>
+        <docbook:colspec colnum="2" colname="c2"/>
+        <docbook:colspec colnum="3" colname="c3"/>
+        <docbook:thead>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Register</docbook:entry>
+            <docbook:entry>Offset</docbook:entry>
+            <docbook:entry>Description</docbook:entry>
+          </docbook:row>
+        </docbook:thead>
+        <docbook:tbody>
+          <docbook:row>
+            <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CON" xlink:role="http://docbook.org/xlink/role/olink">IC_CON
+</docbook:olink></docbook:entry>
+            <docbook:entry>0x0</docbook:entry>
+            <docbook:entry>
+              <docbook:para>I2C Control Register.
+This register can be written only when the DW_apb_i2c
+is disabled, which corresponds...</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_TAR" xlink:role="http://docbook.org/xlink/role/olink">IC_TAR
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x4</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Target Address Register
+
+If the configuration parameter I2C_DYNAMIC_TAR_UPDATE is set to 'No'...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SAR" xlink:role="http://docbook.org/xlink/role/olink">IC_SAR
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x8</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Slave Address Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_HS_MADDR" xlink:role="http://docbook.org/xlink/role/olink">IC_HS_MADDR
+</docbook:olink></docbook:entry>
+      <docbook:entry>0xc</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C High Speed Master Mode Code Address Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_DATA_CMD" xlink:role="http://docbook.org/xlink/role/olink">IC_DATA_CMD
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x10</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Rx/Tx Data Buffer and Command Register; this is the register the CPU writes to when filling...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SS_SCL_HCNT" xlink:role="http://docbook.org/xlink/role/olink">IC_SS_SCL_HCNT
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x14</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Standard Speed I2C Clock SCL High Count Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SS_SCL_LCNT" xlink:role="http://docbook.org/xlink/role/olink">IC_SS_SCL_LCNT
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x18</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Standard Speed I2C Clock SCL Low Count Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_FS_SCL_HCNT" xlink:role="http://docbook.org/xlink/role/olink">IC_FS_SCL_HCNT
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x1c</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Fast Mode or Fast Mode Plus I2C Clock SCL High Count Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_FS_SCL_LCNT" xlink:role="http://docbook.org/xlink/role/olink">IC_FS_SCL_LCNT
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x20</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Fast Mode or Fast Mode Plus I2C Clock SCL Low Count Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_HS_SCL_HCNT" xlink:role="http://docbook.org/xlink/role/olink">IC_HS_SCL_HCNT
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x24</docbook:entry>
+      <docbook:entry>
+        <docbook:para>High Speed I2C Clock SCL High Count Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_HS_SCL_LCNT" xlink:role="http://docbook.org/xlink/role/olink">IC_HS_SCL_LCNT
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x28</docbook:entry>
+      <docbook:entry>
+        <docbook:para>High Speed I2C Clock SCL Low Count Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_INTR_STAT" xlink:role="http://docbook.org/xlink/role/olink">IC_INTR_STAT
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x2c</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Interrupt Status Register
+
+Each bit in this register has a corresponding mask bit
+in the IC_INTR_MASK...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_INTR_MASK" xlink:role="http://docbook.org/xlink/role/olink">IC_INTR_MASK
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x30</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Interrupt Mask Register.
+
+These bits mask their corresponding interrupt status bits. This register...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_RAW_INTR_STAT" xlink:role="http://docbook.org/xlink/role/olink">IC_RAW_INTR_STAT
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x34</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Raw Interrupt Status Register
+
+Unlike the IC_INTR_STAT register, these bits are not masked so...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_RX_TL" xlink:role="http://docbook.org/xlink/role/olink">IC_RX_TL
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x38</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Receive FIFO Threshold Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_TX_TL" xlink:role="http://docbook.org/xlink/role/olink">IC_TX_TL
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x3c</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Transmit FIFO Threshold Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_INTR" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_INTR
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x40</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear Combined and Individual Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_RX_UNDER" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_RX_UNDER
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x44</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear RX_UNDER Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_RX_OVER" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_RX_OVER
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x48</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear RX_OVER Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_TX_OVER" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_TX_OVER
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x4c</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear TX_OVER Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_RD_REQ" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_RD_REQ
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x50</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear RD_REQ Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_TX_ABRT" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_TX_ABRT
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x54</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear TX_ABRT Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_RX_DONE" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_RX_DONE
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x58</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear RX_DONE Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_ACTIVITY" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_ACTIVITY
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x5c</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear ACTIVITY Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_STOP_DET" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_STOP_DET
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x60</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear STOP_DET Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_START_DET" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_START_DET
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x64</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear START_DET Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_CLR_GEN_CALL" xlink:role="http://docbook.org/xlink/role/olink">IC_CLR_GEN_CALL
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x68</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Clear GEN_CALL Interrupt Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_ENABLE" xlink:role="http://docbook.org/xlink/role/olink">IC_ENABLE
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x6c</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Enable Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_STATUS" xlink:role="http://docbook.org/xlink/role/olink">IC_STATUS
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x70</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Status Register 
+
+This is a read-only register used to indicate the current
+transfer status...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_TXFLR" xlink:role="http://docbook.org/xlink/role/olink">IC_TXFLR
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x74</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Transmit FIFO Level Register
+This register contains the number of valid data entries in the...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_RXFLR" xlink:role="http://docbook.org/xlink/role/olink">IC_RXFLR
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x78</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Receive FIFO Level Register
+This register contains the number of valid data entries in the receive...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SDA_HOLD" xlink:role="http://docbook.org/xlink/role/olink">IC_SDA_HOLD
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x7c</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C SDA Hold Time Length Register
+
+The bits [15:0] of this register are used to control the hold...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_TX_ABRT_SOURCE" xlink:role="http://docbook.org/xlink/role/olink">IC_TX_ABRT_SOURCE
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x80</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Transmit Abort Source Register
+
+This register has 32 bits that indicate the source
+of the TX_ABRT...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_SDA_SETUP" xlink:role="http://docbook.org/xlink/role/olink">IC_SDA_SETUP
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x94</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C SDA Setup Register
+
+This register controls the amount of time delay
+(in terms of number of ic_clk...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_ACK_GENERAL_CALL" xlink:role="http://docbook.org/xlink/role/olink">IC_ACK_GENERAL_CALL
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x98</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C ACK General Call Register
+
+The register controls whether DW_apb_i2c responds
+with a ACK or NACK...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_ENABLE_STATUS" xlink:role="http://docbook.org/xlink/role/olink">IC_ENABLE_STATUS
+</docbook:olink></docbook:entry>
+      <docbook:entry>0x9c</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Enable Status Register
+
+The register is used to report the DW_apb_i2c hardware
+status when the...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_FS_SPKLEN" xlink:role="http://docbook.org/xlink/role/olink">IC_FS_SPKLEN
+</docbook:olink></docbook:entry>
+      <docbook:entry>0xa0</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C SS, FS or FM+  spike suppression limit
+
+This register is used to store the duration, measured...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_HS_SPKLEN" xlink:role="http://docbook.org/xlink/role/olink">IC_HS_SPKLEN
+</docbook:olink></docbook:entry>
+      <docbook:entry>0xa4</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C HS spike suppression limit register
+
+This register is used to store the duration, measured in...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_REG_TIMEOUT_RST" xlink:role="http://docbook.org/xlink/role/olink">REG_TIMEOUT_RST
+</docbook:olink></docbook:entry>
+      <docbook:entry>0xf0</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Name: Register timeout counter reset register
+Size: REG_TIMEOUT_WIDTH bits
+Address: 0xF0
+Read/Write...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_COMP_PARAM_1" xlink:role="http://docbook.org/xlink/role/olink">IC_COMP_PARAM_1
+</docbook:olink></docbook:entry>
+      <docbook:entry>0xf4</docbook:entry>
+      <docbook:entry>
+        <docbook:para>Component Parameter Register 1
+
+Note
+This is a constant read-only register that contains
+encoded...</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_COMP_VERSION" xlink:role="http://docbook.org/xlink/role/olink">IC_COMP_VERSION
+</docbook:olink></docbook:entry>
+      <docbook:entry>0xf8</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Component Version Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    <docbook:row>
+      <docbook:entry><docbook:olink xlink:href="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details#H4-reg-DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_IC_COMP_TYPE" xlink:role="http://docbook.org/xlink/role/olink">IC_COMP_TYPE
+</docbook:olink></docbook:entry>
+      <docbook:entry>0xfc</docbook:entry>
+      <docbook:entry>
+        <docbook:para>I2C Component Type Register</docbook:para>
+      </docbook:entry>
+    </docbook:row>
+    </docbook:tbody>
+    </docbook:tgroup>
+  </docbook:table>
+  </docbook:sect1>
+</docbook:article>

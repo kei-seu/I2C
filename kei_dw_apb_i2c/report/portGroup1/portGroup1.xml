@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+]>
+<docbook:article
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://docbook.org/ns/docbook docbook.xsd"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:docbook="http://docbook.org/ns/docbook" version="5.0">
+  <docbook:title>Signals for DW_apb_i2c</docbook:title>
+  <docbook:sect1 xml:id="section">
+    <docbook:title xml:id="H2-title">I2C Interface (Master/Slave)</docbook:title>
+    <docbook:informaltable xml:id="interfacetable-I2CInterface_Master_Slave_" frame="none" rowsep="0" colsep="0">
+      <docbook:tgroup cols="3">
+        <?dbhtml cellpadding="0" cellspacing="0" ?>
+        <docbook:tbody>
+          <docbook:row>
+            <docbook:entry>
+            </docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="ic_clk">ic_clk</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="ic_current_src_en">ic_current_src_en</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="ic_clk_in_a">ic_clk_in_a</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="ic_clk_oe">ic_clk_oe</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="ic_data_in_a">ic_data_in_a</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="ic_data_oe">ic_data_oe</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry align="right"><docbook:link linkend="ic_rst_n">ic_rst_n</docbook:link> -</docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>- <docbook:link linkend="ic_en">ic_en</docbook:link></docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry>
+            </docbook:entry>
+            <docbook:entry align="center">
+              <?dbhtml bgcolor="#C0C0C0" ?>
+              <?dbfo bgcolor="#C0C0C0" ?>
+                <docbook:literallayout>            </docbook:literallayout>
+            </docbook:entry>
+            <docbook:entry>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:informaltable>
+    <docbook:table xml:id="signaltable" pgwide="1">
+      <docbook:title>I2C Interface (Master/Slave)</docbook:title>
+      <docbook:tgroup cols="3">
+        <docbook:colspec colnum="1" colname="c1"/>
+        <docbook:colspec colnum="2" colname="c2"/>
+        <docbook:colspec colnum="3" colname="c3"/>
+        <docbook:thead>
+          <docbook:row>
+            <?dbhtml bgcolor="#C0C0C0" ?>
+            <?dbfo bgcolor="#C0C0C0" ?>
+            <docbook:entry>Port Name</docbook:entry>
+            <docbook:entry>I/O</docbook:entry>
+            <docbook:entry>Description</docbook:entry>
+          </docbook:row>
+        </docbook:thead>
+        <docbook:tbody>
+          <docbook:row>
+            <docbook:entry><docbook:para id="ic_current_src_en">ic_current_src_en</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Optional. Current source pull-up. Controls the polarity of the current source pull-up on the SCLH. This pull-up is used to shorten the rise time on SCLH by activating an user-supplied external current source pull-up circuit. It is disabled after a RESTART condition and after each A/A bit when acting as the active master. <docbook:para role="BLANK"/> This signal enables other devices to delay the serial transfer by stretching the LOW period of the SCLH signal. The active master re-enables its current source pull-up circuit again when all devices have released and the SCLH signal reaches high level, therefore, shortening the last part of the SCLH signal's rise time.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="ic_clk">ic_clk</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>Peripheral clock. DW_apb_i2c runs on this clock and is used to clock transfers in standard, fast, and high-speed mode. <docbook:para role="BLANK"/> <docbook:emphasis role="bold">Note:</docbook:emphasis> ic_clk frequency must be greater than or equal to pclk frequency. The configuration parameter IC_CLK_TYPE indicates the relationship between pclk and ic_clk. It can be asynchronous (1) or identical (0).</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>None</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>N/A</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>N/A</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="ic_clk_in_a">ic_clk_in_a</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In (IC_ULTRA_FAST_MODE = 0) mode - Incoming I2C clock. This is the input SCL signal. Double-registered for metastability synchronization. <docbook:para role="BLANK"/> <docbook:emphasis role="bold">Note:</docbook:emphasis> DW_apb_i2c provides filtering on the SDA (ic_data_in_a) and SCL (ic_clk_in_a) inputs, suppressing noise and signal spikes with durations less than one ic_clk period. <docbook:para role="BLANK"/> In Ultra-Fast(IC_ULTRA_FAST_MODE = 1) mode - Incoming I2C clock. This is the input SCL signal. Double-registered for metastability synchronization.  <docbook:para role="BLANK"/> <docbook:emphasis role="bold">Note:</docbook:emphasis> DW_apb_i2c provides filtering on the SDA (ic_data_in_a) and SCL (ic_clk_in_a) inputs, suppressing noise and signal spikes with durations less than one ic_clk period. This signal is used as USCL input for slave device. This signal is asynchronous to ic_clk.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>Asynchronous</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="ic_data_in_a">ic_data_in_a</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In (IC_ULTRA_FAST_MODE = 0) mode - Incoming I2C Data. It is the input SDA signal. Double-registered for metastability synchronization.  <docbook:para role="BLANK"/> <docbook:emphasis role="bold">Note:</docbook:emphasis> DW_apb_i2c provides filtering on the SDA (ic_data_in_a) and SCL (ic_clk_in_a) inputs, suppressing noise and signal spikes with durations less than one ic_clk period. <docbook:para role="BLANK"/> In Ultra-Fast(IC_ULTRA_FAST_MODE = 1) mode - Incoming I2C Data. It is the input SDA signal. Double-registered for metastability synchronization. <docbook:para role="BLANK"/> <docbook:emphasis role="bold">Note:</docbook:emphasis> DW_apb_i2c provides filtering on the SDA (ic_data_in_a) and SCL (ic_clk_in_a) inputs, suppressing noise and signal spikes with durations less than one ic_clk period.This signal is used as USDA input for slave device. This signal is asynchronous to ic_clk.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>Asynchronous</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>N/A</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="ic_rst_n">ic_rst_n</docbook:para></docbook:entry>
+            <docbook:entry>I</docbook:entry>
+            <docbook:entry>
+              <docbook:para>I2C reset. Used to reset flip-flops that are clocked by the ic_clk clock. <docbook:para role="BLANK"/> <docbook:emphasis role="bold">Note:</docbook:emphasis> This signal does not reset DW_apb_i2c control, configuration, and status registers. The signal is asserted asynchronously, but is deasserted synchronously after the rising edge of ic_clk. The synchronization must be provided external to this component.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>Asynchronous</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>N/A</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>Low</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="ic_clk_oe">ic_clk_oe</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In (IC_ULTRA_FAST_MODE = 0) mode - Outgoing I2C clock. Open drain synchronous with ic_clk. <docbook:para role="BLANK"/> In Ultra-Fast(IC_ULTRA_FAST_MODE = 1) mode - Outgoing I2C clock, inverted. This signal is used as USCL out from master device.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="ic_data_oe">ic_data_oe</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>In (IC_ULTRA_FAST_MODE = 0) mode - Outgoing I2C Data. Open Drain Synchronous to ic_clk. <docbook:para role="BLANK"/> In Ultra-Fast(IC_ULTRA_FAST_MODE = 1) mode - Outgoing I2C Data, inverted. This signal is used as USDA out from master device.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>ic_clk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>High</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          <docbook:row>
+            <docbook:entry><docbook:para id="ic_en">ic_en</docbook:para></docbook:entry>
+            <docbook:entry>O</docbook:entry>
+            <docbook:entry>
+              <docbook:para>I2C interface enable. Indicates whether DW_apb_i2c is enabled; this signal is set to 0 when IC_ENABLE[0] is set to 0 (disabled). Because DW_apb_i2c always finishes its current transfer before turning off ic_en, this signal may be used by a clock generator to control whether the DW_apb_i2c ic_clk is active or inactive.</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Synchronous To: </docbook:emphasis>pclk</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Registered: </docbook:emphasis>Yes</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Power Domain: </docbook:emphasis>SINGLE_DOMAIN</docbook:para>
+              <docbook:para><docbook:emphasis role="bold">Active State: </docbook:emphasis>Low</docbook:para>
+            </docbook:entry>
+          </docbook:row>
+          </docbook:tbody>
+          </docbook:tgroup>
+        </docbook:table>
+  </docbook:sect1>
+</docbook:article>

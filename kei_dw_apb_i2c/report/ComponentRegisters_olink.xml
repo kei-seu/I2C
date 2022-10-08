@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE targetset
+    SYSTEM "file:///opt/synopsys/coretools/N-2017.12-SP2/auxx/dware/docbook-xsl-ns/common/targetdatabase.dtd" [
+<!ENTITY ComponentRegisters SYSTEM "file:///home/liubin/project/dw_iip/i_i2c_1/report/ComponentRegisters.db">
+<!ENTITY DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_descriptions SYSTEM "file:///home/liubin/project/dw_iip/i_i2c_1/report/DW_apb_i2c_mem_map/DW_apb_i2c_addr_block1/descriptions.db">
+<!ENTITY DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_details SYSTEM "file:///home/liubin/project/dw_iip/i_i2c_1/report/DW_apb_i2c_mem_map/DW_apb_i2c_addr_block1/details.db">
+
+]>
+<targetset>
+  <targetsetinfo>
+    Description of this target database document,
+    which is for the examples in olink doc.
+  </targetsetinfo>
+
+  <!-- Site map for generating relative paths between documents -->
+  <sitemap>
+    <dir name=".">
+
+      <document targetdoc="ComponentRegisters"
+                baseuri="ComponentRegisters.html">
+        &ComponentRegisters;
+      </document>
+      <dir name="DW_apb_i2c_mem_map">
+        <dir name="DW_apb_i2c_addr_block1">
+          <document targetdoc="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-descriptions"
+                    baseuri="descriptions.html">
+            &DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_descriptions;
+          </document>
+          <document targetdoc="DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1-details"
+                    baseuri="details.html">
+            &DW_apb_i2c_mem_map_DW_apb_i2c_addr_block1_details;
+          </document>
+          </dir>
+        </dir>
+    </dir>
+  </sitemap>
+</targetset>
