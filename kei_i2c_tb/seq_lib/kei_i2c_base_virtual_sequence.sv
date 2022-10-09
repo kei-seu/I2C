@@ -14,9 +14,14 @@ virtual class kei_i2c_base_virtual_sequence extends uvm_sequence;
   rand uvm_reg_data_t data;
 
   // element sequences
-  kei_apb_config_seq     apb_cfg_seq;
-  kei_apb_wait_empty_seq apb_wait_empty_seq;
-  kei_i2c_slave_rx_seq   i2c_slv_rx_seq;
+  kei_apb_config_seq                  apb_cfg_seq;
+  kei_apb_write_packet_seq            apb_write_packet_seq;
+  kei_apb_read_packet_seq             apb_read_packet_seq;
+  kei_apb_wait_empty_seq              apb_wait_empty_seq;
+  kei_apb_intr_wait_seq               apb_intr_wait_seq;
+  kei_apb_intr_clear_seq              apb_intr_clear_seq;
+  kei_i2c_slave_write_response_seq    i2c_slv_write_resp_seq;
+  kei_i2c_slave_read_response_seq     i2c_slv_read_resp_seq;
 
   `uvm_declare_p_sequencer(kei_i2c_virtual_sequencer)
 
@@ -25,6 +30,9 @@ virtual class kei_i2c_base_virtual_sequence extends uvm_sequence;
   endfunction
 
   virtual task body();
+    rgm = p_sequencer.rgm;
+    vif = p_sequencer.vif;
+    do_reset_callback();
     // TODO
     // Attach element sequences below
   endtask
