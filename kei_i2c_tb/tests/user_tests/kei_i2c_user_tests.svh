@@ -1,0 +1,6 @@
+
+`ifndef KEI_I2C_USER_TESTS_SVH
+`define KEI_I2C_USER_TESTS_SVH
+
+`endif // KEI_I2C_USER_TESTS_SVH
+
