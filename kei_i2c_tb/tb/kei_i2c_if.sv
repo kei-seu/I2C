@@ -3,6 +3,8 @@
 `define KEI_I2C_IF_SV
 interface kei_i2c_if;
   import kei_i2c_pkg::IC_INTR_NUM;
+  import uvm_pkg::*;
+  `include "uvm_macros.svh"
 
   logic i2c_clk;
   logic i2c_rstn;
@@ -49,6 +51,24 @@ interface kei_i2c_if;
   task wait_i2c(int n);
     repeat(n) @(i2c_ck);
   endtask
+
+  task wait_intr(int id);
+    if(id > IC_INTR_NUM -1) begin
+      `uvm_error("OUTRANGE", $sformatf("Interrupt id [%0d] is out of range [%0d : 0]", id, IC_INTR_NUM-1))
+    end
+    else begin
+      wait(intr[id] === 1'b1);
+    end
+  endtask
+
+  function int get_intr(int id);
+    if(id > IC_INTR_NUM -1) begin
+      `uvm_error("OUTRANGE", $sformatf("Interrupt id [%0d] is out of range [%0d : 0]", id, IC_INTR_NUM-1))
+      return -1;
+    end
+    else 
+      return intr[id]; 
+  endfunction
 
   task wait_rstn_release();
     fork
