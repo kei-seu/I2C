@@ -56,7 +56,13 @@ virtual class kei_i2c_base_virtual_sequence extends uvm_sequence;
       return 1;
     end
   endfunction
-
+  
+  virtual task update_regs(uvm_reg regs[]);
+    uvm_status_e status;
+    foreach(regs[i])
+      regs[i].update(status);
+  endtask
+  
 endclass
 
 `endif // KEI_I2C_BASE_VIRTUAL_SEQUENCE_SV
