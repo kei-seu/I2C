@@ -4,7 +4,8 @@
 
 `include "kei_i2c_base_test.sv"
 `include "kei_i2c_quick_reg_access_test.sv"
-`include "kei_i2c_directed_tx_test.sv"
-`include "kei_i2c_directed_rx_test.sv"
+`include "kei_i2c_master_directed_interrupt_test.sv"
+`include "kei_i2c_master_directed_write_packet_test.sv"
+`include "kei_i2c_master_directed_read_packet_test.sv"
 
 `endif // KEI_I2C_TESTS_SVH
