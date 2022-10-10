@@ -14,6 +14,7 @@ class kei_i2c_quick_reg_access_test extends kei_i2c_base_test;
     super.build_phase(phase);
     // TODO
     // modify components' configurations
+    cfg.master_scoreboard_enable = 0;
   endfunction
 
   task run_phase(uvm_phase phase);
