@@ -22,7 +22,7 @@ virtual class kei_i2c_base_test extends uvm_test;
     super.end_of_elaboration_phase(phase);
     uvm_root::get().set_report_verbosity_level_hier(UVM_HIGH);
     uvm_root::get().set_report_max_quit_count(10);
-    //uvm_root::get().set_timeout(10ms);//有bug，设置为10ms，实际10us就会超时退出
+    uvm_root::get().set_timeout(10ms);
   endfunction
 
   task run_phase(uvm_phase phase);
