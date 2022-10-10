@@ -22,7 +22,7 @@ virtual class kei_i2c_base_test extends uvm_test;
     super.end_of_elaboration_phase(phase);
     uvm_root::get().set_report_verbosity_level_hier(UVM_HIGH);
     uvm_root::get().set_report_max_quit_count(10);
-    uvm_root::get().set_timeout(10ms);
+    //uvm_root::get().set_timeout(10ms);//有bug，设置为10ms，实际10us就会超时退出，如若将脚本里的-timescale=1ns/1ps改为-timescale=1ps/1ps，则可修复该bug。这是因为phase_timeout是以ps为单位，若指定时间单位为ns，而10ms=10*1000*1000ns，则phase_timeout会被设置成10*1000*1000，进而出错。（QuestaSim特有bug，vcs不会出现问题）
   endfunction
 
   task run_phase(uvm_phase phase);
