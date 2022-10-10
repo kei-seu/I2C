@@ -17,6 +17,9 @@ set INCDIR "+incdir+../../kei_dw_apb_i2c/src \
 					  +incdir+../env \
 					  +incdir+../seq_lib \
 					  +incdir+../seq_lib/elem_seqs \
+					  +incdir+../seq_lib/user_elem_seqs \
+					  +incdir+../seq_lib/user_virt_seqs \
+					  +incdir+../tests/user_tests \
 					  +incdir+../tests "
 
 set VCOMP "vlog -timescale=1ns/1ps -l comp.log $INCDIR"
@@ -43,5 +46,5 @@ set TEST kei_i2c_quick_reg_access_test
 set VERB UVM_HIGH
 set SEED 0
 #set SEED [expr int(rand() * 100)]
-vsim work.kei_i2c_tb -sv_seed $SEED +UVM_TESTNAME=$TEST +UVM_VERBOSITY=$VERB -l sim.log
+vsim work.kei_i2c_tb -classdebug -sv_seed $SEED +UVM_TESTNAME=$TEST +UVM_VERBOSITY=$VERB -l sim.log
 
