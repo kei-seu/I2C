@@ -19,6 +19,11 @@ class kei_i2c_virtual_sequencer extends uvm_sequencer;
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     // configuration items below would be needed by virtual sequence
+    if(!uvm_config_db#(virtual kei_i2c_if)::get(this,"","",vif))
+      `uvm_error("GETVIF","cannot get kei_i2c_if handle from config DB")
+    if(!uvm_config_db#(ral_block_kei_i2c)::get(this,"","rgm",rgm))
+      `uvm_error("GETRGM","cannot get RGM handle from config DB")
+      
   endfunction
 
 endclass

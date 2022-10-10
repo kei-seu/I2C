@@ -12,7 +12,7 @@ package kei_i2c_pkg;
   `include "ral_kei_i2c.sv"
   `include "kei_i2c_configs.svh"
   `include "kei_i2c_cgm.sv"
-  `include "kei_i2c_scoreboard.sv"
+  `include "kei_i2c_master_scoreboard.sv"
   `include "kei_i2c_virtual_sequencer.sv"
   `include "kei_i2c_env.sv"
   `include "kei_i2c_element_sequences.svh"
