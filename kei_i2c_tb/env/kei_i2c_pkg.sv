@@ -17,8 +17,10 @@ package kei_i2c_pkg;
   `include "kei_i2c_env.sv"
   `include "kei_i2c_element_sequences.svh"
   `include "kei_i2c_virtual_sequences.svh"
+  `include "kei_i2c_user_element_sequences.svh"
+  `include "kei_i2c_user_virtual_sequences.svh"
   `include "kei_i2c_tests.svh"
-
+  `include "kei_i2c_user_tests.svh"
 endpackage
 
 `endif // KEI_I2C_PKG_SV
