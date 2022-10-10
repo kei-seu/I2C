@@ -46,6 +46,7 @@ class kei_i2c_master_scoreboard extends uvm_component;
     if(!uvm_config_db #(kei_i2c_config)::get(this, "", "cfg", cfg)) begin
       `uvm_error("build_phase", "Unable to get kei_i2c_config from uvm_config_db")
     end
+    enable = cfg.master_scoreboard_enable;
   endfunction: build_phase
 
   task run_phase(uvm_phase phase);
