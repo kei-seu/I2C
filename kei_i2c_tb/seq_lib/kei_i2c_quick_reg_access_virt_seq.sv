@@ -47,7 +47,7 @@ class kei_i2c_quick_reg_access_virt_seq extends kei_i2c_base_virtual_sequence;
 										p_sequencer.apb_mst_sqr,
 										{SPEED == 2;
 										IC_10BITADDR_MASTER ==0;
-										IC_TAR == `LVC_I2C_SLAVE0_ADDRESS;
+										IC_TAR == `KEI_VIP_I2C_SLAVE0_ADDRESS;
 										IC_FS_SCL_HCNT == 200;
 										IC_FS_SCL_LCNT == 200;
 										ENABLE == 1;})
