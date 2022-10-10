@@ -6,7 +6,8 @@ class kei_i2c_config extends uvm_object;
   kei_vip_apb_config apb_cfg;
   kei_vip_i2c_system_configuration i2c_cfg;
   ral_block_kei_i2c rgm;
-
+  
+  bit master_scoreboard_enable = 1;
   `uvm_object_utils(kei_i2c_config)
 
   function new (string name = "kei_i2c_config");
