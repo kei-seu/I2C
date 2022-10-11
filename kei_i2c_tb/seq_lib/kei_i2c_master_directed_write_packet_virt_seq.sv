@@ -16,8 +16,33 @@ class kei_i2c_master_directed_write_packet_virt_seq extends kei_i2c_base_virtual
 
     // TODO
     // Use element sequences to program I2C DUT, I2C Slave VIP
-    #10us;
-
+    `uvm_do_on_with(apb_cfg_seq,
+										p_sequencer.apb_mst_sqr,
+										{SPEED ==2; 
+										IC_10BITADDR_MASTER == 0;
+										IC_TAR == `KEI_VIP_I2C_SLAVE0_ADDRESS;
+										IC_FS_SCL_HCNT == 200;
+										IC_FS_SCL_LCNT == 200;
+										ENABLE == 1;})//IC_10BITADDR_MASTER reset值为1，所以此处必须约束到0
+		
+		`uvm_do_on_with(apb_write_packet_seq,
+										p_sequencer.apb_mst_sqr,
+										{packet.size() == 8;
+										packet[0] == 8'b00000001;
+										packet[1] == 8'b00000010;
+										packet[2] == 8'b00000100;
+										packet[3] == 8'b00001000;
+										packet[4] == 8'b00010000;
+										packet[5] == 8'b00100000;
+										packet[6] == 8'b01000000;
+										packet[7] == 8'b10000000;})
+										
+		`uvm_do_on(i2c_slv_write_resp_seq,p_sequencer.i2c_slv_sqr)//i2c slave端给出acknowledge硬答
+		
+		`uvm_do_on(apb_wait_empty_seq,p_sequencer.apb_mst_sqr)//txfifo为空时，ip会向apb总线返回state寄存器（地址70）的值（通过prdata返回）
+		
+		#10us;
+		
     // Attach element sequences below
     `uvm_info(get_type_name(), "=====================FINISHED=====================", UVM_LOW)
   endtask

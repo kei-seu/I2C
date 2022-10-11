@@ -22,7 +22,10 @@ virtual class kei_i2c_base_virtual_sequence extends uvm_sequence;
   kei_apb_intr_clear_seq              apb_intr_clear_seq;
   kei_i2c_slave_write_response_seq    i2c_slv_write_resp_seq;
   kei_i2c_slave_read_response_seq     i2c_slv_read_resp_seq;
-
+  uvm_reg_access_seq                  reg_acc_seq;  
+  uvm_reg_bit_bash_seq                reg_bit_bash_seq;
+  uvm_reg_hw_reset_seq                reg_rst_seq;
+  
   `uvm_declare_p_sequencer(kei_i2c_virtual_sequencer)
 
   function new (string name = "kei_i2c_base_virtual_sequence");
