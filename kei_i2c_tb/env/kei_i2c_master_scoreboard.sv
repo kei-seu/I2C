@@ -38,7 +38,7 @@ class kei_i2c_master_scoreboard extends uvm_component;
     super.new(name, parent);
   endfunction
 
-    function void build_phase(uvm_phase phase);
+  function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     apb_trans_observed_imp = new("apb_trans_observed_imp", this);
     i2c_trans_observed_imp = new("i2c_trans_observed_imp", this);
