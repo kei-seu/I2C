@@ -71,22 +71,12 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>DVT Auto-Linked/D᎓/EDA/project/I2C/I2C/kei_i2c_tb</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
 			<name>DVT Auto-Linked/D᎓/EDA/dvt_eclipse/predefined_projects/libs/uvm-1.2/src</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
 			<name>DVT Auto-Linked/D᎓/EDA/project/I2C/I2C/kei_dw_apb_i2c/src</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>DVT Auto-Linked/D᎓/EDA/project/I2C/I2C/kei_i2c_tb/seq_lib</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
@@ -284,11 +274,6 @@
 			<name>DVT Auto-Linked/D᎓/EDA/project/I2C/I2C/kei_dw_apb_i2c/src/kei_DW_apb_i2c_tx_shift.v</name>
 			<type>1</type>
 			<location>D:/EDA/project/I2C/I2C/kei_dw_apb_i2c/src/kei_DW_apb_i2c_tx_shift.v</location>
-		</link>
-		<link>
-			<name>DVT Auto-Linked/D᎓/EDA/project/I2C/I2C/kei_i2c_tb/seq_lib/elem_seqs</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
 			<name>DVT Auto-Linked/D᎓/EDA/dvt_eclipse/predefined_projects/libs/uvm-1.2/src/base/uvm_barrier.svh</name>
@@ -954,11 +939,6 @@
 			<name>DVT Auto-Linked/D᎓/EDA/dvt_eclipse/predefined_projects/libs/uvm-1.2/src/tlm2/uvm_tlm2_time.svh</name>
 			<type>1</type>
 			<location>D:/EDA/dvt_eclipse/predefined_projects/libs/uvm-1.2/src/tlm2/uvm_tlm2_time.svh</location>
-		</link>
-		<link>
-			<name>DVT Auto-Linked/D᎓/EDA/project/I2C/I2C/kei_i2c_tb/seq_lib/elem_seqs/kei_apb_read_packet_seq.sv</name>
-			<type>1</type>
-			<location>D:/EDA/project/I2C/I2C/kei_i2c_tb/seq_lib/elem_seqs/kei_apb_read_packet_seq.sv</location>
 		</link>
 		<link>
 			<name>DVT Auto-Linked/D᎓/EDA/dvt_eclipse/predefined_projects/libs/uvm-1.2/src/reg/sequences/uvm_mem_access_seq.svh</name>
