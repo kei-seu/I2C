@@ -1,0 +1,207 @@
+ <!-- WorkBook Path: D:\EDA\project\I2C\I2C\kei_i2c_tb\doc\questa_vplan.xlsx -->
+ <!-- Date: 0001/1/1 19:34:17 -->
+<Workbook>
+	<Worksheet>
+		<Table>
+			 <!-- Testplan -->
+			<Row>
+				<Cell>1</Cell>  <!-- Section -->
+				<Cell>registers</Cell>  <!-- Title -->
+				<Cell>register access test.</Cell>  <!-- Description -->
+				<Cell></Cell>  <!-- Link -->
+				<Cell></Cell>  <!-- Type -->
+				<Cell>1</Cell>  <!-- Weight -->
+				<Cell>100</Cell>  <!-- Goal -->
+			</Row>
+			<Row>
+				<Cell>1.1</Cell>
+				<Cell>hardware reset value</Cell>
+				<Cell>apply uvm_reg_hw_reset_seq</Cell>
+				<Cell>kei_i2c_reg_hw_reset_test_*</Cell>
+				<Cell>Test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.2</Cell>
+				<Cell>bit bash </Cell>
+				<Cell>apply uvm_reg_bit_bash_seq</Cell>
+				<Cell>kei_i2c_reg_bit_bash_test_*</Cell>
+				<Cell>Test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>1.3</Cell>
+				<Cell>register access</Cell>
+				<Cell>apply uvm_reg_access_seq</Cell>
+				<Cell>kei_i2c_reg_access_test_*</Cell>
+				<Cell>Test</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>2</Cell>
+				<Cell>i2c protocol</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>2.1</Cell>
+				<Cell>target and slave address</Cell>
+				<Cell>IC_TAR, IC_SAR register set</Cell>
+				<Cell>target_address_and_slave_address_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>2.2</Cell>
+				<Cell>speed modes</Cell>
+				<Cell>standard mode, fast mode, high speed(optional)</Cell>
+				<Cell>speed_modes_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>2.3</Cell>
+				<Cell>7-or-10 bits addressing</Cell>
+				<Cell>7bits or 10bits addressing</Cell>
+				<Cell>bits7_or_bits10_addressing_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>2.4</Cell>
+				<Cell>restart condition</Cell>
+				<Cell>restart enabled and detected</Cell>
+				<Cell>restart_condition_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3</Cell>
+				<Cell>status  </Cell>
+				<Cell>i2c module status</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3.1</Cell>
+				<Cell>activity</Cell>
+				<Cell>if module is in activity mode </Cell>
+				<Cell>activity_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>3.2</Cell>
+				<Cell>enabled</Cell>
+				<Cell>if module is enabled, and would be checked with enabled status</Cell>
+				<Cell>enabled_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4</Cell>
+				<Cell>data buffer</Cell>
+				<Cell>TX and RX FIFO status</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4.1</Cell>
+				<Cell>tx fifo status</Cell>
+				<Cell>TX FIFO empty/full/overflow</Cell>
+				<Cell>tx_fifo_status_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>4.2</Cell>
+				<Cell>rx fifo status</Cell>
+				<Cell>RX FIFO empty/full/overflow</Cell>
+				<Cell>rx_fifo_status_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5</Cell>
+				<Cell>interrupt</Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell></Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.1</Cell>
+				<Cell>status register</Cell>
+				<Cell>if interrupt status register would reflect the state</Cell>
+				<Cell>interrupt_status_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.2</Cell>
+				<Cell>clear register</Cell>
+				<Cell>if dedicated register would clear interrupt</Cell>
+				<Cell>interrupt_clear_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.3</Cell>
+				<Cell>hardware signals</Cell>
+				<Cell>if hardware coresponding output would be raised</Cell>
+				<Cell>interrupt_hardware_outputs_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>5.4</Cell>
+				<Cell>tx abort source</Cell>
+				<Cell>different tx abort source should be identified</Cell>
+				<Cell>interrupt_tx_abort_sources_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>6</Cell>
+				<Cell>SDA control</Cell>
+				<Cell>setup and hold timing with dedicated registers</Cell>
+				<Cell>sda_control_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>7</Cell>
+				<Cell>timeout counter</Cell>
+				<Cell>A zero on this counter will break the waited transaction with PSLVERR as high. </Cell>
+				<Cell>timeout_counter_cg</Cell>
+				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+		</Table>
+	</Worksheet>
+</Workbook>
