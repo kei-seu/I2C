@@ -15,6 +15,7 @@ class kei_i2c_reg_hw_reset_test extends kei_i2c_base_test;
     // TODO
     // modify components' configurations
     cfg.master_scoreboard_enable = 0;
+    cfg.coverage_model_enable = 0;
   endfunction
 
   task run_phase(uvm_phase phase);
