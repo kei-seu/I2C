@@ -9,6 +9,7 @@ class kei_i2c_config extends uvm_object;
   virtual kei_i2c_if vif;
   
   bit master_scoreboard_enable = 1;
+  bit coverage_model_enable = 1;
   
   `uvm_object_utils(kei_i2c_config)
 
