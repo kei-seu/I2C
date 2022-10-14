@@ -35,10 +35,8 @@ class kei_apb_config_seq extends kei_apb_base_sequence;
     if(IC_SAR >= 0) rgm.IC_SAR.IC_SAR.set(IC_SAR);
     rgm.IC_SAR.update(status);
 
-    // SCL_HCNT + SCL_LCNT = I2C baud clock T 
-    // 2us + 2us -> 1000/4 = 250Kb/s
-    if(IC_FS_SCL_HCNT >= 0) rgm.IC_FS_SCL_HCNT.write(status, 200); // 2us 
-    if(IC_FS_SCL_LCNT >= 0) rgm.IC_FS_SCL_LCNT.write(status, 200); // 2us
+    if(IC_FS_SCL_HCNT >= 0) rgm.IC_FS_SCL_HCNT.write(status, IC_FS_SCL_HCNT); 
+    if(IC_FS_SCL_LCNT >= 0) rgm.IC_FS_SCL_LCNT.write(status, IC_FS_SCL_LCNT); 
 
     if(ENABLE >= 0) rgm.IC_ENABLE.ENABLE.set('h1);
     rgm.IC_ENABLE.update(status);
