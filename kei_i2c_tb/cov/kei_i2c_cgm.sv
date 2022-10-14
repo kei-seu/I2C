@@ -62,29 +62,54 @@ class kei_i2c_cgm extends uvm_component;
       bins fast = {2};
       bins high = {3};
     }
+    
+    // In SS mode, the frequency of SCL is 0 - 100 Kbs
+    // To ensure that there is no 0 rate in the actual situation and the sim
+    // does not time out, we just test 50 - 100 Kbs
+    // Refer to the period of i2c_clk 100 MHz
+    // Fastest:
+    // The count value is 100MHz / 100Kbs = 1000 = SS_SCL_HCNT + SS_SCL_LCNT
+    // Slowest:
+    // The count value is 100MHz / 50Kbs = 2000 = SS_SCL_HCNT + SS_SCL_LCNT
     SS_SCL_HCNT: coverpoint val iff(field == "SS_SCL_HCNT") {
-      //bins max = {[:]};
-      //bins min = {[:]};
+      bins max = {[800:1000]};
+      bins min = {[400:600]};
     }
     SS_SCL_LCNT: coverpoint val iff(field == "SS_SCL_LCNT") {
-      //bins max = {[:]};
-      //bins min = {[:]};
+      bins max = {[800:1000]};
+      bins min = {[400:600]};
     }
+    
+     // In FS mode, the frequency of SCL is <= 400 Kbs
+    // To ensure frequency FS > SS, we just test 100 - 400 Kbs
+    // Refer to the period of i2c_clk 100MHz
+    // Fastest:
+    // The count value is 100MHz / 400Kbs = 250 = FS_SCL_HCNT + FS_SCL_LCNT
+    // Slowest:
+    // The count value is 100MHz / 100Kbs = 1000 = FS_SCL_HCNT + FS_SCL_LCNT
     FS_SCL_HCNT: coverpoint val iff(field == "FS_SCL_HCNT") {
-      //bins max = {[:]};
-      //bins min = {[:]};
+      bins max = {[400:600]};
+      bins min = {[100:150]};
     }
     FS_SCL_LCNT: coverpoint val iff(field == "FS_SCL_LCNT") {
-      //bins max = {[:]};
-      //bins min = {[:]};
+      bins max = {[400:600]};
+      bins min = {[100:150]};
     }
+    
+    // In HS mode, the frequency of SCL is <= 3.4 Mbs
+    // To ensure frequency of HS, we test 1 - 3.4 Mbs
+    // Refer to the period of i2c_clk 100MHz
+    // Fastest:
+    // The count value is 100MHz / 3.4Mbs ~= 30 = HS_SCL_HCNT + HS_SCL_LCNT
+    // Slowest:
+    // The count value is 100MHz / 1Mbs = 100 = HS_SCL_HCNT + HS_SCL_LCNT
     HS_SCL_HCNT: coverpoint val iff(field == "HS_SCL_HCNT") {
-      //bins max = {[:]};
-      //bins min = {[:]};
+      bins max = {[40:60]};
+      bins min = {[10:20]};
     }
     HS_SCL_LCNT: coverpoint val iff(field == "HS_SCL_LCNT") {
-      //bins max = {[:]};
-      //bins min = {[:]};
+      bins max = {[40:60]};
+      bins min = {[10:20]};
     }
 
   endgroup
@@ -433,6 +458,15 @@ class kei_i2c_cgm extends uvm_component;
         end
         else if(r.get_name() == "IC_TX_ABRT_SOURCE") begin
           interrupt_tx_abort_sources_cg.sample(rgm.IC_TX_ABRT_SOURCE.get());
+        end
+        else if(r.get_name() == "IC_SDA_HOLD") begin
+          sda_control_cg.sample(rgm.IC_SDA_HOLD_IC_SDA_RX_HOLD.get(),rgm.IC_SDA_HOLD_IC_SDA_TX_HOLD.get(),"","SDA_HOLD");
+        end
+        else if(r.get_name() == "IC_SDA_SETUP") begin
+          sda_control_cg.sample("","",rgm.IC_SDA_SETUP_SDA_SETUP.get(),"SDA_SETUP");
+        end
+        else if(r.get_name() == "REG_TIMEOUT_RST") begin
+          timeout_counter_cg.sample(rgm.REG_TIMEOUT_RST.get());
         end
       end
     join_none
