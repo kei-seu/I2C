@@ -3,3 +3,4 @@ kei_i2c_tb/.dvt/default.build
 kei_i2c_tb/.dvt/default.build.auto.1
 kei_i2c_tb/.project
 *.log
+kei_i2c_tb/sim/VRMDATA
