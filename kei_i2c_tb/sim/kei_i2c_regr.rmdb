@@ -19,9 +19,7 @@
            running a regression. The user can specify optional tplanoptions parameter for control
            of the testplan import process                                                        
       -->
-      <!--
       <parameter name="tplanfile" type="file">(%RMDBDIR%)/../doc/questa10.6c_vplan.ucdb</parameter>
-      -->
       <!-- 
            The definition of parameter named ucdbfile enables automatic pass / fail
            determination to be based on value of UCDB attribute called TESTSTATUS by VRM 
@@ -50,12 +48,10 @@
         -cover bst -timescale=1ns/1ps -l comp.log (%INCDIR%) -work (%WORK_LIB%)
       </parameter>
       <parameter name="WORK_LIB" type="file">(%DATADIR%)/work</parameter>
-      <!--
-          The parameter named seed has special behavior in VRM 
+      <!--The parameter named seed has special behavior in VRM 
           When a re-run is requested by the user, VRM will automatically
           replace the seed value "random" with the actual seed 
-          used in the first regression run                           
-      --> 
+          used in the first regression run                           --> 
       <parameter name="seed">random</parameter>
       <parameter name="VSIM_DOFILE" type="file"	>(%RMDBDIR%)/i2c_vsim_mti.do</parameter>
       <parameter name="VERB">UVM_LOW</parameter>
@@ -95,13 +91,6 @@
       <command>coverage save (%ucdbfile%)</command>
     </execScript>
     <postScript launch="vsim">
-      <command>vcover merge -testassociated (%mergefile%) (%RMDBDIR%)/../doc/questa10.6c_vplan.ucdb (%mergefile%) </command>
-      <!--
-           If you merge vplans using an automated method (commenting the
-           line 97 and not commenting line 23), the resulting merge.ucdb 
-           will be buggy. This is because when using the automated method, 
-           the vplan is merged at the beginning and not at the end
-      -->
       <command>vcover attr -name ORIGFILENAME -name TESTSTATUS (%mergefile%)</command>
       <command>if ([file exists (%mergefile%)]) {vcover report -html (%mergefile%) -htmldir [file join (%DATADIR%) cov_html_summary]}</command>
       <command>vrun -vrmdata (%DATADIR%) -status -full -html -htmldir (%DATADIR%)/vrun</command>
