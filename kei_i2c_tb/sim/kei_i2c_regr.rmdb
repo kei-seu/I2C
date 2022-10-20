@@ -1,0 +1,148 @@
+<?xml version="1.0" ?>
+<rmdb version="1.0" toprunnables="fullregr">
+  <runnable name="fullregr" type="group">
+    <localfile type="link" src="(%RMDBDIR%)/i2c_wave_mti.do"/>
+    <parameters>
+      <parameter name="NUM_SIM" ask="Enter number of simulation repeats : " accept="num(1,500)">2</parameter>
+      <!-- 
+           If ucdbfile parameter is defined and mergefile parameter is defined, VRM will perform
+           automatic merging of ucdb filed defined in ucdbfile into mergefile for passing
+           tests. The user can specify mergeoptions optional parameter and mergescript action script
+           but this is usually not necessary                                                         
+      -->
+      <parameter name="MODE">batch</parameter>
+      <parameter name="mergefile">merge.ucdb</parameter>
+      <parameter name="mergeoptions">-testassociated</parameter>
+      <!-- 
+           If ucdbfile, mergefile and tplanfile parameters are defined VRM will perform
+           automatic testplan import and merging into mergefile as the first action of 
+           running a regression. The user can specify optional tplanoptions parameter for control
+           of the testplan import process                                                        
+      -->
+      <parameter name="tplanfile" type="file">(%RMDBDIR%)/../doc/questa10.6c_vplan.ucdb</parameter>
+      <!-- 
+           The definition of parameter named ucdbfile enables automatic pass / fail
+           determination to be based on value of UCDB attribute called TESTSTATUS by VRM 
+           in addition to its primary task of specifying the location of ucdbfile 
+      -->
+      <parameter name="ucdbfile">(%INSTANCE%)_(%seed%).ucdb</parameter>
+      <parameter name="UCDBFILE"    export="yes"	>(%ucdbfile%)</parameter>
+      <parameter name="VRMDATA_DIR" export="yes">(%DATADIR%)</parameter>
+      <parameter name="DUT_SRC"  export="yes" >(%RMDBDIR%)/../../kei_dw_apb_i2c/src</parameter>
+      <parameter name="INCDIR">
+        +incdir+(%RMDBDIR%)/../../kei_dw_apb_i2c/src  
+				+incdir+(%RMDBDIR%)/../agents/kei_vip_apb3  
+				+incdir+(%RMDBDIR%)/../agents/kei_vip_i2c  
+				+incdir+(%RMDBDIR%)/../cfg  
+				+incdir+(%RMDBDIR%)/../cov  
+				+incdir+(%RMDBDIR%)/../reg  
+				+incdir+(%RMDBDIR%)/../env  
+				+incdir+(%RMDBDIR%)/../seq_lib  
+				+incdir+(%RMDBDIR%)/../seq_lib/elem_seqs  
+				+incdir+(%RMDBDIR%)/../seq_lib/user_elem_seqs  
+				+incdir+(%RMDBDIR%)/../seq_lib/user_virt_seqs  
+				+incdir+(%RMDBDIR%)/../tests/user_tests  
+				+incdir+(%RMDBDIR%)/../tests  
+      </parameter>
+      <parameter name="vcompopts"> 
+        -cover bst -timescale=1ns/1ps -l comp.log (%INCDIR%) -work (%WORK_LIB%)
+      </parameter>
+      <parameter name="WORK_LIB" type="file">(%DATADIR%)/work</parameter>
+      <!--The parameter named seed has special behavior in VRM 
+          When a re-run is requested by the user, VRM will automatically
+          replace the seed value "random" with the actual seed 
+          used in the first regression run                           --> 
+      <parameter name="seed">random</parameter>
+      <parameter name="VSIM_DOFILE" type="file"	>(%RMDBDIR%)/i2c_vsim_mti.do</parameter>
+      <parameter name="VERB">UVM_LOW</parameter>
+      <parameter name="VSIMARGS_batch">
+        -coverage -wlf (%INSTANCE%)_(%seed%).wlf 
+        -do "source (%VSIM_DOFILE%)"  
+        -msgmode both -displaymsgmode both
+        -sv_seed (%seed%) 
+        +UVM_TESTNAME=(%INSTANCE%)
+        +UVM_VERBOSITY=(%VERB%)
+        -lib (%WORK_LIB%)
+      </parameter>
+      <parameter name="VSIMARGS_gui">(%VSIMARGS_batch%) -gui -uvmcontrol=all -debugdb -classdebug -assertdebug</parameter>
+    </parameters>
+    <preScript>
+      <command>file delete -force work</command>
+      <command>vlib (%WORK_LIB%)</command>
+      <command>vlog (%vcompopts%) -f  (%RMDBDIR%)/kei_i2c.mti.flist </command>
+      <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../agents/kei_vip_apb3/kei_vip_apb_if.sv </command>
+      <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../agents/kei_vip_apb3/kei_vip_apb_pkg.sv </command>
+      <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../agents/kei_vip_i2c/kei_vip_i2c_if.sv </command>
+      <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../agents/kei_vip_i2c/kei_vip_i2c_pkg.sv </command>
+      <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../env/kei_i2c_pkg.sv </command>
+      <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../tb/kei_i2c_if.sv </command>
+      <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../tb/kei_i2c_tb.sv</command>
+    </preScript>
+    <members>
+      <member>smoke</member>
+      <member>reg</member>
+      <member>random</member>
+    </members>
+    <execScript launch="vsim"  mintimeout="300">
+      <command>if {"(%MODE%)" == "gui"} {set ::env(MTI_VRUN_INTERACTIVE) 1}</command>
+      <command>vsim (%VSIMARGS_(%MODE:%)%) kei_i2c_tb</command>
+      <command>run -all</command>
+      <command>coverage attribute -name TESTNAME -value (%INSTANCE%)_(%seed%)</command>
+      <command>coverage save (%ucdbfile%)</command>
+    </execScript>
+    <postScript launch="vsim">
+      <command>vcover attr -name ORIGFILENAME -name TESTSTATUS (%mergefile%)</command>
+      <command>if ([file exists (%mergefile%)]) {vcover report -html (%mergefile%) -htmldir [file join (%DATADIR%) cov_html_summary]}</command>
+      <command>vrun -vrmdata (%DATADIR%) -status -full -html -htmldir (%DATADIR%)/vrun</command>
+    </postScript>
+  </runnable>
+
+  <!-- ============== -->
+  <!-- SMOKE TESTS    -->
+  <!-- ============== -->
+  <runnable name="smoke" type="group">
+    <parameters>
+    </parameters>
+    <members>
+      <member>kei_i2c_quick_reg_access_test</member>
+      <member>kei_i2c_master_directed_write_packet_test</member>
+      <member>kei_i2c_master_directed_read_packet_test</member>
+      <member>kei_i2c_master_directed_interrupt_test</member>
+    </members>
+  </runnable>
+  <runnable name="kei_i2c_quick_reg_access_test" type="task"/>
+  <runnable name="kei_i2c_master_directed_write_packet_test" type="task"/>
+  <runnable name="kei_i2c_master_directed_read_packet_test" type="task"/>
+  <runnable name="kei_i2c_master_directed_interrupt_test" type="task"/>
+
+  <!-- ============== -->
+  <!-- REGISTER TESTS -->
+  <!-- ============== -->
+  <runnable name="reg" type="group">
+    <parameters>
+    </parameters>
+    <members>
+      <member>kei_i2c_reg_hw_reset_test</member>
+      <member>kei_i2c_reg_bit_bash_test</member>
+      <member>kei_i2c_reg_access_test</member>
+    </members>
+  </runnable>
+  <runnable name="kei_i2c_reg_hw_reset_test" type="task"/>
+  <runnable name="kei_i2c_reg_bit_bash_test" type="task"/>
+  <runnable name="kei_i2c_reg_access_test" type="task"/>
+
+  <!-- ============== -->
+  <!-- RANDOM TESTS   -->
+  <!-- ============== -->
+  <!-- An example of a repeat runnable. Simulate group will be repeated
+       %NUM_SIM% times with different random seeds in this example   -->
+  <runnable name="random" type="group" repeat="(%NUM_SIM%)">
+    <parameters>
+    </parameters>
+    <members>
+      <member>kei_i2c_master_directed_write_packet_test</member>
+      <member>kei_i2c_master_directed_read_packet_test</member>
+    </members>
+  </runnable>
+
+</rmdb>
