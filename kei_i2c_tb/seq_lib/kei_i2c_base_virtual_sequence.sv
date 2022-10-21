@@ -7,7 +7,8 @@ virtual class kei_i2c_base_virtual_sequence extends uvm_sequence;
 
   ral_block_kei_i2c rgm;
   virtual kei_i2c_if vif;
-
+  kei_i2c_env env;
+  kei_i2c_config cfg;
 
   // Register model variables:
   uvm_status_e status;
@@ -35,6 +36,8 @@ virtual class kei_i2c_base_virtual_sequence extends uvm_sequence;
   virtual task body();
     rgm = p_sequencer.rgm;
     vif = p_sequencer.vif;
+    cfg = p_sequencer.cfg;
+    void'($cast(env,p_sequencer.m_parent));
     do_reset_callback();
     // TODO
     // Attach element sequences below
