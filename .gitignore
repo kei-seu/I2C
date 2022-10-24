@@ -1,7 +1,9 @@
 
-kei_i2c_tb/.dvt/default.build
-kei_i2c_tb/.dvt/default.build.auto.1
+kei_i2c_tb/.dvt
 kei_i2c_tb/.project
-*.log
-kei_i2c_tb/sim/VRMDATA
+kei_i2c_tb/sim/VRMDATA*
+kei_i2c_tb/sim/regr_ucdb*
 kei_i2c_tb/sim/transcript
+kei_i2c_tb/sim/work
+kei_i2c_tb/sim/*.wlf
+*.log
