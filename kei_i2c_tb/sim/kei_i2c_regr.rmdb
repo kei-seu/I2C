@@ -3,7 +3,7 @@
   <runnable name="fullregr" type="group">
     <localfile type="link" src="(%RMDBDIR%)/i2c_wave_mti.do"/>
     <parameters>
-      <parameter name="NUM_SIM" ask="Enter number of simulation repeats : " accept="num(1,500)">2</parameter>
+      <parameter name="NUM_SIM" ask="Enter number of simulation repeats : " accept="num(1,500)">1</parameter>
       <!-- 
            If ucdbfile parameter is defined and mergefile parameter is defined, VRM will perform
            automatic merging of ucdb filed defined in ucdbfile into mergefile for passing
@@ -151,9 +151,9 @@
     <parameters>
     </parameters>
     <members>
-      <member>kei_i2c_master_directed_write_packet_test</member>
-      <member>kei_i2c_master_directed_read_packet_test</member>
+      <member>kei_i2c_master_address_cg_test</member>
     </members>
   </runnable>
-
+  <runnable name="kei_i2c_master_address_cg_test" type="task"/>
+  
 </rmdb>
