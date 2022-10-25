@@ -10,8 +10,12 @@ class kei_apb_config_seq extends kei_apb_base_sequence;
     soft SPEED == -1;
     soft IC_10BITADDR_MASTER == -1;
     soft IC_TAR == -1;
+    soft IC_SS_SCL_HCNT == -1;
+    soft IC_SS_SCL_LCNT == -1;
     soft IC_FS_SCL_HCNT == -1;
     soft IC_FS_SCL_LCNT == -1;
+    soft IC_HS_SCL_HCNT == -1;
+    soft IC_HS_SCL_LCNT == -1;
     soft ENABLE == -1;
     soft IC_SAR == -1;
   }
@@ -35,10 +39,14 @@ class kei_apb_config_seq extends kei_apb_base_sequence;
     if(IC_SAR >= 0) rgm.IC_SAR.IC_SAR.set(IC_SAR);
     rgm.IC_SAR.update(status);
 
+    if(IC_SS_SCL_HCNT >= 0) rgm.IC_SS_SCL_HCNT.write(status, IC_SS_SCL_HCNT); 
+    if(IC_SS_SCL_LCNT >= 0) rgm.IC_SS_SCL_LCNT.write(status, IC_SS_SCL_LCNT); 
     if(IC_FS_SCL_HCNT >= 0) rgm.IC_FS_SCL_HCNT.write(status, IC_FS_SCL_HCNT); 
     if(IC_FS_SCL_LCNT >= 0) rgm.IC_FS_SCL_LCNT.write(status, IC_FS_SCL_LCNT); 
-
-    if(ENABLE >= 0) rgm.IC_ENABLE.ENABLE.set('h1);
+    if(IC_HS_SCL_HCNT >= 0) rgm.IC_HS_SCL_HCNT.write(status, IC_HS_SCL_HCNT); 
+    if(IC_HS_SCL_LCNT >= 0) rgm.IC_HS_SCL_LCNT.write(status, IC_HS_SCL_LCNT); 
+    
+    if(ENABLE >= 0) rgm.IC_ENABLE.ENABLE.set(ENABLE);
     rgm.IC_ENABLE.update(status);
     
 
