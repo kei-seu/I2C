@@ -72,11 +72,11 @@ class kei_i2c_cgm extends uvm_component;
     // Slowest:
     // The count value is 100MHz / 50Kbs = 2000 = SS_SCL_HCNT + SS_SCL_LCNT
     SS_SCL_HCNT: coverpoint val iff(field == "SS_SCL_HCNT") {
-      bins max = {[800:1000]};
+      bins max = {[900:1100]};
       bins min = {[400:600]};
     }
     SS_SCL_LCNT: coverpoint val iff(field == "SS_SCL_LCNT") {
-      bins max = {[800:1000]};
+      bins max = {[900:1100]};
       bins min = {[400:600]};
     }
     
