@@ -14,8 +14,12 @@ virtual class kei_apb_base_sequence extends uvm_sequence #(kei_vip_apb_transfer)
   rand int SPEED = -1;
   rand int IC_10BITADDR_MASTER = -1;
   rand int IC_TAR = -1;
+  rand int IC_SS_SCL_HCNT = -1;
+  rand int IC_SS_SCL_LCNT = -1;
   rand int IC_FS_SCL_HCNT = -1;
   rand int IC_FS_SCL_LCNT = -1;
+  rand int IC_HS_SCL_HCNT = -1;
+  rand int IC_HS_SCL_LCNT = -1;
   rand int ENABLE = -1;
   rand int DAT = -1;
   rand int CMD = -1;
