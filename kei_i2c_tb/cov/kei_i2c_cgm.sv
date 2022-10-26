@@ -289,7 +289,7 @@ class kei_i2c_cgm extends uvm_component;
     SDA_SETUP: coverpoint stp iff(field == "SDA_SETUP") {
       bins MAX = {[100:$]};
       bins NORMAL = {[10:99]};
-      bins MIN = {[1:9]};
+      bins MIN = {[2:9]};
     }
   endgroup
 
@@ -377,7 +377,7 @@ class kei_i2c_cgm extends uvm_component;
         // ensure RGM mirror value has been updated by monitor transaction
         #1ps; 
         if(r.get_name() == "IC_TAR") begin
-          target_address_and_slave_address_cg.sample(rgm.IC_TAR_IC_TAR.get(), "TAR");//rgm.IC_TAR_IC_TAR等价于rgm.IC_TAR.IC_TAR
+          target_address_and_slave_address_cg.sample(rgm.IC_TAR_IC_TAR.get(), "TAR");//rgm.IC_TAR_IC_TAR equals rgm.IC_TAR.IC_TAR
         end
         else if(r.get_name() == "IC_SAR") begin
           target_address_and_slave_address_cg.sample(rgm.IC_SAR_IC_SAR.get(), "SAR");
