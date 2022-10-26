@@ -22,7 +22,7 @@ set INCDIR "+incdir+../../kei_dw_apb_i2c/src \
 					  +incdir+../tests/user_tests \
 					  +incdir+../tests "
 
-set VCOMP "vlog -timescale=1ns/1ps -l comp.log $INCDIR"
+set VCOMP "vlog -cover bst -timescale=1ns/1ps -l comp.log $INCDIR"
 
 
 # clean the environment and remove trash files
