@@ -16,6 +16,17 @@ class kei_i2c_master_sda_control_cg_virt_seq extends kei_i2c_base_virtual_sequen
     super.body();
     vif.wait_rstn_release();
     vif.wait_apb(10);
+   
+    /*
+    DW_apb_i2c可以配置transmitter和receiver模式的hold time以及slave-transmitter模式的setup time；
+    TX hold time控制dut在transmitter模式下SDA在address和data phase的hold time（相较于SCL下降沿），
+    当dut处于master-transmitter模式，上述hold time等于IC_SDA_HOLD_IC_SDA_RX_HOLD*dut的i2c时钟周期；
+    RX hold time字面上控制dut在receiver模式下的hold time，实际意义不明，无法在波形上观察；
+    setup time控制dut在slave-transmitter模式下SDA在address和data phase的setup time（相较于SCL上升沿），
+    但我们只测试master mode下的dut，
+    故仅对slave mode下的setup time对应的reg进行测试，没有实现具体的i2c测试，进而没有i2c波形以供查验，
+    因此，对stp这个coverpoint的cover并不一定可靠
+    */
     
     `uvm_do_on_with(apb_cfg_seq,
 										p_sequencer.apb_mst_sqr,
@@ -65,7 +76,7 @@ class kei_i2c_master_sda_control_cg_virt_seq extends kei_i2c_base_virtual_sequen
         rgm.IC_ENABLE.update(status);
       end
     
-    // test SET UP TIME
+    // test SETUP TIME
     
     foreach(time_set[i]) 
       begin
