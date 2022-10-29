@@ -27,4 +27,4 @@ class kei_i2c_master_address_cg_test extends kei_i2c_base_test;
 
 endclass
 
-`endif // KEI_I2C_SPEED_MODE_CG_TEST_SV
+`endif // KEI_I2C_MASTER_ADDRESS_CG_TEST_SV
