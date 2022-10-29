@@ -18,6 +18,14 @@ class kei_i2c_master_address_cg_virt_seq extends kei_i2c_base_virtual_sequence;
     vif.wait_rstn_release();
     vif.wait_apb(10);
     
+    /*
+    DW_apb_i2c既可以配置master mode下的master地址，也可配置slave mode下的slave地址；
+    但我们只测试master mode下的dut，
+    故仅对slave mode下的slave地址对应的reg进行测试，没有实现具体的i2c测试，进而没有i2c波形以供查验，
+    因此，对SAR_BITS10和SAR_BITS7这两个coverpoint的cover并不一定可靠
+    */
+    
+    //7bit地址下，测试master mode下的master地址
     foreach(address[i]) begin
     
     `uvm_do_on_with(apb_cfg_seq,
@@ -48,6 +56,7 @@ class kei_i2c_master_address_cg_virt_seq extends kei_i2c_base_virtual_sequence;
     
     end
     
+    //10bit地址下，测试master mode下的master地址
     foreach(address[i]) begin
     
     `uvm_do_on_with(apb_cfg_seq,
@@ -78,6 +87,7 @@ class kei_i2c_master_address_cg_virt_seq extends kei_i2c_base_virtual_sequence;
     
     end
     
+    //对slave mode下的slave地址对应的reg进行测试
     foreach(address[j]) begin
       rgm.IC_ENABLE.ENABLE.set(0);
       rgm.IC_ENABLE.update(status);
