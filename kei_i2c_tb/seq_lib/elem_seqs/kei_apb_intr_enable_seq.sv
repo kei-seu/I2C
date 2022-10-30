@@ -21,4 +21,4 @@ class kei_apb_intr_enable_seq extends kei_apb_base_sequence;
 
 endclass
 
-`endif // KEi_APB_INTR_ENABLE_SEQ_SV
+`endif // KEI_APB_INTR_ENABLE_SEQ_SV
