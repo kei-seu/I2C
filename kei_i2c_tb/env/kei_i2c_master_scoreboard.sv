@@ -22,6 +22,8 @@ class kei_i2c_master_scoreboard extends uvm_component;
 
   /** variable to enable and disable scoreboard */  
   bit enable = 1;
+  /** abort/exceptional interrupt to disable scoreboard */
+  bit interrupt_abort = 0;
   /** number of WRITE/READ transaction expected by refmod */
   int write_count_expected = 0;
   int read_count_expected = 0;
@@ -54,6 +56,7 @@ class kei_i2c_master_scoreboard extends uvm_component;
       i2c_refmod();
       i2c_write_comparer();
       i2c_read_comparer();
+      i2c_mon_interrupt();
     join_none
   endtask
 
@@ -151,8 +154,8 @@ class kei_i2c_master_scoreboard extends uvm_component;
       `uvm_info(get_type_name(),
       $sformatf("\n\
   ----------------------------------------------\n\
- | ScoreBoard Report                             |\n\
-  ---------------------------------------------- \n\
+ | ScoreBoard(Enabled) Report                   |\n\
+  ----------------------------------------------\n\
  | Transactions write expected by Refmod %5d   |\n\
  | Transactions  read expected by Refmod %5d   |\n\
  | Transactions write observed by Slave  %5d   |\n\
@@ -183,8 +186,38 @@ class kei_i2c_master_scoreboard extends uvm_component;
         `uvm_error(get_type_name(),$sformatf("Scoreboard Error : Mismatch detected in number of read transaction of expected - %0d and observed - %0d",read_count_expected,read_count_observed))
       end
     end
+    else
+      begin
+        `uvm_info(get_type_name(), 
+                {"\n"
+                ," ------------------------------------------------ \n"
+                ,"|   ScoreBoard(Disabled) Report                  |\n"
+                ," ------------------------------------------------ "
+                }, 
+                UVM_LOW)
+        if(!cfg.master_scoreboard_enable)
+          `uvm_info(get_type_name(), 
+                    "\n DISABLED REASON::\n Scoreboard is config-diabled due to [top-down configuration].", 
+                    UVM_LOW)
+        if(interrupt_abort)
+          `uvm_info(get_type_name(), 
+                    "\n DISABLED REASON::\n Scoreboard is auto-diabled due to [abort/exceptional interrupt asserted].", 
+                    UVM_LOW)
+      end
   endfunction: report_phase
-
+  
+  task i2c_mon_interrupt();
+    forever begin
+      // wait any interrupt asserted
+      cfg.vif.wait_intr();
+      if(cfg.vif.get_intr(IC_TX_ABRT_INTR_ID)) begin
+        interrupt_abort = 1;
+        enable = 0;
+        `uvm_info(get_type_name(), "monitored aborted/exceptional interrupt asserted, and disable scoreboard.", UVM_LOW)
+      end
+    end
+  endtask
+  
 endclass
 
 `endif // KEI_I2C_MASTER_SCOREBOARD_SV
