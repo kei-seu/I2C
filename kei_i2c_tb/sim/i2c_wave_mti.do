@@ -4,6 +4,7 @@ add wave -noupdate -height 23 -group i2c_if /kei_i2c_tb/i2c_if/CLK
 add wave -noupdate -height 23 -group i2c_if /kei_i2c_tb/i2c_if/RST
 add wave -noupdate -height 23 -group i2c_if /kei_i2c_tb/i2c_if/SCL
 add wave -noupdate -height 23 -group i2c_if /kei_i2c_tb/i2c_if/SDA
+add wave -noupdate -height 23 -group apb_if /kei_i2c_tb/apb_if/clk
 add wave -noupdate -height 23 -group apb_if /kei_i2c_tb/apb_if/rstn
 add wave -noupdate -height 23 -group apb_if /kei_i2c_tb/apb_if/paddr
 add wave -noupdate -height 23 -group apb_if /kei_i2c_tb/apb_if/pwrite
