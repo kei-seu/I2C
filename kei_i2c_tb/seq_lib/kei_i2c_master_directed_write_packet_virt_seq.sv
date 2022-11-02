@@ -37,7 +37,7 @@ class kei_i2c_master_directed_write_packet_virt_seq extends kei_i2c_base_virtual
 										packet[6] == 8'b01000000;
 										packet[7] == 8'b10000000;})
 										
-		`uvm_do_on(i2c_slv_write_resp_seq,p_sequencer.i2c_slv_sqr)//i2c slave端给出acknowledge硬答
+		`uvm_do_on(i2c_slv_write_resp_seq,p_sequencer.i2c_slv_sqr)//i2c slave端给出acknowledge硬答，会阻塞到全部数据传输结束
 		
 		`uvm_do_on(apb_wait_empty_seq,p_sequencer.apb_mst_sqr)//txfifo为空时，ip会向apb总线返回state寄存器（地址70）的值（通过prdata返回）
 		
