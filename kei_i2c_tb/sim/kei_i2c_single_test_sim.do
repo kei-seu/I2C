@@ -46,5 +46,5 @@ set TEST kei_i2c_quick_reg_access_test
 set VERB UVM_HIGH
 set SEED 0
 #set SEED [expr int(rand() * 100)]
-vsim work.kei_i2c_tb -classdebug -sv_seed $SEED +UVM_TESTNAME=$TEST +UVM_VERBOSITY=$VERB -l sim.log
+vsim work.kei_i2c_tb -novopt -classdebug -sv_seed $SEED +UVM_TESTNAME=$TEST +UVM_VERBOSITY=$VERB -l sim.log
 
