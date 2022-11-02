@@ -57,7 +57,10 @@ interface kei_i2c_if;
       `uvm_error("OUTRANGE", $sformatf("Interrupt id [%0d] is out of range [%0d : 0]", id, IC_INTR_NUM-1))
     end
     else begin
-      wait(intr[id] === 1'b1);
+      if(id >= 0)
+        @(intr iff intr[id] === 1'b1);
+      else
+        @(intr iff intr >= 0);
     end
   endtask
 
