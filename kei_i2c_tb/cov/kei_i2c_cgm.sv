@@ -424,37 +424,37 @@ class kei_i2c_cgm extends uvm_component;
           interrupt_status_cg.sample(rgm.IC_RAW_INTR_STAT.get());
         end
         else if(r.get_name() == "IC_CLR_INTR") begin
-          interrupt_clear_cg.sample(1, "CLR_INTR");
+          interrupt_clear_cg.sample(rgm.IC_CLR_INTR.get(), "CLR_INTR");
         end
         else if(r.get_name() == "IC_CLR_RX_UNDER") begin
-          interrupt_clear_cg.sample(1, "CLR_RX_UNDER");
+          interrupt_clear_cg.sample(rgm.IC_CLR_RX_UNDER.get(), "CLR_RX_UNDER");
         end
         else if(r.get_name() == "IC_CLR_RX_OVER") begin
-          interrupt_clear_cg.sample(1, "CLR_RX_OVER");
+          interrupt_clear_cg.sample(rgm.IC_CLR_RX_OVER.get(), "CLR_RX_OVER");
         end
         else if(r.get_name() == "IC_CLR_TX_OVER") begin
-          interrupt_clear_cg.sample(1, "CLR_TX_OVER");
+          interrupt_clear_cg.sample(rgm.IC_CLR_TX_OVER.get(), "CLR_TX_OVER");
         end
         else if(r.get_name() == "IC_CLR_RD_REQ") begin
-          interrupt_clear_cg.sample(1, "CLR_RD_REQ");
+          interrupt_clear_cg.sample(rgm.IC_CLR_RD_REQ.get(), "CLR_RD_REQ");
         end
         else if(r.get_name() == "IC_CLR_TX_ABRT") begin
-          interrupt_clear_cg.sample(1, "CLR_TX_ABRT");
+          interrupt_clear_cg.sample(rgm.IC_CLR_TX_ABRT.get(), "CLR_TX_ABRT");
         end
         else if(r.get_name() == "IC_CLR_RX_DONE") begin
-          interrupt_clear_cg.sample(1, "CLR_RX_DONE");
+          interrupt_clear_cg.sample(rgm.IC_CLR_RX_DONE.get(), "CLR_RX_DONE");
         end
         else if(r.get_name() == "IC_CLR_ACTIVITY") begin
-          interrupt_clear_cg.sample(1, "CLR_ACTIVITY");
+          interrupt_clear_cg.sample(rgm.IC_CLR_ACTIVITY.get(), "CLR_ACTIVITY");
         end
         else if(r.get_name() == "IC_CLR_STOP_DET") begin
-          interrupt_clear_cg.sample(1, "CLR_STOP_DET");
+          interrupt_clear_cg.sample(rgm.IC_CLR_STOP_DET.get(), "CLR_STOP_DET");
         end
         else if(r.get_name() == "IC_CLR_START_DET") begin
-          interrupt_clear_cg.sample(1, "CLR_START_DET");
+          interrupt_clear_cg.sample(rgm.IC_CLR_START_DET.get(), "CLR_START_DET");
         end
         else if(r.get_name() == "IC_CLR_GEN_CALL") begin
-          interrupt_clear_cg.sample(1, "CLR_GEN_CALL");
+          interrupt_clear_cg.sample(rgm.IC_CLR_GEN_CALL.get(), "CLR_GEN_CALL");
         end
         else if(r.get_name() == "IC_TX_ABRT_SOURCE") begin
           interrupt_tx_abort_sources_cg.sample(rgm.IC_TX_ABRT_SOURCE.get());
