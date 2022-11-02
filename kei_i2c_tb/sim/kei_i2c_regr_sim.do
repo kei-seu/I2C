@@ -46,7 +46,7 @@ eval $VCOMP -sv ../tb/kei_i2c_tb.sv
 #set VERB UVM_HIGH
 #set SEED 0
 #set SEED [expr int(rand() * 100)]
-#vsim work.kei_i2c_tb -classdebug -sv_seed $SEED +UVM_TESTNAME=$TEST +UVM_VERBOSITY=$VERB -l sim.log
+#vsim work.kei_i2c_tb -novopt -classdebug -sv_seed $SEED +UVM_TESTNAME=$TEST +UVM_VERBOSITY=$VERB -l sim.log
 
 # prepare simrun folder
 set timetag [clock format [clock seconds] -format "%Y%b%d-%H_%M"]
@@ -69,7 +69,7 @@ foreach testset $TestSets {
     set seed [expr int(rand() * 100)]
     echo simulating $testname
     echo $seed +UVM_TESTNAME=$testname -l regr_ucdb_${timetag}/run_${testname}_${seed}.log
-    vsim -onfinish stop -cover -sv_seed $seed \
+    vsim -novopt -onfinish stop -cover -sv_seed $seed \
          +UVM_TESTNAME=$testname -l regr_ucdb_${timetag}/run_${testname}_${seed}.log work.kei_i2c_tb
     run -all
     coverage save regr_ucdb_${timetag}/${testname}_${seed}.ucdb
