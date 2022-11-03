@@ -2388,6 +2388,53 @@ endgroup
       this.IC_COMP_TYPE.build();
       this.default_map.add_reg(this.IC_COMP_TYPE, `UVM_REG_ADDR_WIDTH'hFC, "RO", 0);
 		this.IC_COMP_TYPE_IC_COMP_TYPE = this.IC_COMP_TYPE.IC_COMP_TYPE;
+    
+    // specify HDL path
+    add_hdl_path("rkv_i2c_tb.dut.U_DW_apb_i2c_regfile");  
+    this.IC_CON.add_hdl_path_slice("ic_con_pre", 0, 32);
+    this.IC_TAR.add_hdl_path_slice("ic_tar_reg", 0, 32);
+    this.IC_SAR.add_hdl_path_slice("ic_sar", 0, 32);
+    this.IC_HS_MADDR.add_hdl_path_slice("ic_hs_maddr", 0, 32);
+//  this.IC_DATA_CMD.add_hdl_path_slice("rx_pop_data", 0, 32);
+    this.IC_SS_SCL_HCNT.add_hdl_path_slice("r_ic_ss_hcnt", 0, 32);
+    this.IC_SS_SCL_LCNT.add_hdl_path_slice("r_ic_ss_lcnt", 0, 32);
+    this.IC_FS_SCL_HCNT.add_hdl_path_slice("r_ic_fs_hcnt", 0, 32);
+    this.IC_FS_SCL_LCNT.add_hdl_path_slice("r_ic_fs_lcnt", 0, 32);
+    this.IC_HS_SCL_HCNT.add_hdl_path_slice("r_ic_hs_hcnt", 0, 32);
+    this.IC_HS_SCL_LCNT.add_hdl_path_slice("r_ic_hs_lcnt", 0, 32);
+    this.IC_INTR_STAT.add_hdl_path_slice("ic_intr_stat", 0, 32);
+    this.IC_INTR_MASK.add_hdl_path_slice("ic_intr_mask", 0, 32);
+    this.IC_RAW_INTR_STAT.add_hdl_path_slice("ic_raw_intr_stat", 0, 32);
+    this.IC_RX_TL.add_hdl_path_slice("ic_rx_tl", 0, 32);
+    this.IC_TX_TL.add_hdl_path_slice("ic_tx_tl", 0, 32);
+    this.IC_CLR_INTR.add_hdl_path_slice("v_ic_clr_intr_stat", 0, 32);
+    this.IC_CLR_RX_UNDER.add_hdl_path_slice("ic_raw_intr_stat[0]", 0, 32);
+    this.IC_CLR_RX_OVER.add_hdl_path_slice("ic_raw_intr_stat[1]", 0, 32);
+    this.IC_CLR_TX_OVER.add_hdl_path_slice("ic_raw_intr_stat[3]", 0, 32);
+    this.IC_CLR_RD_REQ.add_hdl_path_slice("ic_raw_intr_stat[5]", 0, 32);
+    this.IC_CLR_TX_ABRT.add_hdl_path_slice("ic_raw_intr_stat[6]", 0, 32);
+    this.IC_CLR_RX_DONE.add_hdl_path_slice("ic_raw_intr_stat[7]", 0, 32);
+    this.IC_CLR_ACTIVITY.add_hdl_path_slice("ic_raw_intr_stat[8]", 0, 32);
+    this.IC_CLR_STOP_DET.add_hdl_path_slice("ic_raw_intr_stat[9]", 0, 32);
+    this.IC_CLR_START_DET.add_hdl_path_slice("ic_raw_intr_stat[10]", 0, 32);
+    this.IC_CLR_GEN_CALL.add_hdl_path_slice("ic_raw_intr_stat[11]", 0, 32);
+    this.IC_ENABLE.add_hdl_path_slice("ic_enable_reg", 0, 32);
+    this.IC_STATUS.add_hdl_path_slice("ic_status", 0, 32);
+    this.IC_TXFLR.add_hdl_path_slice("ic_txflr", 0, 32);
+    this.IC_RXFLR.add_hdl_path_slice("ic_rxflr", 0, 32);
+    this.IC_SDA_HOLD.add_hdl_path_slice("ic_sda_hold", 0, 32);
+    this.IC_TX_ABRT_SOURCE.add_hdl_path_slice("v_ic_tx_abrt_source", 0, 32);
+    this.IC_SDA_SETUP.add_hdl_path_slice("ic_sda_setup", 0, 32);
+    this.IC_ACK_GENERAL_CALL.add_hdl_path_slice("ic_ack_general_call", 0, 32);
+    this.IC_ENABLE_STATUS.add_hdl_path_slice("ic_enable_status", 0, 32);
+    this.IC_FS_SPKLEN.add_hdl_path_slice("r_ic_fs_spklen", 0, 32);
+    this.IC_HS_SPKLEN.add_hdl_path_slice("r_ic_hs_spklen", 0, 32);
+    this.REG_TIMEOUT_RST.add_hdl_path_slice("reg_timeout_rst", 0, 32);
+    this.IC_COMP_PARAM_1.add_hdl_path_slice("ic_comp_param_1", 0, 32);
+    this.IC_COMP_VERSION.add_hdl_path_slice("ic_comp_version", 0, 32);
+    this.IC_COMP_TYPE.add_hdl_path_slice("ic_comp_type", 0, 32);
+    lock_model();
+    
    endfunction : build
 
 	`uvm_object_utils(ral_block_kei_i2c)
