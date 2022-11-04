@@ -14,5 +14,10 @@
 
 `include "kei_i2c_master_enabled_cg_virt_seq.sv"
 
+`include "kei_i2c_master_stop_det_intr_virt_seq.sv"
+`include "kei_i2c_master_tx_abrt_intr_virt_seq.sv"
+`include "kei_i2c_master_rx_full_intr_virt_seq.sv"
+`include "kei_i2c_master_rx_over_intr_virt_seq.sv"
+
 `endif // KEI_I2C_USER_VIRTUAL_SEQUENCES_SVH
 
