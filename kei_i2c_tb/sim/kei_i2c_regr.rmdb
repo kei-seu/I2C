@@ -60,6 +60,7 @@
       <parameter name="VSIM_DOFILE" type="file"	>(%RMDBDIR%)/i2c_vsim_mti.do</parameter>
       <parameter name="VERB">UVM_LOW</parameter>
       <parameter name="VSIMARGS_batch">
+        -novopt
         -coverage -wlf (%INSTANCE%)_(%seed%).wlf 
         -do "source (%VSIM_DOFILE%)"  
         -msgmode both -displaymsgmode both
@@ -158,6 +159,10 @@
       <member>kei_i2c_master_sda_control_cg_test</member>
       <member>kei_i2c_master_timeout_cg_test</member>
       <member>kei_i2c_master_enabled_cg_test</member>
+      <member>kei_i2c_master_stop_det_intr_test</member>
+      <member>kei_i2c_master_tx_abrt_intr_test</member>
+      <member>kei_i2c_master_rx_full_intr_test</member>
+      <member>kei_i2c_master_rx_over_intr_test</member>
     </members>
   </runnable>
   <runnable name="kei_i2c_master_address_cg_test" type="task"/>
@@ -167,5 +172,9 @@
   <runnable name="kei_i2c_master_sda_control_cg_test" type="task"/>
   <runnable name="kei_i2c_master_timeout_cg_test" type="task"/>
   <runnable name="kei_i2c_master_enabled_cg_test" type="task"/>
+  <runnable name="kei_i2c_master_stop_det_intr_test" type="task"/>
+  <runnable name="kei_i2c_master_tx_abrt_intr_test" type="task"/>
+  <runnable name="kei_i2c_master_rx_full_intr_test" type="task"/>
+  <runnable name="kei_i2c_master_rx_over_intr_test" type="task"/>
   
 </rmdb>
