@@ -19,6 +19,7 @@ virtual class kei_i2c_base_virtual_sequence extends uvm_sequence;
   kei_apb_write_packet_seq            apb_write_packet_seq;
   kei_apb_write_nocheck_packet_seq    apb_write_nocheck_packet_seq;
   kei_apb_read_packet_seq             apb_read_packet_seq;
+  kei_apb_noread_packet_seq           apb_noread_packet_seq;
   kei_apb_wait_empty_seq              apb_wait_empty_seq;
   kei_apb_intr_wait_seq               apb_intr_wait_seq;
   kei_apb_intr_clear_seq              apb_intr_clear_seq;
