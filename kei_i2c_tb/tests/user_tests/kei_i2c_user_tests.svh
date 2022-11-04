@@ -14,5 +14,11 @@
 
 `include "kei_i2c_master_enabled_cg_test.sv"
 
+`include "kei_i2c_master_stop_det_intr_test.sv"
+`include "kei_i2c_master_tx_abrt_intr_test.sv"
+`include "kei_i2c_master_rx_full_intr_test.sv"
+`include "kei_i2c_master_rx_over_intr_test.sv"
+
+
 `endif // KEI_I2C_USER_TESTS_SVH
 
