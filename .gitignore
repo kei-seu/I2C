@@ -1,9 +1,16 @@
 
 kei_i2c_tb/.dvt
 kei_i2c_tb/.project
+kei_i2c_tb/sim/wlft*
 kei_i2c_tb/sim/VRMDATA*
 kei_i2c_tb/sim/regr_ucdb*
 kei_i2c_tb/sim/transcript
 kei_i2c_tb/sim/work
 kei_i2c_tb/sim/*.wlf
+kei_i2c_tb/sim/*.vstf
+kei_i2c_tb/sim/*.vrm
+kei_i2c_tb/seq_lib/user_virt_seqs/kei_i2c_master_tx_over_intr_virt_seq.sv
+kei_i2c_tb/seq_lib/user_virt_seqs/kei_i2c_master_rx_under_intr_virt_seq.sv
+kei_i2c_tb/tests/user_tests/kei_i2c_master_tx_over_intr_test.sv
+kei_i2c_tb/tests/user_tests/kei_i2c_master_rx_under_intr_test.sv
 *.log
