@@ -1,5 +1,5 @@
  <!-- WorkBook Path: D:\EDA\project\I2C\I2C\kei_i2c_tb\doc\questa_vplan.xlsx -->
- <!-- Date: 0001/1/1 19:34:17 -->
+ <!-- Date: 0001/1/1 23:19:57 -->
 <Workbook>
 	<Worksheet>
 		<Table>
@@ -199,6 +199,33 @@
 				<Cell>A zero on this counter will break the waited transaction with PSLVERR as high. </Cell>
 				<Cell>timeout_counter_cg</Cell>
 				<Cell>CoverGroup</Cell>
+				<Cell>1</Cell>
+				<Cell>100</Cell>
+			</Row>
+			<Row>
+				<Cell>8</Cell>
+				<Cell>test status</Cell>
+				<Cell>All tests status and pass rate recorded</Cell>
+				<Cell>kei_i2c_reg_access_test_*
+kei_i2c_reg_bit_bash_test_*
+kei_i2c_reg_hw_reset_test_*       
+kei_i2c_quick_reg_access_test_*
+kei_i2c_master_directed_write_packet_test_*
+kei_i2c_master_directed_read_packet_test_*
+kei_i2c_master_directed_interrupt_test_*
+kei_i2c_master_address_cg_test_*
+kei_i2c_master_ss_cnt_test_*
+kei_i2c_master_fs_cnt_test_*
+kei_i2c_master_hs_cnt_test_*
+kei_i2c_master_sda_control_cg_test_*
+kei_i2c_master_timeout_cg_test_*
+kei_i2c_master_enabled_cg_test_*
+kei_i2c_master_stop_det_intr_test_*
+kei_i2c_master_tx_abrt_intr_test_*
+kei_i2c_master_rx_full_intr_test_*
+kei_i2c_master_rx_over_intr_test_*
+</Cell>
+				<Cell>Test</Cell>
 				<Cell>1</Cell>
 				<Cell>100</Cell>
 			</Row>
