@@ -19,12 +19,18 @@ class kei_i2c_slave_write_response_seq extends kei_i2c_slave_base_sequence;
   virtual task body();
     `uvm_info("body", "Entering...", UVM_HIGH)
     super.body();
-
-    `uvm_do_with(req,  
-                {local::nack_addr >= 0 -> nack_addr == local::nack_addr;
-                 local::nack_data >= 0 -> nack_data == local::nack_data;
-                 local::nack_addr_count >= 0-> nack_addr_count == local::nack_addr_count;
-                })
+    
+    `uvm_create(req)
+    req.reasonable_nack_addr.constraint_mode(0);
+    /*
+    nack_addr受约束块reasonable_nack_addr控制，在该约束下默认nack_addr是固定为0的，是无法改变的；
+    调用内建函数constraint_mode(0)，可以关闭该约束块，进而使得nack_addr是可变的
+    */
+    `uvm_rand_send_with(req,  
+                        {local::nack_addr >= 0 -> nack_addr == local::nack_addr;
+                         local::nack_data >= 0 -> nack_data == local::nack_data;
+                         local::nack_addr_count >= 0-> nack_addr_count == local::nack_addr_count;
+                        })
 
     if(cfg.enable_put_response == 1) get_response(rsp);
 
