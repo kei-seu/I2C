@@ -13,6 +13,7 @@ virtual class kei_apb_base_sequence extends uvm_sequence #(kei_vip_apb_transfer)
   // RGM register field value
   rand int SPEED = -1;
   rand int IC_10BITADDR_MASTER = -1;
+  rand int IC_RESTART_EN = -1;
   rand int IC_TAR = -1;
   rand int IC_SS_SCL_HCNT = -1;
   rand int IC_SS_SCL_LCNT = -1;
@@ -24,6 +25,8 @@ virtual class kei_apb_base_sequence extends uvm_sequence #(kei_vip_apb_transfer)
   rand int DAT = -1;
   rand int CMD = -1;
   rand int IC_SAR = -1;
+  rand int SPECIAL = -1;
+  rand int GC_OR_START = -1;
   
   `uvm_declare_p_sequencer(kei_vip_apb_master_sequencer)
 
