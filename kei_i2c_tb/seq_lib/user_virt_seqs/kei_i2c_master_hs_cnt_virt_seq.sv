@@ -18,7 +18,7 @@ class kei_i2c_master_hs_cnt_virt_seq extends kei_i2c_base_virtual_sequence;
     cfg.i2c_cfg.slave_cfg[0].bus_speed = HIGHSPEED_MODE;
     env.i2c_slv.reconfigure_via_task(cfg.i2c_cfg.slave_cfg[0]);
     
-    // test 1Mbs in SS mode
+    // test 1Mbs in HS mode
      
     `uvm_do_on_with(apb_cfg_seq,
 										p_sequencer.apb_mst_sqr,
