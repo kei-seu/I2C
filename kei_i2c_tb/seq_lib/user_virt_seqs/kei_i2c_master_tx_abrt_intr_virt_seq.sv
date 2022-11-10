@@ -53,8 +53,11 @@ class kei_i2c_master_tx_abrt_intr_virt_seq extends kei_i2c_base_virtual_sequence
     rgm.IC_ENABLE.ABORT.set(1);
     rgm.IC_ENABLE.update(status);
     
-    `uvm_do_on_with(apb_intr_wait_seq,p_sequencer.apb_mst_sqr,{intr_id == IC_TX_ABRT_INTR_ID;})
-    
+    fork
+      `uvm_do_on_with(apb_intr_wait_seq,p_sequencer.apb_mst_sqr,{intr_id == IC_TX_ABRT_INTR_ID;})
+      `uvm_do_on(apb_wait_detect_abort_source_seq, p_sequencer.apb_mst_sqr)
+    join  
+      
     if(vif.get_intr(IC_TX_ABRT_INTR_ID) !== 1'b1)
       `uvm_error("INTRERR", "interrupt output IC_TX_ABRT_INTR_ID is not high")
     else
