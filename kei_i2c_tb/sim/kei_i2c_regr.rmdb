@@ -163,6 +163,14 @@
       <member>kei_i2c_master_tx_abrt_intr_test</member>
       <member>kei_i2c_master_rx_full_intr_test</member>
       <member>kei_i2c_master_rx_over_intr_test</member>
+      <member>kei_i2c_master_10b_rd_norstrt_abrt_test</member>
+      <member>kei_i2c_master_sbyte_norstrt_abrt_test</member>
+      <member>kei_i2c_master_txdata_noack_abrt_test</member>
+      <member>kei_i2c_master_7b_addr_noack_abrt_test</member>
+      <member>kei_i2c_master_10b_addr1_noack_abrt_test</member>
+      <member>kei_i2c_master_hs_norstrt_abrt_test</member>
+      <member>kei_i2c_master_gcall_noack_abrt_test</member>
+      <member>kei_i2c_master_gcall_read_abrt_test</member>
     </members>
   </runnable>
   <runnable name="kei_i2c_master_address_cg_test" type="task"/>
@@ -176,5 +184,13 @@
   <runnable name="kei_i2c_master_tx_abrt_intr_test" type="task"/>
   <runnable name="kei_i2c_master_rx_full_intr_test" type="task"/>
   <runnable name="kei_i2c_master_rx_over_intr_test" type="task"/>
+  <runnable name="kei_i2c_master_10b_rd_norstrt_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_sbyte_norstrt_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_txdata_noack_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_7b_addr_noack_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_10b_addr1_noack_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_hs_norstrt_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_gcall_noack_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_gcall_read_abrt_test" type="task"/>
   
 </rmdb>
