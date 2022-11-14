@@ -18,8 +18,11 @@ interface kei_i2c_backdoor_if(input bit clk);
     release kei_i2c_tb.dut.U_DW_apb_i2c_regfile.rx_pop;
   endtask
   
-  function void i2c_if_SDA();
-    force kei_i2c_tb.i2c_if.SDA = 1'b1;
+  function void i2c_if_SDA_force(input bit force_high);
+    if(force_high)
+      force kei_i2c_tb.i2c_if.SDA = 1'b1;
+    else
+      force kei_i2c_tb.i2c_if.SDA = 1'b0;
   endfunction
   
 endinterface
