@@ -23,4 +23,5 @@
 -sv agents/kei_vip_i2c/kei_vip_i2c_pkg.sv 
 -sv env/kei_i2c_pkg.sv 
 -sv tb/kei_i2c_if.sv 
+-sv tb/kei_i2c_backdoor_if.sv 
 -sv tb/kei_i2c_tb.sv 
