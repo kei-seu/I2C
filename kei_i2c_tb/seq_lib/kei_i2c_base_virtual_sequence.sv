@@ -7,6 +7,8 @@ virtual class kei_i2c_base_virtual_sequence extends uvm_sequence;
 
   ral_block_kei_i2c rgm;
   virtual kei_i2c_if vif;
+  virtual kei_i2c_backdoor_if backdoor_vif;
+  virtual kei_vip_i2c_if i2c_vif;
   kei_i2c_env env;
   kei_i2c_config cfg;
 
@@ -39,6 +41,8 @@ virtual class kei_i2c_base_virtual_sequence extends uvm_sequence;
   virtual task body();
     rgm = p_sequencer.rgm;
     vif = p_sequencer.vif;
+    backdoor_vif = p_sequencer.backdoor_vif;
+    i2c_vif = p_sequencer.i2c_vif;
     cfg = p_sequencer.cfg;
     void'($cast(env,p_sequencer.m_parent));
     do_reset_callback();
