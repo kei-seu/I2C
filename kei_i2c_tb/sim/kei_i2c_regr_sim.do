@@ -39,6 +39,7 @@ eval $VCOMP -sv ../agents/kei_vip_i2c/kei_vip_i2c_if.sv
 eval $VCOMP -sv ../agents/kei_vip_i2c/kei_vip_i2c_pkg.sv 
 eval $VCOMP -sv ../env/kei_i2c_pkg.sv 
 eval $VCOMP -sv ../tb/kei_i2c_if.sv 
+eval $VCOMP -sv ../tb/kei_i2c_backdoor_if.sv 
 eval $VCOMP -sv ../tb/kei_i2c_tb.sv 
 
 # call a UVM test
