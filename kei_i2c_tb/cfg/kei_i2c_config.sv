@@ -7,6 +7,8 @@ class kei_i2c_config extends uvm_object;
   kei_vip_i2c_system_configuration i2c_cfg;
   ral_block_kei_i2c rgm;
   virtual kei_i2c_if vif;
+  virtual kei_i2c_backdoor_if backdoor_vif;
+  virtual kei_vip_i2c_if i2c_vif;
   
   bit master_scoreboard_enable = 1;
   bit coverage_model_enable = 1;
