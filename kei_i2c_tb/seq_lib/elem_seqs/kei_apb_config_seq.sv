@@ -8,6 +8,7 @@ class kei_apb_config_seq extends kei_apb_base_sequence;
 
   constraint def_cstr {
     soft SPEED == -1;
+    soft MASTER_MODE ==-1;
     soft IC_10BITADDR_MASTER == -1;
     soft IC_RESTART_EN == -1;
     soft IC_TAR == -1;
@@ -32,7 +33,7 @@ class kei_apb_config_seq extends kei_apb_base_sequence;
     super.body();
     
     if(SPEED >= 0) rgm.IC_CON.SPEED.set(SPEED);
-    //rgm.IC_CON.MASTER_MODE.set('h1);
+    if(MASTER_MODE >= 0) rgm.IC_CON.MASTER_MODE.set(MASTER_MODE);
     if(IC_10BITADDR_MASTER >= 0) rgm.IC_CON.IC_10BITADDR_MASTER.set(IC_10BITADDR_MASTER);
     if(IC_RESTART_EN >= 0) rgm.IC_CON.IC_RESTART_EN.set(IC_RESTART_EN);
     rgm.IC_CON.update(status);
