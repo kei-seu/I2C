@@ -11,7 +11,9 @@ class kei_i2c_virtual_sequencer extends uvm_sequencer;
   kei_i2c_config cfg;
   ral_block_kei_i2c rgm;
   virtual kei_i2c_if vif;
-
+  virtual kei_i2c_backdoor_if backdoor_vif;
+  virtual kei_vip_i2c_if i2c_vif;
+  
   `uvm_component_utils(kei_i2c_virtual_sequencer)
 
   function new (string name = "kei_i2c_virtual_sequencer", uvm_component parent);
@@ -27,6 +29,9 @@ class kei_i2c_virtual_sequencer extends uvm_sequencer;
       end
     rgm = cfg.rgm;
     vif = cfg.vif;
+    backdoor_vif = cfg.backdoor_vif;
+    i2c_vif = cfg.i2c_vif;
+      
   endfunction
 
 endclass
