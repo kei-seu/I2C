@@ -28,10 +28,8 @@ class kei_i2c_master_hs_norstrt_abrt_virt_seq extends kei_i2c_base_virtual_seque
                     IC_10BITADDR_MASTER == 0;
                     IC_RESTART_EN == 0;
                     IC_TAR == `KEI_VIP_I2C_SLAVE0_ADDRESS;
-                    SPECIAL == 1;
-                    GC_OR_START == 1;
-                    IC_FS_SCL_HCNT == 50;
-                    IC_FS_SCL_LCNT == 50;
+                    IC_HS_SCL_HCNT == 50;
+                    IC_HS_SCL_LCNT == 50;
                     ENABLE == 1;})
 		
     
