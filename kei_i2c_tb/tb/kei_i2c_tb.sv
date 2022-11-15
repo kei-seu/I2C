@@ -123,11 +123,13 @@ module kei_i2c_tb;
   assign top_if.i2c_rstn = i2c_rstn;
   assign top_if.apb_clk  = apb_clk;
   assign top_if.apb_rstn = apb_rstn;
-
+  
+  kei_i2c_backdoor_if backdoor_if(i2c_clk);
 
   initial begin 
     // do interface configuration from top tb (HW) to verification env (SW)
     uvm_config_db#(virtual kei_i2c_if)::set(uvm_root::get(), "uvm_test_top.env", "vif", top_if);
+    uvm_config_db#(virtual kei_i2c_backdoor_if)::set(uvm_root::get(), "uvm_test_top.env", "backdoor_vif", backdoor_if);
     uvm_config_db#(virtual kei_vip_apb_if)::set(uvm_root::get(), "uvm_test_top.env.apb_mst*", "vif", apb_if);
     uvm_config_db#(virtual kei_vip_i2c_if)::set(uvm_root::get(), "uvm_test_top.env", "i2c_vif", i2c_if);
     run_test("kei_i2c_quick_reg_access_test");
