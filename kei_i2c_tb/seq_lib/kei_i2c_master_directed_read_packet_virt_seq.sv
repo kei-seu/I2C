@@ -40,7 +40,7 @@ class kei_i2c_master_directed_read_packet_virt_seq extends kei_i2c_base_virtual_
 											packet[4] == 8'b00010000;
 											packet[5] == 8'b00100000;
 											packet[6] == 8'b01000000;
-											packet[7] == 8'b10000000;})
+											packet[7] == 8'b10000000;})//i2c slave端给出data，会阻塞到全部数据传输结束
 		join
 		
 		`uvm_do_on(apb_wait_empty_seq,p_sequencer.apb_mst_sqr)
