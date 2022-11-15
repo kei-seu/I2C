@@ -7,6 +7,10 @@ class kei_i2c_env extends uvm_component;
   // top configuration
   virtual kei_i2c_if vif;
   
+  virtual kei_i2c_backdoor_if backdoor_vif;
+  
+  virtual kei_vip_i2c_if i2c_vif;
+  
   kei_i2c_config cfg;
 
   kei_vip_apb_master_agent apb_mst;
@@ -49,6 +53,18 @@ class kei_i2c_env extends uvm_component;
       end
     cfg.vif = vif;
     
+    if(!uvm_config_db#(virtual kei_i2c_backdoor_if)::get(this,"","backdoor_vif",backdoor_vif))
+      begin
+        `uvm_error("GETVIF","cannot get kei_i2c_backdoor_if handle from config DB")
+      end
+    cfg.backdoor_vif = backdoor_vif;
+    
+    if(!uvm_config_db#(virtual kei_vip_i2c_if)::get(this,"","i2c_vif",i2c_vif))
+      begin
+        `uvm_error("GETVIF","cannot get kei_vip_i2c_if handle from config DB")
+      end
+    cfg.i2c_vif = i2c_vif;
+      
     if(!uvm_config_db #(ral_block_kei_i2c)::get(this, "", "rgm", rgm))  
       begin
         `uvm_info("build_phase", "Unable to get ral_block_kei_i2c from uvm_config_db and create a RGM locally", UVM_LOW)
