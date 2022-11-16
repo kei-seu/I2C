@@ -81,6 +81,7 @@
       <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../agents/kei_vip_i2c/kei_vip_i2c_pkg.sv </command>
       <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../env/kei_i2c_pkg.sv </command>
       <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../tb/kei_i2c_if.sv </command>
+      <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../tb/kei_i2c_backdoor_if.sv </command>
       <command>vlog (%vcompopts%) -sv (%RMDBDIR%)/../tb/kei_i2c_tb.sv</command>
     </preScript>
     <members>
@@ -161,16 +162,23 @@
       <member>kei_i2c_master_enabled_cg_test</member>
       <member>kei_i2c_master_stop_det_intr_test</member>
       <member>kei_i2c_master_tx_abrt_intr_test</member>
+      <member>kei_i2c_master_tx_over_intr_test</member>
       <member>kei_i2c_master_rx_full_intr_test</member>
       <member>kei_i2c_master_rx_over_intr_test</member>
+      <member>kei_i2c_master_rx_under_intr_test</member>
       <member>kei_i2c_master_10b_rd_norstrt_abrt_test</member>
       <member>kei_i2c_master_sbyte_norstrt_abrt_test</member>
       <member>kei_i2c_master_txdata_noack_abrt_test</member>
       <member>kei_i2c_master_7b_addr_noack_abrt_test</member>
       <member>kei_i2c_master_10b_addr1_noack_abrt_test</member>
+      <member>kei_i2c_master_10b_addr2_noack_abrt_test</member>
       <member>kei_i2c_master_hs_norstrt_abrt_test</member>
       <member>kei_i2c_master_gcall_noack_abrt_test</member>
       <member>kei_i2c_master_gcall_read_abrt_test</member>
+      <member>kei_i2c_master_sbyte_ackdet_abrt_test</member>
+      <member>kei_i2c_master_hs_ackdet_abrt_test</member>
+      <member>kei_i2c_master_arb_lost_abrt_test</member>
+      <member>kei_i2c_master_master_dis_abrt_test</member>
     </members>
   </runnable>
   <runnable name="kei_i2c_master_address_cg_test" type="task"/>
@@ -182,15 +190,22 @@
   <runnable name="kei_i2c_master_enabled_cg_test" type="task"/>
   <runnable name="kei_i2c_master_stop_det_intr_test" type="task"/>
   <runnable name="kei_i2c_master_tx_abrt_intr_test" type="task"/>
+  <runnable name="kei_i2c_master_tx_over_intr_test" type="task"/>
   <runnable name="kei_i2c_master_rx_full_intr_test" type="task"/>
   <runnable name="kei_i2c_master_rx_over_intr_test" type="task"/>
+  <runnable name="kei_i2c_master_rx_under_intr_test" type="task"/>
   <runnable name="kei_i2c_master_10b_rd_norstrt_abrt_test" type="task"/>
   <runnable name="kei_i2c_master_sbyte_norstrt_abrt_test" type="task"/>
   <runnable name="kei_i2c_master_txdata_noack_abrt_test" type="task"/>
   <runnable name="kei_i2c_master_7b_addr_noack_abrt_test" type="task"/>
   <runnable name="kei_i2c_master_10b_addr1_noack_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_10b_addr2_noack_abrt_test" type="task"/>
   <runnable name="kei_i2c_master_hs_norstrt_abrt_test" type="task"/>
   <runnable name="kei_i2c_master_gcall_noack_abrt_test" type="task"/>
   <runnable name="kei_i2c_master_gcall_read_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_sbyte_ackdet_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_hs_ackdet_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_arb_lost_abrt_test" type="task"/>
+  <runnable name="kei_i2c_master_master_dis_abrt_test" type="task"/>
   
 </rmdb>
