@@ -107,11 +107,22 @@ module kei_i2c_tb;
 
   kei_vip_i2c_if i2c_if(ref_clk);
   assign i2c_if.RST = !i2c_rstn;
-
-  assign i2c_sda = i2c_data_oe ? 1'b0 : 1'bz;
-  assign i2c_sda = i2c_if.SDA === 1'b0 ? 1'b0 : 1'bz;
-  pullup(i2c_sda);
-  assign i2c_if.SDA = i2c_data_oe ? 1'b0 : 1'bz;
+  
+  /*
+  DUT在master mode下
+  DUT驱动SDA时：
+  i2c vip一侧sda_slave为x或z使得对SDA的strong0驱动一定失败，表现为z，但本身有个weak1兜底，所以i2c vip一侧SDA综合表现为weak1
+  DUT一侧的i2c_data_oe按照数据输出（反相），使得tb里的i2c_sda为strong0或z，而i2c_sda本来为pull1
+  故i2c_sda综合表现为strong0或pull1，i2c_if.SDA综合表现为strong0或weak1
+  i2c vip驱动SDA时：
+  i2c vip一侧sda_slave按照数据输出（同相）使得对SDA的strong0驱动有可能成功也有可能失败，表现为strong0或z，但本身有个weak1兜底，
+  所以i2c vip一侧SDA综合表现为strong0或weak1
+  DUT一侧的的i2c_data_oe为0，故i2c_sda综合表现为为strong0或pull1
+  */
+  assign i2c_sda = i2c_data_oe ? 1'b0 : 1'bz;//assign默认驱动强度为strong0和strong1
+  assign i2c_sda = i2c_if.SDA === 1'b0 ? 1'b0 : 1'bz;//i2c vip驱动i2c_if.SDA时，保证i2c_sda与之一致
+  pullup(i2c_sda);//pullup门驱动强度pull1，strength0未定义；pulldown门驱动强度pull0，strength1未定义
+  assign i2c_if.SDA = i2c_data_oe ? 1'b0 : 1'bz;//DUT驱动i2c_sda时，保证i2c_if.SDA 与之一致
 
   assign i2c_scl = i2c_clk_oe ? 1'b0 : 1'bz;
   assign i2c_scl = i2c_if.SCL === 1'b0 ? 1'b0 : 1'bz;
