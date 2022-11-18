@@ -15,7 +15,7 @@ class kei_i2c_master_arb_lost_abrt_virt_seq extends kei_i2c_base_virtual_sequenc
     vif.wait_apb(10);
     
     /*
-    
+    当作为transmitter的dut失去对总线（SCL或SDA）的控制时，中断tx_abort的源arb_lost产生
     */
 
     `uvm_do_on_with(apb_cfg_seq,
@@ -47,12 +47,14 @@ class kei_i2c_master_arb_lost_abrt_virt_seq extends kei_i2c_base_virtual_sequenc
     #30us;  
     backdoor_vif.i2c_if_SDA_force(1'b0);
     
-   `uvm_do_on(apb_wait_detect_abort_source_seq, p_sequencer.apb_mst_sqr)
+    `uvm_do_on(apb_wait_detect_abort_source_seq, p_sequencer.apb_mst_sqr)
     
     if(vif.get_intr(IC_TX_ABRT_INTR_ID) !== 1'b1)
       `uvm_error("INTRERR", "interrupt output IC_TX_ABRT_INTR_ID is not high")
     else
       `uvm_info("INTRERR", "interrupt output IC_TX_ABRT_INTR_ID is high", UVM_LOW)
+    
+    `uvm_do_on_with(apb_intr_clear_seq,p_sequencer.apb_mst_sqr,{intr_id == IC_ALL_INTR_ID;})
     
     `uvm_do_on(apb_wait_empty_seq, p_sequencer.apb_mst_sqr)
 		
