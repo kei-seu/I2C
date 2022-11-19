@@ -17,7 +17,8 @@ class kei_i2c_master_txdata_noack_abrt_virt_seq extends kei_i2c_base_virtual_seq
     vif.wait_apb(10);
     
     /*
-
+    当i2c_slv_write_resp_seq的成员变量nack_data为1时，
+    代表着i2c vip在第一次数据阶段的acknowledge周期产生nack
     */
 
     `uvm_do_on_with(apb_cfg_seq,
