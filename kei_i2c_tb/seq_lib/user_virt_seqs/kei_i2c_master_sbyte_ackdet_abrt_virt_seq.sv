@@ -17,7 +17,8 @@ class kei_i2c_master_sbyte_ackdet_abrt_virt_seq extends kei_i2c_base_virtual_seq
     vif.wait_apb(10);
     
     /*
-
+    寄存器IC_TAR的域SPECIAL和GC_OR_START分别为1和1时，代表着dut以start_byte方式工作
+    在start byte阶段的acknowledge周期，强制将i2c_SDA force到0（即强制产生ack）
     */
     
     `uvm_do_on_with(apb_cfg_seq,
