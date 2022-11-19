@@ -15,7 +15,7 @@ class kei_i2c_master_master_dis_abrt_virt_seq extends kei_i2c_base_virtual_seque
     vif.wait_apb(10);
     
     /*
-    
+    寄存器IC_CON的域MASTER_MODE为0时，代表着不使能master mode
     */
 
     `uvm_do_on_with(apb_cfg_seq,
