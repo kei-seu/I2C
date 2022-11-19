@@ -17,7 +17,8 @@ class kei_i2c_master_sbyte_norstrt_abrt_virt_seq extends kei_i2c_base_virtual_se
     vif.wait_apb(10);
     
     /*
-
+    寄存器IC_TAR的域SPECIAL和GC_OR_START分别为1和1时，代表着dut以start_byte方式工作
+    寄存器IC_CON的域IC_RESTART_EN为0时，表示不产生restart条件
     */
     
     `uvm_do_on_with(apb_cfg_seq,
