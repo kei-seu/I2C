@@ -15,6 +15,7 @@ class kei_i2c_master_hs_cnt_virt_seq extends kei_i2c_base_virtual_sequence;
     vif.wait_rstn_release();
     vif.wait_apb(10);
     
+    //hs模式的数据传输过程与ss和fs不同，故需要对i2c vip进行特殊配置
     cfg.i2c_cfg.slave_cfg[0].bus_speed = HIGHSPEED_MODE;
     env.i2c_slv.reconfigure_via_task(cfg.i2c_cfg.slave_cfg[0]);
     
