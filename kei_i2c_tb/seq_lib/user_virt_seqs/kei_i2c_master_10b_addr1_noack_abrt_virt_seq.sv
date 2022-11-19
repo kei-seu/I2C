@@ -17,7 +17,8 @@ class kei_i2c_master_10b_addr1_noack_abrt_virt_seq extends kei_i2c_base_virtual_
     vif.wait_apb(10);
     
     /*
-
+    当i2c_slv_write_resp_seq的成员变量nack_addr为1且nack_addr_count为2时，
+    i2c vip在前两次地址阶段的acknowledge周期产生nack
     */
     
     cfg.i2c_cfg.slave_cfg[0].enable_10bit_addr = 1;
