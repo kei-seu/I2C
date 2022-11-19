@@ -17,7 +17,8 @@ class kei_i2c_master_10b_addr2_noack_abrt_virt_seq extends kei_i2c_base_virtual_
     vif.wait_apb(10);
     
     /*
-
+    由于i2c vip一侧无法配置指定对某一个地址阶段的acknowledge周期产生nack，
+    故在10bit地址的第二个地址阶段的acknowledge周期强制将i2c_SDA force到1（即强制产生nack）
     */
     
     cfg.i2c_cfg.slave_cfg[0].enable_10bit_addr = 1;
