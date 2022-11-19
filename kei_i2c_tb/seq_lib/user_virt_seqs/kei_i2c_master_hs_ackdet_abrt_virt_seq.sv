@@ -17,8 +17,9 @@ class kei_i2c_master_hs_ackdet_abrt_virt_seq extends kei_i2c_base_virtual_sequen
     vif.wait_apb(10);
     
     /*
-
+    在master code阶段的acknowledge周期，强制将i2c_SDA force到0（即强制产生ack）
     */
+    
     cfg.i2c_cfg.slave_cfg[0].bus_speed = HIGHSPEED_MODE;
     env.i2c_slv.reconfigure_via_task(cfg.i2c_cfg.slave_cfg[0]);
     
