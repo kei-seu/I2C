@@ -17,8 +17,9 @@ class kei_i2c_master_hs_norstrt_abrt_virt_seq extends kei_i2c_base_virtual_seque
     vif.wait_apb(10);
     
     /*
-
+    寄存器IC_CON的域IC_RESTART_EN为0时，表示不产生restart条件
     */
+    
     cfg.i2c_cfg.slave_cfg[0].bus_speed = HIGHSPEED_MODE;
     env.i2c_slv.reconfigure_via_task(cfg.i2c_cfg.slave_cfg[0]);
     
