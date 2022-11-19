@@ -17,7 +17,9 @@ class kei_i2c_master_rx_under_intr_virt_seq extends kei_i2c_base_virtual_sequenc
     vif.wait_apb(10);
     
     /*
-    
+    正常情况下，在rx fifo已空的时候进行读操作，dut向apb vip输出的pready会拉低一段时间，
+    之后pslverr会发送一段脉冲，代表着传输失败，读到的数据被遗弃，不会产生中断rx_under
+    必须以后门的方式在rx fifo已空时进行强制读，才可产生中断rx_under
     */
     
     `uvm_do_on_with(apb_cfg_seq,
