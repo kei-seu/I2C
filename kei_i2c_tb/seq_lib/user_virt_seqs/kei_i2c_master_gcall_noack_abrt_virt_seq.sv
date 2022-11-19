@@ -17,7 +17,7 @@ class kei_i2c_master_gcall_noack_abrt_virt_seq extends kei_i2c_base_virtual_sequ
     vif.wait_apb(10);
     
     /*
-
+    寄存器IC_TAR的域SPECIAL和GC_OR_START分别为1和0时，代表着dut以general_call方式工作
     */
     
     `uvm_do_on_with(apb_cfg_seq,
