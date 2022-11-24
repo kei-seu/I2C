@@ -111,7 +111,18 @@ class kei_i2c_cgm extends uvm_component;
       bins max = {[40:60]};
       bins min = {[10:20]};
     }
-
+    
+    HS_MASTER_CODE: coverpoint val iff(field == "HS_MASTER_CODE") {
+      bins master_code_0 = {0};
+      bins master_code_1 = {1};
+      bins master_code_2 = {2};
+      bins master_code_3 = {3};
+      bins master_code_4 = {4};
+      bins master_code_5 = {5};
+      bins master_code_6 = {6};
+      bins master_code_7 = {7};
+    }
+    
   endgroup
 
   // T2.3 7bits or 10bits addressing
@@ -386,6 +397,9 @@ class kei_i2c_cgm extends uvm_component;
           speed_modes_cg.sample(rgm.IC_CON_SPEED.get(), "SPEED");
           bits7_or_bits10_addressing_cg.sample(rgm.IC_CON_IC_10BITADDR_MASTER.get());
           restart_condition_cg.sample(rgm.IC_CON_IC_RESTART_EN.get());
+        end
+        else if(r.get_name() == "IC_HS_MADDR") begin
+          speed_modes_cg.sample(rgm.IC_HS_MADDR_IC_HS_MAR.get(), "HS_MASTER_CODE");
         end
         else if(r.get_name() == "IC_SS_SCL_LCNT") begin
           speed_modes_cg.sample(rgm.IC_SS_SCL_LCNT_IC_SS_SCL_LCNT.get(), "SS_SCL_LCNT");
