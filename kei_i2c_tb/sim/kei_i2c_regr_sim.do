@@ -65,6 +65,7 @@ set TestSets {  {kei_i2c_reg_hw_reset_test 1} \
                 {kei_i2c_master_ss_cnt_test 1} \ 
                 {kei_i2c_master_fs_cnt_test 1} \ 
                 {kei_i2c_master_hs_cnt_test 1} \ 
+                {kei_i2c_master_hs_master_code_test 1} \ 
                 {kei_i2c_master_sda_control_cg_test 1} \ 
                 {kei_i2c_master_timeout_cg_test 1} \ 
                 {kei_i2c_master_enabled_cg_test 1} \ 
