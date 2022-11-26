@@ -157,6 +157,7 @@
       <member>kei_i2c_master_ss_cnt_test</member>
       <member>kei_i2c_master_fs_cnt_test</member>
       <member>kei_i2c_master_hs_cnt_test</member>
+      <member>kei_i2c_master_hs_master_code_test</member>
       <member>kei_i2c_master_sda_control_cg_test</member>
       <member>kei_i2c_master_timeout_cg_test</member>
       <member>kei_i2c_master_enabled_cg_test</member>
@@ -185,6 +186,7 @@
   <runnable name="kei_i2c_master_ss_cnt_test" type="task"/>
   <runnable name="kei_i2c_master_fs_cnt_test" type="task"/>
   <runnable name="kei_i2c_master_hs_cnt_test" type="task"/>
+  <runnable name="kei_i2c_master_hs_master_code_test" type="task"/>
   <runnable name="kei_i2c_master_sda_control_cg_test" type="task"/>
   <runnable name="kei_i2c_master_timeout_cg_test" type="task"/>
   <runnable name="kei_i2c_master_enabled_cg_test" type="task"/>
