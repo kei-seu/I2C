@@ -9,4 +9,6 @@ kei_i2c_tb/sim/work
 kei_i2c_tb/sim/*.wlf
 kei_i2c_tb/sim/*.vstf
 kei_i2c_tb/sim/*.vrm
+kei_i2c_tb/seq_lib/user_virt_seqs/kei_i2c_master_gcall_virt_seq.sv
+kei_i2c_tb/tests/user_tests/kei_i2c_master_gcall_test.sv
 *.log
