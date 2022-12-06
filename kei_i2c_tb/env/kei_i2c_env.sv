@@ -73,6 +73,7 @@ class kei_i2c_env extends uvm_component;
         rgm.lock_model();
       end
     cfg.rgm = rgm;
+    cfg.rgm.cg_addr_enable = cfg.reg_model_cg_addr_enable;
     uvm_config_db#(ral_block_kei_i2c)::set(this,"*","rgm", rgm);
     adapter = kei_vip_apb_reg_adapter::type_id::create("adapter", this);
     predictor = uvm_reg_predictor#(kei_vip_apb_transfer)::type_id::create("predictor", this);
