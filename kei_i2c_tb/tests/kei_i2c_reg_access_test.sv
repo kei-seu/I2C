@@ -16,6 +16,7 @@ class kei_i2c_reg_access_test extends kei_i2c_base_test;
     // modify components' configurations
     cfg.master_scoreboard_enable = 0;
     cfg.coverage_model_enable = 0;
+    cfg.reg_model_cg_addr_enable = 0;
   endfunction
 
   task run_phase(uvm_phase phase);
