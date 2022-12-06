@@ -12,6 +12,7 @@ class kei_i2c_config extends uvm_object;
   
   bit master_scoreboard_enable = 1;
   bit coverage_model_enable = 1;
+  bit reg_model_cg_addr_enable = 1;
   
   `uvm_object_utils(kei_i2c_config)
 
