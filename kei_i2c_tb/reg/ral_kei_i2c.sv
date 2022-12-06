@@ -1587,7 +1587,8 @@ class ral_block_kei_i2c extends uvm_reg_block;
 	uvm_reg_field RSVD_IC_COMP_PARAM_1;
 	uvm_reg_field IC_COMP_VERSION_IC_COMP_VERSION;
 	uvm_reg_field IC_COMP_TYPE_IC_COMP_TYPE;
-
+  
+  bit cg_addr_enable;
 
 covergroup cg_addr (input string name);
 	option.per_instance = 1;
@@ -1806,6 +1807,7 @@ endgroup
 	function new(string name = "kei_i2c");
 		super.new(name, build_coverage(UVM_CVR_ADDR_MAP));
 		add_coverage(UVM_CVR_ADDR_MAP);
+    set_coverage(UVM_CVR_ADDR_MAP);
 		if (has_coverage(UVM_CVR_ADDR_MAP))
 			cg_addr = new("cg_addr");
 	endfunction: new
@@ -2443,7 +2445,7 @@ endgroup
 function void sample(uvm_reg_addr_t offset,
                      bit            is_read,
                      uvm_reg_map    map);
-  if (get_coverage(UVM_CVR_ADDR_MAP)) begin
+  if (get_coverage(UVM_CVR_ADDR_MAP) && cg_addr_enable) begin
     m_offset = offset;
     cg_addr.sample();
   end
